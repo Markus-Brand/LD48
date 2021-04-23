@@ -41,3 +41,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1431250579
+    locked: 0
+  - name: Debris
+    uniqueID: 668323911
+    locked: 0
+  - name: Items
+    uniqueID: 1024082165
+    locked: 0
+  - name: Drop Shadows
+    uniqueID: 3321495157
+    locked: 0
+  - name: Projectiles
+    uniqueID: 990091461
+    locked: 0
+  - name: Actors
+    uniqueID: 297195009
+    locked: 0
+  - name: Walls
+    uniqueID: 1106694313
+    locked: 0
