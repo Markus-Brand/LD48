@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-	public float Speed = 1f; // only default value
+	public float MovementSpeed = 1f; // only default value
+	public float RotationSpeed = 1f; // only default value
 
 	void Start()
 	{
@@ -26,8 +28,18 @@ public class PlayerMovement : MonoBehaviour
 			direction += Vector2.right;
 		}
 		if (direction.sqrMagnitude > 0.5) {
-			direction *= Speed * Time.deltaTime;
+			direction *= MovementSpeed * Time.deltaTime;
 			gameObject.transform.position += new Vector3(direction.x, direction.y, 0);
+		}
+		float rotation = 0;
+		if (Input.GetKey(KeyCode.Q)) {
+			rotation -= 1;
+		}
+		if (Input.GetKey(KeyCode.E)) {
+			rotation += 1;
+		}
+		if (Math.Abs(rotation) > 0.5) {
+			gameObject.transform.Rotate(Vector3.forward, rotation * Time.deltaTime * RotationSpeed);
 		}
 	}
 }
