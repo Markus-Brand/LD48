@@ -415,7 +415,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 250, y: 790}
-  m_SizeDelta: {x: 450, y: 550}
+  m_SizeDelta: {x: 450, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1529128639
 MonoBehaviour:
@@ -440,9 +440,11 @@ MonoBehaviour:
   m_text: 'This is your king! <link="unlock-fact:KingWantsYourHelpWithFathersDeath">Please
     help</link>, <link="unlock-fact:KingsFatherDiedMysteriously">my father died mysteriously</link>!
 
-    Jg
+    JJJ
 
-    gJ
+    ggg
+
+    JJJ
 
 
     Lots
@@ -455,12 +457,17 @@ MonoBehaviour:
     Bla
 
 
-    Because King an stuff
-
-    Now what sayeth thou?
+    Because King an stuff, now what sayeth thou?
 
     Accomodations
-    will be provided by his Majesty'
+    will be provided by his Majesty
+
+    Next Page
+
+
+    More Text and stuff, because
+    the king has to write many things (or let them be written by other less kingly
+    peoples).'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a1cb7916768e44789e241a730e27d13, type: 2}
   m_sharedMaterial: {fileID: 8947745028661422647, guid: 2a1cb7916768e44789e241a730e27d13, type: 2}
@@ -499,7 +506,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -24
+  m_lineSpacing: -28
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -585,7 +592,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 900, y: 790}
-  m_SizeDelta: {x: 450, y: 550}
+  m_SizeDelta: {x: 450, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1822313666
 MonoBehaviour:
@@ -622,9 +629,11 @@ MonoBehaviour:
   m_text: 'This is your king! <link="unlock-fact:KingWantsYourHelpWithFathersDeath">Please
     help</link>, <link="unlock-fact:KingsFatherDiedMysteriously">my father died mysteriously</link>!
 
-    Jg
+    JJJ
 
-    gJ
+    ggg
+
+    JJJ
 
 
     Lots
@@ -637,15 +646,20 @@ MonoBehaviour:
     Bla
 
 
-    Because King an stuff
-
-    Now what sayeth thou?
+    Because King an stuff, now what sayeth thou?
 
     Accomodations
-    will be provided by his Majesty'
+    will be provided by his Majesty
+
+    Next Page
+
+
+    More Text and stuff, because
+    the king has to write many things (or let them be written by other less kingly
+    peoples).'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2a1cb7916768e44789e241a730e27d13, type: 2}
+  m_sharedMaterial: {fileID: 8947745028661422647, guid: 2a1cb7916768e44789e241a730e27d13, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -669,25 +683,25 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: -28
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 6
+  m_overflowMode: 3
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 1529128639}
   m_enableKerning: 1
