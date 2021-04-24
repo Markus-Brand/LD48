@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Notebook : MonoBehaviour
+public class Notebook : MonoBehaviour, IPointerClickHandler
 {
 	public static string GetNotebookFactText()
 	{
@@ -30,6 +31,8 @@ public class Notebook : MonoBehaviour
 
 	public Vector3 OpenDisplacement = Vector3.zero;
 	public float OpenScale = 1;
+	public GameObject ClosedNotebook;
+	public GameObject OpenNotebook;
 
 	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f);
 
@@ -40,8 +43,8 @@ public class Notebook : MonoBehaviour
 
 	private void Start()
 	{
-		_initialPosition = transform.localPosition;
-		_initialScale = transform.localScale;
+		_initialPosition = ClosedNotebook.transform.localPosition;
+		_initialScale = ClosedNotebook.transform.localScale;
 		_openPosition = _initialPosition + OpenDisplacement;
 		_openScale = _initialScale * OpenScale;
 	}
@@ -49,11 +52,20 @@ public class Notebook : MonoBehaviour
 	private void Update()
 	{
 		_open.Update();
-		transform.localPosition = _open.Lerp(_initialPosition, _openPosition);
-		transform.localScale = _open.Lerp(_initialScale, _openScale);
+		ClosedNotebook.transform.localPosition = _open.Lerp(_initialPosition, _openPosition);
+		ClosedNotebook.transform.localScale = _open.Lerp(_initialScale, _openScale);
+		var openVisible = _open.IsTrue();
+		OpenNotebook.SetActive(openVisible);
+		ClosedNotebook.SetActive(!openVisible);
 
 		if (Input.GetKeyDown(KeyCode.Tab)) {
 			_open.Flip();
 		}
+	}
+	
+
+	public void OnPointerClick(PointerEventData eventData)
+	{
+		_open.Flip();
 	}
 }
