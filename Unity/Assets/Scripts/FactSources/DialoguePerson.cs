@@ -9,8 +9,10 @@ public class DialoguePerson : MonoBehaviour
 		var options = GetComponents<DialogueOption>().Where(o => o.IsAvailable()).ToList();
 		if (options.Count == 0) return;
 		DialogueManager.GetInstance().ShowChoice(
-			options.Select(o => new DialogueManager.ChoiceOption(o.displayName, o.Execute)).ToArray()
-			);
+			options.Select(o => new DialogueManager.ChoiceOption(o.displayName, o.Execute))
+				.Concat(new[] {new DialogueManager.ChoiceOption("Nothing", () => { })})
+				.ToArray()
+		);
 	}
 
 	private void OnMouseDown()

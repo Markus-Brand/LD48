@@ -30,6 +30,8 @@ public class DialogueManager : MonoBehaviour
 	public GameObject textBox;
 
 	private Action _currentCloseAction = null;
+	private ChoiceOption[] _currentOptions = null;
+	private int _currentChoiceSelection;
 
 	private void Start()
 	{
@@ -39,10 +41,7 @@ public class DialogueManager : MonoBehaviour
 	public void ShowDialogue(Speaker speaker, string text, Action onClose)
 	{
 		if (IsCurrentlyActive) return;
-		_currentCloseAction = () => {
-			textBox.SetActive(false);
-			onClose();
-		};
+		_currentCloseAction = onClose;
 		textUi.text = speaker.GetDisplayName() + ": " + text;
 		textBox.SetActive(true);
 	}
@@ -50,6 +49,11 @@ public class DialogueManager : MonoBehaviour
 	public void ShowChoice(ChoiceOption[] options)
 	{
 		if (IsCurrentlyActive) return;
+		if (options.Length > 3) Debug.LogError("Cannot really show this many options!");
+		_currentOptions = options;
+		_currentChoiceSelection = 0;
+		RefreshOptions();
+		textBox.SetActive(true);
 		// TODO actually let the user decide!
 		options.Last().onChoose();
 	}
@@ -59,14 +63,43 @@ public class DialogueManager : MonoBehaviour
 		if (_currentCloseAction != null) {
 			var action = _currentCloseAction;
 			_currentCloseAction = null;
+			textBox.SetActive(false);
+			action();
+		}
+		if (_currentOptions != null) {
+			var action = _currentOptions[_currentChoiceSelection].onChoose;
+			_currentChoiceSelection = 0;
+			_currentOptions = null;
+			textBox.SetActive(false);
 			action();
 		}
 	}
 
 	public bool IsCurrentlyActive => textBox.activeSelf;
 
-	private void OnMouseDown()
+	private void RefreshOptions()
 	{
-		Continue();
+		textUi.text = String.Join("\n", _currentOptions.Select((o, i) =>
+			(_currentChoiceSelection == i ? "<mspace=1em>> </mspace>" : "<mspace=1em>  </mspace>") + o.text
+			).ToList());
+	}
+
+	private void Update()
+	{
+		if (_currentOptions != null) {
+			if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
+				_currentChoiceSelection++;
+				if (_currentChoiceSelection >= _currentOptions.Length) _currentChoiceSelection = 0;
+				RefreshOptions();
+			} else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow)) {
+				_currentChoiceSelection--;
+				if (_currentChoiceSelection < 0) _currentChoiceSelection = _currentOptions.Length - 1;
+				RefreshOptions();
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) ||
+		    Input.GetKeyDown(KeyCode.KeypadEnter)) {
+			Continue();
+		}
 	}
 }
