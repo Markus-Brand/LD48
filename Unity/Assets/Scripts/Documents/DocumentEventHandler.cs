@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 
 namespace Documents
 {
@@ -23,7 +22,13 @@ namespace Documents
 			if (TMP_TextUtilities.IsIntersectingRectTransform(_transform, Input.mousePosition, _camera) && Input.GetMouseButtonUp(0)) {
 				int linkIndex = TMP_TextUtilities.FindIntersectingLink(_textComponent, Input.mousePosition, _camera);
 				if (linkIndex != -1) {
-					Debug.Log("Clicked Link: " + _textComponent.textInfo.linkInfo[linkIndex].GetLinkID());
+					var link = _textComponent.textInfo.linkInfo[linkIndex];
+					var split = link.GetLinkID().Split(":".ToCharArray());
+					var action = split[0];
+					var target = split[1];
+					if (action == "unlock-fact") {
+						((Fact)Enum.Parse(typeof(Fact), target)).Discover();
+					}
 				}
 			}
 		}
