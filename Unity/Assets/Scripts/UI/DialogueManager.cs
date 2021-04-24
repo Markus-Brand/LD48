@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
 	public void ShowChoice(ChoiceOption[] options)
 	{
 		if (IsCurrentlyActive) return;
-		if (options.Length > 3) Debug.LogError("Cannot really show this many options!");
+		if (options.Length > 4) Debug.LogError("Cannot really show this many options!");
 		_currentOptions = options;
 		_currentChoiceSelection = 0;
 		RefreshOptions();
