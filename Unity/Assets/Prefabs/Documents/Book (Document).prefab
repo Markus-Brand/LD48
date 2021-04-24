@@ -267,7 +267,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -28
+  m_lineSpacing: -8
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -309,6 +309,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e53bd52205742eb88b3457fecb2e5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClickedLink:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6146862290408902905}
+        m_TargetAssemblyTypeName: DocumentOverlay, Assembly-CSharp
+        m_MethodName: PerformLinkAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4511240692626369980
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,7 +459,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -28
+  m_lineSpacing: -8
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -486,6 +501,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e53bd52205742eb88b3457fecb2e5d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ClickedLink:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6146862290408902905}
+        m_TargetAssemblyTypeName: DocumentOverlay, Assembly-CSharp
+        m_MethodName: PerformLinkAction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4511240693831288894
 GameObject:
   m_ObjectHideFlags: 0

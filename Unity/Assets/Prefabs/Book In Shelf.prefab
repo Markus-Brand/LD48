@@ -97,12 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1876d075834bc28e4fa01ae6c68e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: This is your king! Please help, my father died mysteriously!
-  facts:
-  - fact: 0
-    occurrence: died
-  - fact: 1
-    occurrence: died
+  Text: 
+  Overlay: {fileID: 4511240694025428753, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+  Facts: []
 --- !u!61 &1792329403712384991
 BoxCollider2D:
   m_ObjectHideFlags: 0

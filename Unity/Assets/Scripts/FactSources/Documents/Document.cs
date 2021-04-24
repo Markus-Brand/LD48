@@ -22,6 +22,6 @@ public class Document : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		OpenText();
+		if (!UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject()) OpenText();
 	}
 }
