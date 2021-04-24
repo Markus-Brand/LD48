@@ -39,7 +39,7 @@ public class CameraScript : MonoBehaviour
 	{
 		currentShakes = new List<Shake>();
 		cameraPosition = transform.position;
-		this.MakeUndirectedShake(1, 2);
+		//this.MakeUndirectedShake(1, 2);
 	}
 
 	void Update()
