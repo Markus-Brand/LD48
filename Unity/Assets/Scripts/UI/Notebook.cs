@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using EventSystem;
+using EventSystem.Events;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -33,6 +36,7 @@ public class Notebook : MonoBehaviour, IPointerClickHandler
 	public float OpenScale = 1;
 	public GameObject ClosedNotebook;
 	public GameObject OpenNotebook;
+	public TMP_Text NotesText;
 
 	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f);
 
@@ -47,6 +51,8 @@ public class Notebook : MonoBehaviour, IPointerClickHandler
 		_initialScale = ClosedNotebook.transform.localScale;
 		_openPosition = _initialPosition + OpenDisplacement;
 		_openScale = _initialScale * OpenScale;
+		EventManager.getInstance().On<FactStateChangedEvent>(e => UpdateText());
+		UpdateText();
 	}
 
 	private void Update()
@@ -62,10 +68,14 @@ public class Notebook : MonoBehaviour, IPointerClickHandler
 			_open.Flip();
 		}
 	}
-	
 
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		_open.Flip();
+	}
+
+	private void UpdateText()
+	{
+		NotesText.text = GetNotebookFactText();
 	}
 }
