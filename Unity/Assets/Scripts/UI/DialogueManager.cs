@@ -91,7 +91,7 @@ public class DialogueManager : MonoBehaviour
 				_currentChoiceSelection++;
 				if (_currentChoiceSelection >= _currentOptions.Length) _currentChoiceSelection = 0;
 				RefreshOptions();
-			} else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.DownArrow)) {
+			} else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
 				_currentChoiceSelection--;
 				if (_currentChoiceSelection < 0) _currentChoiceSelection = _currentOptions.Length - 1;
 				RefreshOptions();
