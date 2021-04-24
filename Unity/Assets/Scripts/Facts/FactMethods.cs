@@ -1,15 +1,17 @@
 using System;
 using System.Collections.Generic;
+using EventSystem;
+using EventSystem.Events;
 using UnityEngine;
 
 public static class FactMethods
 {
 	private static readonly Dictionary<Fact, string> DisplayTexts = new Dictionary<Fact, string> {
-		{Fact.KingWantsYourHelpWithFathersDeath, ""},
-		{Fact.KingsFatherDiedMysteriously, ""},
-		{Fact.KingsFatherHadWeirdSymptoms, ""},
-		{Fact.KingsFatherWasPoisoned, ""},
-		{Fact.KingsAdvisorBehavesWeird, ""},
+		{Fact.KingWantsYourHelpWithFathersDeath, "King Richard III needs your help! His fathers death was somewhat suspicious."},
+		{Fact.KingsFatherDiedMysteriously, "Dies under mysterious circumstances."},
+		{Fact.KingsFatherHadWeirdSymptoms, "Had weird symptoms shortly before his death TODO WHICH SYMPTOMS?"},
+		{Fact.KingsFatherWasPoisoned, "Was probably poisoned to death"},
+		{Fact.KingsAdvisorBehavesWeird, "Did not quite like to investigate the death of King George IV further"},
 	};
 	
 	private static readonly Dictionary<Fact, FactTopic> Topics = new Dictionary<Fact, FactTopic> {
@@ -39,7 +41,9 @@ public static class FactMethods
 
 	public static void setState(this Fact fact, FactState newState)
 	{
+		if (newState == fact.getState()) return;
 		states[fact] = newState;
+		EventManager.getInstance().Trigger(new FactStateChangedEvent());
 	}
 
 	public static void checkCompleteness()

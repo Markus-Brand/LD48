@@ -8,18 +8,21 @@ public class Notebook
 		string result = "";
 
 		foreach (var topic in Util.getAllEnumValues<FactTopic>()) {
-			result += topic.getDisplayText() + "\n\n";
-			foreach (var fact in getDiscoveredFactsOfTopic(topic)) {
-				result += "- " + fact.getDisplayText();
+			var discoveredFactsOfTopic = getDiscoveredFactsOfTopic(topic);
+			if (discoveredFactsOfTopic.Count == 0) continue;
+			result += topic.getDisplayText() + "\n";
+			foreach (var fact in discoveredFactsOfTopic) {
+				result += "- " + fact.getDisplayText() + "\n";
 			}
+			result += "\n";
 		}
 
 		return result;
 	}
 
-	private static IEnumerable<Fact> getDiscoveredFactsOfTopic(FactTopic topic)
+	private static List<Fact> getDiscoveredFactsOfTopic(FactTopic topic)
 	{
 		return Util.getAllEnumValues<Fact>()
-			.Where(fact => fact.getState() == FactState.Discovered && fact.getTopic() == topic);
+			.Where(fact => fact.getState() == FactState.Discovered && fact.getTopic() == topic).ToList();
 	}
 }
