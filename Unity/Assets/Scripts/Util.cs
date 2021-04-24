@@ -9,6 +9,11 @@ public static class Util
 		return (T[]) Enum.GetValues(typeof(T));
 	}
 	
+	public static T parse<T>(string input) where T : struct
+	{
+		return (T) Enum.Parse(typeof(T), input);
+	}
+
 	public static string AddSpaceBetweenWords(this string name)
 	{
 		return String.Join(" ", Regex.Split(name, "(?:[\\W_]+|(?<![A-Z])(?=[A-Z])|(?<!^)(?=[A-Z][a-z]))"));
