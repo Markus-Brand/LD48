@@ -152,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1015072074}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 62.698}
 --- !u!114 &48693862
 MonoBehaviour:
@@ -370,7 +370,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &157481357
 MonoBehaviour:
@@ -461,7 +461,10 @@ GameObject:
   - component: {fileID: 264929992}
   - component: {fileID: 264929993}
   - component: {fileID: 264929994}
+  - component: {fileID: 264929997}
+  - component: {fileID: 264929996}
   - component: {fileID: 264929995}
+  - component: {fileID: 264929998}
   m_Layer: 0
   m_Name: Smiley
   m_TagString: Untagged
@@ -476,12 +479,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264929991}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.93, y: -0.02, z: 0.2147836}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.18, y: -0.38, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 1015072074}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &264929993
 SpriteRenderer:
@@ -558,35 +561,91 @@ MonoBehaviour:
   m_GameObject: {fileID: 264929991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f1876d075834bc28e4fa01ae6c68e88, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 'This is my text.
-
-    Here is the hint to fact 1.
-
-    Nobody knew that
-    the King was secretly a bad guy, so please keep it a secret.
-
-
-    This can have
-
-
-    many
-
-
-    more
-    lines
-
-
-    cause its a book.
-
-    Lol :D'
-  facts:
-  - fact: 0
-    occurrence: Here is the hint to fact 1.
-  - fact: 1
-    occurrence: King was secretly a bad guy
+  displayName: Accuse the Advisor
+  conditions: 03000000
+  dialogue:
+  - speaker: King Richard III
+    text: Have you found something out?
+    factsToLearn: 
+  - speaker: You
+    text: Please send away your helper first
+    factsToLearn: 
+  - speaker: King Richard III
+    text: Is this necessary?
+    factsToLearn: 
+  - speaker: You
+    text: Yes, absolutely
+    factsToLearn: 
+  - speaker: King Richard III
+    text: Ok, Severin, please leave!
+    factsToLearn: 
+  - speaker: Severin
+    text: As you whish, my lord.
+    factsToLearn: 
+  - speaker: King Richard III
+    text: So, what have you found out?
+    factsToLearn: 
+  - speaker: You
+    text: Your advisor has poisoned your father!
+    factsToLearn: 
+  - speaker: Voice from somewhere
+    text: You win!
+    factsToLearn: 
+--- !u!114 &264929996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264929991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayName: Ask about the letter
+  conditions: 00000000
+  dialogue:
+  - speaker: King Richard III
+    text: So you can help me?
+    factsToLearn: 
+  - speaker: You
+    text: Sure thing!
+    factsToLearn: 
+  - speaker: King Richard III
+    text: Thank you very much!
+    factsToLearn: 
+--- !u!114 &264929997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264929991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c246d321455f436bb688a5e4d2f90bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &264929998
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264929991}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.033473015, y: -0.06694555}
+  m_Size: {x: 3.1129837, y: 7.5983276}
+  m_Direction: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -747,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 495435396893050213, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 495435396893050213, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
       propertyPath: m_LocalPosition.x
@@ -929,7 +988,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1015072074}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -65}
 --- !u!114 &756670781
 MonoBehaviour:
@@ -1090,7 +1149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1015072073
 GameObject:
@@ -1121,11 +1180,10 @@ Transform:
   m_Children:
   - {fileID: 1115625201}
   - {fileID: 132954682}
-  - {fileID: 264929992}
   - {fileID: 48693861}
   - {fileID: 756670780}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115625200
 GameObject:
@@ -1293,7 +1351,7 @@ Transform:
   m_Children:
   - {fileID: 687001008}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1408408612
 MonoBehaviour:
