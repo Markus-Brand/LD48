@@ -62,3 +62,9 @@ TagManager:
   - name: Walls
     uniqueID: 1106694313
     locked: 0
+  - name: Overlay
+    uniqueID: 80520379
+    locked: 0
+  - name: Notes
+    uniqueID: 318848481
+    locked: 0
