@@ -355,9 +355,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: ace3e5ede2a81dda98c114ce59529845, type: 3}
       propertyPath: Text
-      value: 'This is your king! <link="unlock-fact:KingWantsYourHelpWithFathersDeath">Please
-        help</link>, <link="unlock-fact:KingsFatherDiedMysteriously">my father died
-        mysteriously</link>!
+      value: 'This is your king! <fact=KingWantsYourHelpWithFathersDeath>Please help</fact>,
+        <fact=KingsFatherDiedMysteriously>my father died mysteriously</fact>!
 
         JJJ
 
