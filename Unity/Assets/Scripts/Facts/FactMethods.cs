@@ -97,8 +97,6 @@ public static class FactMethods
 		}
 		content += "\n}\n@enduml";
 
-		Debug.Log(Directory.GetCurrentDirectory());
-
 		string path = "Assets" + Path.DirectorySeparatorChar + "fact-diagram.puml";
 		using (var sw = File.CreateText(path)) {
 			sw.Write(content);
