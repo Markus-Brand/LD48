@@ -461,6 +461,7 @@ GameObject:
   - component: {fileID: 264929992}
   - component: {fileID: 264929993}
   - component: {fileID: 264929994}
+  - component: {fileID: 264929995}
   m_Layer: 0
   m_Name: Smiley
   m_TagString: Untagged
@@ -548,6 +549,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   rotationSpeed: 200
+--- !u!114 &264929995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264929991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1876d075834bc28e4fa01ae6c68e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 'This is my text.
+
+    Here is the hint to fact 1.
+
+    Nobody knew that
+    the King was secretly a bad guy, so please keep it a secret.
+
+
+    This can have
+
+
+    many
+
+
+    more
+    lines
+
+
+    cause its a book.
+
+    Lol :D'
+  facts:
+  - fact: 0
+    occurrence: Here is the hint to fact 1.
+  - fact: 1
+    occurrence: King was secretly a bad guy
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

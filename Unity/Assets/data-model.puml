@@ -1,0 +1,31 @@
+@startuml
+
+enum Fact {
+    category
+    display-string
+    state // save to GameState
+    --
+    setState(state) // write it to your notebook
+    --
+    static getAllOfState(state)
+}
+Fact --> FactTopic
+Fact --> FactState
+
+enum FactState {
+    Undiscovered, Discovered, Discarded
+}
+
+enum FactTopic {
+    image
+    name (of person or town or whatever)
+    --
+}
+
+class Document {
+    facts: Fact[]
+    --
+}
+Document --> Fact
+
+@enduml
