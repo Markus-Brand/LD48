@@ -567,31 +567,31 @@ MonoBehaviour:
   displayName: Accuse the Advisor
   conditions: 03000000
   dialogue:
-  - speaker: King Richard III
+  - speaker: 1
     text: Have you found something out?
     factsToLearn: 
-  - speaker: You
+  - speaker: 0
     text: Please send away your helper first
     factsToLearn: 
-  - speaker: King Richard III
+  - speaker: 1
     text: Is this necessary?
     factsToLearn: 
-  - speaker: You
+  - speaker: 0
     text: Yes, absolutely
     factsToLearn: 
-  - speaker: King Richard III
+  - speaker: 1
     text: Ok, Severin, please leave!
     factsToLearn: 
-  - speaker: Severin
+  - speaker: 2
     text: As you whish, my lord.
     factsToLearn: 
-  - speaker: King Richard III
+  - speaker: 1
     text: So, what have you found out?
     factsToLearn: 
-  - speaker: You
+  - speaker: 0
     text: Your advisor has poisoned your father!
     factsToLearn: 
-  - speaker: Voice from somewhere
+  - speaker: 1
     text: You win!
     factsToLearn: 
 --- !u!114 &264929996
@@ -609,13 +609,13 @@ MonoBehaviour:
   displayName: Ask about the letter
   conditions: 00000000
   dialogue:
-  - speaker: King Richard III
+  - speaker: 1
     text: So you can help me?
     factsToLearn: 
-  - speaker: You
+  - speaker: 0
     text: Sure thing!
     factsToLearn: 
-  - speaker: King Richard III
+  - speaker: 1
     text: Thank you very much!
     factsToLearn: 
 --- !u!114 &264929997
