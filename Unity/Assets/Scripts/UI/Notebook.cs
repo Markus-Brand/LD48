@@ -33,11 +33,13 @@ public class Notebook : MonoBehaviour
 
 	public Vector3 OpenDisplacement = Vector3.zero;
 	public float OpenScale = 1;
+	public float NotificationScale = 1.2f;
 	public GameObject ClosedNotebook;
 	public GameObject OpenNotebook;
 	public TMP_Text NotesText;
 
 	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f);
+	private readonly AutoResettingSmoothToggle _notificationBlink = new AutoResettingSmoothToggle(false, 0.2f);
 
 	private Vector3 _initialPosition;
 	private Vector3 _initialScale;
@@ -51,14 +53,16 @@ public class Notebook : MonoBehaviour
 		_openPosition = _initialPosition + OpenDisplacement;
 		_openScale = _initialScale * OpenScale;
 		EventManager.getInstance().On<FactStateChangedEvent>(e => UpdateText());
+		EventManager.getInstance().On<FactStateChangedEvent>(e => NotifyBlink());
 		UpdateText();
 	}
 
 	private void Update()
 	{
 		_open.Update();
+		_notificationBlink.Update();
 		ClosedNotebook.transform.localPosition = _open.Lerp(_initialPosition, _openPosition);
-		ClosedNotebook.transform.localScale = _open.Lerp(_initialScale, _openScale);
+		ClosedNotebook.transform.localScale = _open.Lerp(_initialScale, _openScale) * _notificationBlink.Lerp(1, NotificationScale);
 		var openVisible = _open.IsTrue();
 		OpenNotebook.SetActive(openVisible);
 		ClosedNotebook.SetActive(!openVisible);
@@ -71,6 +75,11 @@ public class Notebook : MonoBehaviour
 	public void OpenClose()
 	{
 		_open.Flip();
+	}
+
+	public void NotifyBlink()
+	{
+		_notificationBlink.SetTrue();
 	}
 
 	private void UpdateText()
