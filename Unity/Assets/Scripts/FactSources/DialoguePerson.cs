@@ -8,8 +8,9 @@ public class DialoguePerson : MonoBehaviour
 	{
 		var options = GetComponents<DialogueOption>().Where(o => o.IsAvailable()).ToList();
 		if (options.Count == 0) return;
-		// TODO UI based selection of options, don't just execute any!
-		options.Last().Execute();
+		DialogueManager.GetInstance().ShowChoice(
+			options.Select(o => new DialogueManager.ChoiceOption(o.displayName, o.Execute)).ToArray()
+			);
 	}
 
 	private void OnMouseDown()
