@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using EventSystem;
 using EventSystem.Events;
 using UnityEngine;
@@ -22,30 +23,46 @@ public static class FactMethods
 		{Fact.KingsAdvisorBehavesWeird, FactTopic.KingAdvisor},
 	};
 
-	public static string getDisplayText(this Fact fact)
+	private static readonly Fact[] None = {}; // all of these condition facts need to be discovered so that the key fact can also be discovered
+	private static readonly Dictionary<Fact, Fact[]> Conditions = new Dictionary<Fact, Fact[]> {
+		{Fact.KingWantsYourHelpWithFathersDeath, None},
+		{Fact.KingsFatherDiedMysteriously, None},
+		{Fact.KingsFatherHadWeirdSymptoms, new[]{Fact.KingsFatherDiedMysteriously}},
+		{Fact.KingsFatherWasPoisoned, new[]{Fact.KingsFatherHadWeirdSymptoms}},
+		{Fact.KingsAdvisorBehavesWeird, new[] {Fact.KingsFatherWasPoisoned}},
+	};
+
+	public static string GetDisplayText(this Fact fact)
 	{
 		return DisplayTexts[fact];
 	}
 
-	public static FactTopic getTopic(this Fact fact)
+	public static FactTopic GetTopic(this Fact fact)
 	{
 		return Topics[fact];
 	}
 
 	private static readonly Dictionary<Fact, FactState> states = new Dictionary<Fact, FactState>();
 
-	public static FactState getState(this Fact fact)
+	public static FactState GetState(this Fact fact)
 	{
 		return states.ContainsKey(fact) ? states[fact] : FactState.Undiscovered;
 	}
 
-	public static void setState(this Fact fact, FactState newState)
+	public static bool Discover(this Fact fact, bool force = false)
 	{
-		if (newState == fact.getState()) return;
-		states[fact] = newState;
+		if (fact.GetState() != FactState.Undiscovered) return false;
+		if (!force) {
+			if (Conditions[fact].Any(cond => cond.GetState() != FactState.Discovered)) {
+				return false;
+			}
+		}
+		states[fact] = FactState.Discovered;
+		Debug.Log("Just discovered: " + fact);
 		EventManager.getInstance().Trigger(new FactStateChangedEvent());
+		return true;
 	}
-
+	
 	public static void checkCompleteness()
 	{
 		foreach (var fact in Util.getAllEnumValues<Fact>()) {
@@ -53,6 +70,9 @@ public static class FactMethods
 				Debug.LogError("No description for fact! " + fact);
 			}
 			if (!Topics.ContainsKey(fact)) {
+				Debug.LogError("No topic for fact! " + fact);
+			}
+			if (!Conditions.ContainsKey(fact)) {
 				Debug.LogError("No topic for fact! " + fact);
 			}
 		}

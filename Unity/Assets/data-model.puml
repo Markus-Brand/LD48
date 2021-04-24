@@ -4,11 +4,13 @@ enum Fact {
     category
     display-string
     state // save to GameState
+    fact[] conditions // which other facts do I need to know to discover this one
     --
     setState(state) // write it to your notebook
     --
     static getAllOfState(state)
 }
+Fact --> Fact : conditions
 Fact --> FactTopic
 Fact --> FactState
 

@@ -12,7 +12,7 @@ public class Notebook
 			if (discoveredFactsOfTopic.Count == 0) continue;
 			result += topic.getDisplayText() + "\n";
 			foreach (var fact in discoveredFactsOfTopic) {
-				result += "- " + fact.getDisplayText() + "\n";
+				result += "- " + fact.GetDisplayText() + "\n";
 			}
 			result += "\n";
 		}
@@ -23,6 +23,6 @@ public class Notebook
 	private static List<Fact> getDiscoveredFactsOfTopic(FactTopic topic)
 	{
 		return Util.getAllEnumValues<Fact>()
-			.Where(fact => fact.getState() == FactState.Discovered && fact.getTopic() == topic).ToList();
+			.Where(fact => fact.GetState() == FactState.Discovered && fact.GetTopic() == topic).ToList();
 	}
 }
