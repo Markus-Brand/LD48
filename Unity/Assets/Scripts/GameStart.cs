@@ -11,6 +11,6 @@ public class GameStart : MonoBehaviour
 		FactMethods.GeneratePuml();
 		
 		EventManager.getInstance().On<FactStateChangedEvent>(e =>
-			Debug.Log(Notebook.getNotebookFactText()));
+			Debug.Log(Notebook.GetNotebookFactText()));
 	}
 }
