@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Documents
 {
-	public class DocumentCanvasHelper : MonoBehaviour
+	public class ForceCanvasCamera : MonoBehaviour
 	{
 		private void Awake()
 		{
