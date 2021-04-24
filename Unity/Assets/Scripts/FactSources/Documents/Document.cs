@@ -7,7 +7,6 @@ public class Document : MonoBehaviour
 	public string Text;
 
 	public GameObject Overlay;
-	public List<FactOccurrence> Facts;
 
 	public void OpenText()
 	{
@@ -15,9 +14,6 @@ public class Document : MonoBehaviour
 		var overlayObject = Instantiate(Overlay);
 		var overlay = overlayObject.GetComponent<DocumentOverlay>();
 		overlay.Text = Text;
-		/*foreach (var factOccurrence in Facts) {
-			factOccurrence.fact.Discover();
-		}*/
 	}
 
 	private void OnMouseDown()

@@ -697,7 +697,7 @@ MonoBehaviour:
     factsToLearn: 
   - speaker: 2
     text: As you whish, my lord.
-    factsToLearn: 
+    factsToLearn: 04000000
   - speaker: 1
     text: So, what have you found out?
     factsToLearn: 

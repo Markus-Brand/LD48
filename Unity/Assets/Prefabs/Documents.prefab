@@ -92,8 +92,8 @@ PrefabInstance:
 
         George IV died young and healthy
 
-        Suddenly
-        got sick, showed sympotms of mercury poisoning TODO WHICH?
+        <fact=KingsFatherHadWeirdSymptoms>Suddenly
+        got sick, showed sympotms of mercury poisoning TODO WHICH?</fact>
 
 
         His
@@ -178,15 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: ace3e5ede2a81dda98c114ce59529845, type: 3}
       propertyPath: Text
-      value: 'You: Your dad was poisoned
-
-
-        King: say whaaat???
-
-
-        Advisor:
-        Ahh nvm, you should not worry too much my King, lets focus on the important
-        king-duties instead'
+      value: TODO remove me!
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: ace3e5ede2a81dda98c114ce59529845, type: 3}
       propertyPath: Facts.Array.size
@@ -269,12 +261,12 @@ PrefabInstance:
 
         you can die of old age.
 
-        If you consume
-        too much mercury, you show some weird symptoms TODO WHICH? That is why mercury
-        is a popular poison for assasins.
+        <fact=KingsFatherWasPoisoned>If
+        you consume too much mercury, you show some weird symptoms TODO WHICH? That
+        is why mercury is a popular poison for assasins.</fact>
 
-        Apart frmo that, people don''t
-        die.
+        Apart frmo
+        that, people don''t die.
 
 
         The End'
