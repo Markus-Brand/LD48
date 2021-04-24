@@ -5,9 +5,8 @@ using EventSystem;
 using EventSystem.Events;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class Notebook : MonoBehaviour, IPointerClickHandler
+public class Notebook : MonoBehaviour
 {
 	public static string GetNotebookFactText()
 	{
@@ -69,7 +68,7 @@ public class Notebook : MonoBehaviour, IPointerClickHandler
 		}
 	}
 
-	public void OnPointerClick(PointerEventData eventData)
+	public void OpenClose()
 	{
 		_open.Flip();
 	}
