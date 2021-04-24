@@ -10,12 +10,12 @@ public static class FactTopicMethods
 		{FactTopic.KingAdvisor, "Severin, Advisor of the King"},
 	};
 
-	public static string getDisplayText(this FactTopic topic)
+	public static string GetDisplayText(this FactTopic topic)
 	{
 		return DisplayTexts[topic];
 	}
 
-	public static void checkCompleteness()
+	public static void CheckCompleteness()
 	{
 		foreach (var topic in Util.getAllEnumValues<FactTopic>()) {
 			if (!DisplayTexts.ContainsKey(topic)) {

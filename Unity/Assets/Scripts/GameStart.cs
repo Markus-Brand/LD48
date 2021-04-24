@@ -6,8 +6,9 @@ public class GameStart : MonoBehaviour
 {
 	private void Start()
 	{
-		FactMethods.checkCompleteness();
-		FactTopicMethods.checkCompleteness();
+		FactMethods.CheckCompleteness();
+		FactTopicMethods.CheckCompleteness();
+		FactMethods.GeneratePuml();
 		
 		EventManager.getInstance().On<FactStateChangedEvent>(e =>
 			Debug.Log(Notebook.getNotebookFactText()));

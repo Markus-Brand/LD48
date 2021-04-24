@@ -1,0 +1,21 @@
+@startuml
+digraph facts {
+
+KingWantsYourHelpWithFathersDeath [label ="KingWantsYourHelpWithFathersDeath
+King Richard III needs your help! His fathers death was somewhat suspicious."]
+KingsFatherDiedMysteriously [label ="KingsFatherDiedMysteriously
+Dies under mysterious circumstances."]
+KingsFatherHadWeirdSymptoms [label ="KingsFatherHadWeirdSymptoms
+Had weird symptoms shortly before his death TODO WHICH SYMPTOMS?"]
+KingsFatherWasPoisoned [label ="KingsFatherWasPoisoned
+Was probably poisoned to death"]
+KingsAdvisorBehavesWeird [label ="KingsAdvisorBehavesWeird
+Did not quite like to investigate the death of King George IV further"]
+
+KingsFatherDiedMysteriously -> KingsFatherHadWeirdSymptoms
+KingWantsYourHelpWithFathersDeath -> KingsFatherHadWeirdSymptoms
+KingsFatherHadWeirdSymptoms -> KingsFatherWasPoisoned
+KingsFatherWasPoisoned -> KingsAdvisorBehavesWeird
+
+}
+@enduml

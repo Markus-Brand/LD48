@@ -10,7 +10,7 @@ public class Notebook
 		foreach (var topic in Util.getAllEnumValues<FactTopic>()) {
 			var discoveredFactsOfTopic = getDiscoveredFactsOfTopic(topic);
 			if (discoveredFactsOfTopic.Count == 0) continue;
-			result += topic.getDisplayText() + "\n";
+			result += topic.GetDisplayText() + "\n";
 			foreach (var fact in discoveredFactsOfTopic) {
 				result += "- " + fact.GetDisplayText() + "\n";
 			}

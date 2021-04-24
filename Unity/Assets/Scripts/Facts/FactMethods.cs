@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using EventSystem;
 using EventSystem.Events;
@@ -8,13 +9,16 @@ using UnityEngine;
 public static class FactMethods
 {
 	private static readonly Dictionary<Fact, string> DisplayTexts = new Dictionary<Fact, string> {
-		{Fact.KingWantsYourHelpWithFathersDeath, "King Richard III needs your help! His fathers death was somewhat suspicious."},
+		{
+			Fact.KingWantsYourHelpWithFathersDeath,
+			"King Richard III needs your help! His fathers death was somewhat suspicious."
+		},
 		{Fact.KingsFatherDiedMysteriously, "Dies under mysterious circumstances."},
 		{Fact.KingsFatherHadWeirdSymptoms, "Had weird symptoms shortly before his death TODO WHICH SYMPTOMS?"},
 		{Fact.KingsFatherWasPoisoned, "Was probably poisoned to death"},
 		{Fact.KingsAdvisorBehavesWeird, "Did not quite like to investigate the death of King George IV further"},
 	};
-	
+
 	private static readonly Dictionary<Fact, FactTopic> Topics = new Dictionary<Fact, FactTopic> {
 		{Fact.KingWantsYourHelpWithFathersDeath, FactTopic.King},
 		{Fact.KingsFatherDiedMysteriously, FactTopic.KingFather},
@@ -23,12 +27,13 @@ public static class FactMethods
 		{Fact.KingsAdvisorBehavesWeird, FactTopic.KingAdvisor},
 	};
 
-	private static readonly Fact[] None = {}; // all of these condition facts need to be discovered so that the key fact can also be discovered
+	private static readonly Fact[] None = { }; 
+	// all of these condition facts need to be discovered so that the key fact can also be discovered
 	private static readonly Dictionary<Fact, Fact[]> Conditions = new Dictionary<Fact, Fact[]> {
 		{Fact.KingWantsYourHelpWithFathersDeath, None},
 		{Fact.KingsFatherDiedMysteriously, None},
-		{Fact.KingsFatherHadWeirdSymptoms, new[]{Fact.KingsFatherDiedMysteriously}},
-		{Fact.KingsFatherWasPoisoned, new[]{Fact.KingsFatherHadWeirdSymptoms}},
+		{Fact.KingsFatherHadWeirdSymptoms, new[] {Fact.KingsFatherDiedMysteriously, Fact.KingWantsYourHelpWithFathersDeath}},
+		{Fact.KingsFatherWasPoisoned, new[] {Fact.KingsFatherHadWeirdSymptoms}},
 		{Fact.KingsAdvisorBehavesWeird, new[] {Fact.KingsFatherWasPoisoned}},
 	};
 
@@ -62,8 +67,8 @@ public static class FactMethods
 		EventManager.getInstance().Trigger(new FactStateChangedEvent());
 		return true;
 	}
-	
-	public static void checkCompleteness()
+
+	public static void CheckCompleteness()
 	{
 		foreach (var fact in Util.getAllEnumValues<Fact>()) {
 			if (!DisplayTexts.ContainsKey(fact)) {
@@ -75,6 +80,28 @@ public static class FactMethods
 			if (!Conditions.ContainsKey(fact)) {
 				Debug.LogError("No topic for fact! " + fact);
 			}
+		}
+	}
+
+	public static void GeneratePuml()
+	{
+		string content = "@startuml\ndigraph facts {\n\n";
+		foreach (var fact in Util.getAllEnumValues<Fact>()) {
+			content += fact + " [label =\"" + fact + "\n" + fact.GetDisplayText() + "\"]\n";
+		}
+		content += "\n";
+		foreach (var fact in Util.getAllEnumValues<Fact>()) {
+			foreach (var cond in Conditions[fact]) {
+				content += cond + " -> " + fact + "\n";
+			}
+		}
+		content += "\n}\n@enduml";
+
+		Debug.Log(Directory.GetCurrentDirectory());
+
+		string path = "Assets" + Path.DirectorySeparatorChar + "fact-diagram.puml";
+		using (var sw = File.CreateText(path)) {
+			sw.Write(content);
 		}
 	}
 }
