@@ -11,13 +11,13 @@ public class DialogueElement
 
 	public void Execute(List<DialogueElement> restDialogueElements, int nextIndex)
 	{
-		// TODO show the dialogue, and set the continue-handler to show the next element of the rest elements
-		Debug.Log(speaker.GetDisplayName() + ": " + text);
-		foreach (var fact in factsToLearn) {
-			fact.Discover();
-		}
-		if (nextIndex < restDialogueElements.Count) {
-			restDialogueElements[nextIndex].Execute(restDialogueElements, nextIndex + 1);
-		}
+		DialogueManager.GetInstance().ShowDialogue(speaker, text, () => {
+			foreach (var fact in factsToLearn) {
+				fact.Discover();
+			}
+			if (nextIndex < restDialogueElements.Count) {
+				restDialogueElements[nextIndex].Execute(restDialogueElements, nextIndex + 1);
+			}
+		});
 	}
 }
