@@ -29,6 +29,8 @@ public class DialogueManager : MonoBehaviour
 	public TMP_Text textUi;
 	public GameObject textBox;
 
+	private Action _currentCloseAction = null;
+
 	private void Start()
 	{
 		textBox.SetActive(false);
@@ -36,17 +38,35 @@ public class DialogueManager : MonoBehaviour
 
 	public void ShowDialogue(Speaker speaker, string text, Action onClose)
 	{
-		textUi.text = speaker.GetDisplayName() + ": " + text;
-		textBox.SetActive(true);
-		Invoker.InvokeScaled(() => {
+		if (IsCurrentlyActive) return;
+		_currentCloseAction = () => {
 			textBox.SetActive(false);
 			onClose();
-		}, 1f);
+		};
+		textUi.text = speaker.GetDisplayName() + ": " + text;
+		textBox.SetActive(true);
 	}
 
 	public void ShowChoice(ChoiceOption[] options)
 	{
+		if (IsCurrentlyActive) return;
 		// TODO actually let the user decide!
 		options.Last().onChoose();
+	}
+
+	public void Continue()
+	{
+		if (_currentCloseAction != null) {
+			var action = _currentCloseAction;
+			_currentCloseAction = null;
+			action();
+		}
+	}
+
+	public bool IsCurrentlyActive => textBox.activeSelf;
+
+	private void OnMouseDown()
+	{
+		Continue();
 	}
 }
