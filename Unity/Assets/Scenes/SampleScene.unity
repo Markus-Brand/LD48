@@ -564,6 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Accuse the Advisor
   conditions: 03000000
   dialogue:
   - speaker: King Richard III
@@ -605,6 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayName: Ask about the letter
   conditions: 00000000
   dialogue:
   - speaker: King Richard III
