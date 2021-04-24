@@ -6,7 +6,6 @@ using UnityEngine;
 public class MouseFollowingBehaviour : MonoBehaviour
 {
     private Camera _camera;
-    public x
 
     // Start is called before the first frame update
     void Start()
