@@ -1564,6 +1564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4859665445620205015, guid: b2fcd76ebb1ec48f289a16a17a018a66, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7258459028731421452, guid: b2fcd76ebb1ec48f289a16a17a018a66, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1647,18 +1651,6 @@ PrefabInstance:
     - target: {fileID: 7258459028731421452, guid: b2fcd76ebb1ec48f289a16a17a018a66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031171140638736747, guid: b2fcd76ebb1ec48f289a16a17a018a66, type: 3}
-      propertyPath: OpenScale
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031171140638736747, guid: b2fcd76ebb1ec48f289a16a17a018a66, type: 3}
-      propertyPath: OpenDisplacement.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 9031171140638736747, guid: b2fcd76ebb1ec48f289a16a17a018a66, type: 3}
-      propertyPath: OpenDisplacement.y
-      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2fcd76ebb1ec48f289a16a17a018a66, type: 3}
