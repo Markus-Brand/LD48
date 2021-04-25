@@ -52,11 +52,17 @@ public class FactsManager : MonoBehaviour
 
 	public static FactState GetFactState(string id)
 	{
+#if UNITY_EDITOR
+		if (!Instance.AllFacts.ContainsKey(id)) Debug.LogWarning($"Accessing unknown Fact {id}");
+#endif
 		return Instance.FactStates.ContainsKey(id) ? Instance.FactStates[id] : FactState.Undiscovered;
 	}
 	
 	public static void SetFactState(string id, FactState state)
 	{
+#if UNITY_EDITOR
+		if (!Instance.AllFacts.ContainsKey(id)) Debug.LogWarning($"Accessing unknown Fact {id}");
+#endif
 		if (state == GetFactState(id)) return;
 		Instance.FactStates[id] = state;
 		EventManager.getInstance().Trigger(new FactStateChangedEvent());
