@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -26,8 +27,13 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	public TMP_Text textUi;
-	public GameObject textBox;
+	public TMP_Text TextUi;
+	public TMP_Text SpeakerTextUi;
+	public GameObject TextBox;
+	public GameObject SpeakerNameBox;
+
+	public Sprite BoxWithName;
+	public Sprite BoxWithoutName;
 
 	private Action _currentCloseAction = null;
 	private ChoiceOption[] _currentOptions = null;
@@ -35,15 +41,18 @@ public class DialogueManager : MonoBehaviour
 
 	private void Start()
 	{
-		textBox.SetActive(false);
+		TextBox.SetActive(false);
 	}
 
 	public void ShowDialogue(Speaker speaker, string text, Action onClose)
 	{
 		if (IsCurrentlyActive) return;
 		_currentCloseAction = onClose;
-		textUi.text = speaker.GetDisplayName() + ": " + text;
-		textBox.SetActive(true);
+		SpeakerTextUi.text = speaker.GetDisplayName();
+		TextUi.text = text;
+		SpeakerNameBox.SetActive(true);
+		TextBox.GetComponent<Image>().sprite = BoxWithName;
+		TextBox.SetActive(true);
 	}
 
 	public void ShowChoice(ChoiceOption[] options)
@@ -53,9 +62,9 @@ public class DialogueManager : MonoBehaviour
 		_currentOptions = options;
 		_currentChoiceSelection = 0;
 		RefreshOptions();
-		textBox.SetActive(true);
-		// TODO actually let the user decide!
-		options.Last().onChoose();
+		TextBox.GetComponent<Image>().sprite = BoxWithoutName;
+		TextBox.SetActive(true);
+		SpeakerNameBox.SetActive(false);
 	}
 
 	public void Continue()
@@ -63,14 +72,14 @@ public class DialogueManager : MonoBehaviour
 		if (_currentCloseAction != null) {
 			var action = _currentCloseAction;
 			_currentCloseAction = null;
-			textBox.SetActive(false);
+			TextBox.SetActive(false);
 			action();
 		}
 		if (_currentOptions != null) {
 			var action = _currentOptions[_currentChoiceSelection].onChoose;
 			_currentChoiceSelection = 0;
 			_currentOptions = null;
-			textBox.SetActive(false);
+			TextBox.SetActive(false);
 			action();
 		}
 	}
@@ -86,11 +95,11 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
-	public bool IsCurrentlyActive => textBox.activeSelf;
+	public bool IsCurrentlyActive => TextBox.activeSelf;
 
 	private void RefreshOptions()
 	{
-		textUi.text = String.Join("\n", _currentOptions.Select((o, i) =>
+		TextUi.text = String.Join("\n", _currentOptions.Select((o, i) =>
 			(_currentChoiceSelection == i ? "<mspace=1em>> </mspace>" : "<mspace=1em>  </mspace>") + o.text
 			).ToList());
 	}
