@@ -9,8 +9,6 @@ public class UiClickHandler : MonoBehaviour, IPointerClickHandler
 	
 	public void OnPointerClick(PointerEventData eventData)
 	{
-		if (OnClick != null) {
-			OnClick.Invoke();
-		}
+		OnClick?.Invoke();
 	}
 }
