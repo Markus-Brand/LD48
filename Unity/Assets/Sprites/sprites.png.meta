@@ -29,6 +29,18 @@ TextureImporter:
   - first:
       213: 1211998406744890917
     second: page_edge
+  - first:
+      213: 6155212226941906339
+    second: map-ruins
+  - first:
+      213: -2950032572879587788
+    second: map-castle
+  - first:
+      213: -7263262467203474343
+    second: map-home
+  - first:
+      213: 7010617245534139418
+    second: map-library
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -294,7 +306,7 @@ TextureImporter:
         width: 27
         height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -302,6 +314,90 @@ TextureImporter:
       bones: []
       spriteID: 52e5e562122e1d010800000000000000
       internalID: 1211998406744890917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map-ruins
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 454
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad6300a8e4bb6550800000000000000
+      internalID: 6155212226941906339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map-castle
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 460
+        width: 40
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4363ea141016f07d0800000000000000
+      internalID: -2950032572879587788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map-home
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 396
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cd8ebb445b33b90800000000000000
+      internalID: -7263262467203474343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map-library
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 396
+        width: 31
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a143a40bd37ba4160800000000000000
+      internalID: 7010617245534139418
       vertices: []
       indices: 
       edges: []
