@@ -62,7 +62,8 @@ public class Notebook : MonoBehaviour
 	public GameObject PreviousPageButton;
 	public GameObject NextPageButton;
 
-	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f);
+	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f, SmoothToggle.Smoothing.SmoothStep);
+	private readonly SmoothToggle _raisedForOpen = new SmoothToggle(false, 0.3f, SmoothToggle.Smoothing.ToTrue);
 	private readonly AutoResettingSmoothToggle _notificationBlink = new AutoResettingSmoothToggle(false, 0.2f);
 
 	private Vector3 _initialPosition;
@@ -87,7 +88,9 @@ public class Notebook : MonoBehaviour
 	{
 		_open.Update();
 		_notificationBlink.Update();
-		ClosedNotebook.transform.localPosition = _open.Lerp(_initialPosition, _openPosition);
+		_raisedForOpen.Update();
+		
+		ClosedNotebook.transform.localPosition = _open.Lerp(_initialPosition, _openPosition) + _raisedForOpen.CurrentValue * 100 * Vector3.up;
 		ClosedNotebook.transform.localScale = _open.Lerp(_initialScale, _openScale) * _notificationBlink.Lerp(1, NotificationScale);
 		var openVisible = _open.IsTrue();
 		OpenNotebook.SetActive(openVisible);
@@ -99,17 +102,20 @@ public class Notebook : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.M)) {
 			if (_open.IsTrue() && MapContent.activeSelf) {
-				_open.SetFalse();
+				Close();
 			} else {
 				OpenMap();
 			}
 		}
 		if (Input.GetKeyDown(KeyCode.N)) {
 			if (_open.IsTrue() && NotesContent.activeSelf) {
-				_open.SetFalse();
+				Close();
 			} else {
 				OpenNotes();
 			}
+		}
+		if (_open.IsTrue()) {
+			_raisedForOpen.SetFalse(true);
 		}
 	}
 	
@@ -152,6 +158,7 @@ public class Notebook : MonoBehaviour
 
 	public void Close()
 	{
+		_raisedForOpen.SetFalse();
 		_open.SetFalse();
 	}
 
@@ -172,6 +179,11 @@ public class Notebook : MonoBehaviour
 		if (MapContent.activeSelf) {
 			SwitchToNotes();
 		} // TODO else do pagination!
+	}
+
+	public void OnClosedBookHover(bool hover)
+	{
+		_raisedForOpen.SetTo(hover);
 	}
 
 	private void UpdateText()
