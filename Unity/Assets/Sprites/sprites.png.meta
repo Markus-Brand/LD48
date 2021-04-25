@@ -20,6 +20,12 @@ TextureImporter:
   - first:
       213: 6813553822765877458
     second: envelope
+  - first:
+      213: -5082647686934749709
+    second: King
+  - first:
+      213: -2423230811885516303
+    second: Advisor
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -230,6 +236,48 @@ TextureImporter:
       bones: []
       spriteID: 2d807ff1a1b9e8e50800000000000000
       internalID: 6813553822765877458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: King
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 384
+        width: 29
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fd1bc59bdec679b0800000000000000
+      internalID: -5082647686934749709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Advisor
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 384
+        width: 20
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f948c85a64fe5ed0800000000000000
+      internalID: -2423230811885516303
       vertices: []
       indices: 
       edges: []
