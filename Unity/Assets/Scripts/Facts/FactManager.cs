@@ -20,6 +20,8 @@ public class FactManager : MonoBehaviour
 	private Dictionary<string, Fact> _allFacts;
 	public Dictionary<string, Fact> AllFacts => _allFacts ??= Topics.SelectMany(topic => topic.Facts).ToDictionary(fact => fact.ID);
 
+	public List<Fact> AllDiscoverableFacts => _allFacts.Values.Where(fact => fact.IsDiscoverable).ToList();
+
 	public Dictionary<string, FactState> FactStates { get; private set; }
 	
 	
@@ -71,7 +73,7 @@ public class FactManager : MonoBehaviour
 	
 	public static void Discover(string id, bool force = false)
 	{
-		if (force || Instance.AllFacts[id].Dependencies.All(reference => reference.Discovered)) {
+		if (force || Instance.AllFacts[id].IsDiscoverable) {
 			SetFactState(id, FactState.Discovered);
 		}
 	}

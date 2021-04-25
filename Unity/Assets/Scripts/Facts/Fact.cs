@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Fact : MonoBehaviour
@@ -12,14 +13,18 @@ public class Fact : MonoBehaviour
 	public Topic Topic => _topic ??= GetComponentInParent<Topic>();
 
 	public List<FactReference> Dependencies;
+	
+	[TextArea(3, 1000)]
+	public string HelpText;
 
 	public FactState State {
 		get => FactManager.GetFactState(ID);
 		set => FactManager.SetFactState(ID, value);
 	}
 	
-	public bool Discovered => State == FactState.Discovered;
-	
+	public bool IsDiscovered => State == FactState.Discovered;
+	public bool IsDiscoverable => State == FactState.Undiscovered && Dependencies.All(reference => reference.Discovered);
+
 	public void Discover()
 	{
 		FactManager.Discover(ID);

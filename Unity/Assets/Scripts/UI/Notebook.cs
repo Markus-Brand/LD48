@@ -44,7 +44,7 @@ public class Notebook : MonoBehaviour
 
 	private static List<Fact> GetDiscoveredFactsOfTopic(Topic topic)
 	{
-		return topic.Facts.Where(fact => fact.Discovered).ToList();
+		return topic.Facts.Where(fact => fact.IsDiscovered).ToList();
 	}
 
 	public Vector3 OpenDisplacement = Vector3.zero;
