@@ -39,6 +39,8 @@ public class DialogueManager : MonoBehaviour
 	private ChoiceOption[] _currentOptions = null;
 	private int _currentChoiceSelection;
 
+	[NonSerialized] public bool ShowsHelpText;
+
 	private void Start()
 	{
 		TextBox.SetActive(false);
@@ -69,19 +71,19 @@ public class DialogueManager : MonoBehaviour
 
 	public void Continue()
 	{
+		Action action = null;
 		if (_currentCloseAction != null) {
-			var action = _currentCloseAction;
+			action = _currentCloseAction;
 			_currentCloseAction = null;
-			TextBox.SetActive(false);
-			action();
 		}
 		if (_currentOptions != null) {
-			var action = _currentOptions[_currentChoiceSelection].onChoose;
+			action = _currentOptions[_currentChoiceSelection].onChoose;
 			_currentChoiceSelection = 0;
 			_currentOptions = null;
-			TextBox.SetActive(false);
-			action();
 		}
+		TextBox.SetActive(false);
+		ShowsHelpText = false;
+		action?.Invoke();
 	}
 
 	public void OnLineHover(int line)
