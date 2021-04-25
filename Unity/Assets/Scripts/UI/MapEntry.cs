@@ -1,13 +1,17 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MapEntry : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MapEntry : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
 	public Sprite HighlightSprite;
 	private Sprite _nonHighlightSprite;
 	private Image _image;
+
+	public string SceneName;
 
 	private void Start()
 	{
@@ -23,5 +27,20 @@ public class MapEntry : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		_image.sprite = _nonHighlightSprite;
+	}
+
+	public void OnPointerClick(PointerEventData eventData)
+	{
+		OnPointerExit(null);
+		Notebook.GetInstance().Close();
+		StartCoroutine(LoadScene(SceneName));
+	}
+	
+	private static IEnumerator LoadScene(string name)
+	{
+		var load = SceneManager.LoadSceneAsync(name);
+		while (!load.isDone) {
+			yield return null;
+		}
 	}
 }
