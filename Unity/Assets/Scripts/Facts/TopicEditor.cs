@@ -1,15 +1,15 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(TopicBehaviour), true)]
+[CustomEditor(typeof(Topic), true)]
 public class TopicEditor : Editor
 {
 	public override void OnInspectorGUI()
 	{
 		base.OnInspectorGUI();
-		var topic = target as TopicBehaviour;
+		var topic = target as Topic;
 		if (GUILayout.Button("Add Fact")) {
-			TopicBehaviour.CreateFactFor(topic);
+			Topic.CreateFactFor(topic);
 		}
 	}
 }

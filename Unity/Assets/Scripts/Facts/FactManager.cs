@@ -8,17 +8,17 @@ using WgEventSystem;
 using WgEventSystem.Events;
 using Random = UnityEngine.Random;
 
-public class FactsManager : MonoBehaviour
+public class FactManager : MonoBehaviour
 {
 
-	public static FactsManager Instance { get; private set; }
+	public static FactManager Instance { get; private set; }
 
 
-	private List<TopicBehaviour> _topics;
-	public List<TopicBehaviour> Topics => _topics ??= GetComponentsInChildren<TopicBehaviour>().ToList();
+	private List<Topic> _topics;
+	public List<Topic> Topics => _topics ??= GetComponentsInChildren<Topic>().ToList();
 	
-	private Dictionary<string, FactBehaviour> _allFacts;
-	public Dictionary<string, FactBehaviour> AllFacts => _allFacts ??= Topics.SelectMany(topic => topic.Facts).ToDictionary(fact => fact.ID);
+	private Dictionary<string, Fact> _allFacts;
+	public Dictionary<string, Fact> AllFacts => _allFacts ??= Topics.SelectMany(topic => topic.Facts).ToDictionary(fact => fact.ID);
 
 	public Dictionary<string, FactState> FactStates { get; private set; }
 	
@@ -32,19 +32,19 @@ public class FactsManager : MonoBehaviour
 	[MenuItem("GameObject/Add Topic", true, 0)]
 	static bool CreateTopicVisible(MenuCommand menuCommand)
 	{
-		return Selection.activeGameObject?.GetComponent<FactsManager>() != null;
+		return Selection.activeGameObject?.GetComponent<FactManager>() != null;
 	}
 	
 	[MenuItem("GameObject/Add Topic", false, 0)]
 	static void CreateTopic(MenuCommand menuCommand)
 	{
-		CreateTopicFor((menuCommand.context as GameObject)?.GetComponent<FactsManager>());
+		CreateTopicFor((menuCommand.context as GameObject)?.GetComponent<FactManager>());
 	}
 	
-	public static void CreateTopicFor(FactsManager manager)
+	public static void CreateTopicFor(FactManager manager)
 	{
 		GameObject go = new GameObject("UNNAMED");
-		go.AddComponent<TopicBehaviour>();
+		go.AddComponent<Topic>();
 		// Ensure it gets reparented if this was a context click (otherwise does nothing)
 		GameObjectUtility.SetParentAndAlign(go, manager.gameObject);
 		Undo.RegisterCreatedObjectUndo(go, $"Create topic");

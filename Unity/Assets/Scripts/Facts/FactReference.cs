@@ -8,15 +8,15 @@ public class FactReference
 
 	public bool IsNull => FactID == "";
 	public FactState State {
-		get => !IsNull ? FactsManager.GetFactState(FactID) : FactState.Discovered;
-		set => FactsManager.SetFactState(FactID, value);
+		get => !IsNull ? FactManager.GetFactState(FactID) : FactState.Discovered;
+		set => FactManager.SetFactState(FactID, value);
 	}
 	
 	public bool Discovered => State == FactState.Discovered;
 
 	public void Discover()
 	{
-		FactsManager.Discover(FactID);
+		FactManager.Discover(FactID);
 	}
 
 }

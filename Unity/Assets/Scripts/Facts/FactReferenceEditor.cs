@@ -11,7 +11,7 @@ public class FactReferenceEditor : PropertyDrawer
 	{
 		GenericMenu menu = new GenericMenu();
 		var factsData = PrefabUtility.LoadPrefabContents("Assets/Fact Data.prefab");
-		var manager = factsData.GetComponent<FactsManager>();
+		var manager = factsData.GetComponent<FactManager>();
 		var topics = manager.Topics;
 
 		if (includeNone) menu.AddItem(
