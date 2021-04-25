@@ -535,7 +535,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &264929994
@@ -569,31 +569,31 @@ MonoBehaviour:
   dialogue:
   - speaker: 1
     text: Have you found something out?
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 0
     text: Please send away your helper first
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 1
     text: Is this necessary?
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 0
     text: Yes, absolutely
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 1
     text: Ok, Severin, please leave!
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 2
     text: As you whish, my lord.
-    factsToLearn: 04000000
+    factsToLearn: []
   - speaker: 1
     text: So, what have you found out?
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 0
     text: Your advisor has poisoned your father!
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 1
     text: You win!
-    factsToLearn: 
+    factsToLearn: []
 --- !u!114 &264929996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,13 +611,13 @@ MonoBehaviour:
   dialogue:
   - speaker: 1
     text: So you can help me?
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 0
     text: Sure thing!
-    factsToLearn: 
+    factsToLearn: []
   - speaker: 1
     text: Thank you very much!
-    factsToLearn: 
+    factsToLearn: []
 --- !u!114 &264929997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,6 +741,23 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.75
       objectReference: {fileID: 0}
+    - target: {fileID: 718482951682445255, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
+      propertyPath: Text
+      value: 'Death Causes
+
+
+        you can die of old age.
+
+        <fact=george4_wasPoisoned>If
+        you consume too much mercury, you show some weird symptoms TODO WHICH? That
+        is why mercury is a popular poison for assasins.</fact>
+
+        Apart frmo
+        that, people don''t die.
+
+
+        The End'
+      objectReference: {fileID: 0}
     - target: {fileID: 1254745105521854344, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.929
@@ -816,6 +833,23 @@ PrefabInstance:
     - target: {fileID: 5368281116362931355, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390587761454386067, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
+      propertyPath: Text
+      value: 'History Of Kings
+
+
+        George IV died young and healthy
+
+        <fact=george4_weirdSymptoms>Suddenly
+        got sick, showed sympotms of mercury poisoning TODO WHICH?</fact>
+
+
+        His
+        dearest and nearest people in the last moments:
+
+        His Wife, His Son,
+        and his personal Advisor'
       objectReference: {fileID: 0}
     - target: {fileID: 5935295110029771740, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
       propertyPath: m_LocalPosition.x

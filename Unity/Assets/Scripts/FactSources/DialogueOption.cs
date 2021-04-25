@@ -5,12 +5,12 @@ using UnityEngine;
 public class DialogueOption : MonoBehaviour
 {
 	public string displayName;
-	public List<Fact> conditions;
+	public List<FactReference> conditions;
 	public List<DialogueElement> dialogue;
 
 	public bool IsAvailable()
 	{
-		return conditions.All(c => c.GetState() == FactState.Discovered);
+		return conditions.All(c => c.Discovered);
 	}
 
 	public void Execute()

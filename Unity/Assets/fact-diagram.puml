@@ -1,21 +1,21 @@
 @startuml
 digraph facts {
 
-KingWantsYourHelpWithFathersDeath [label ="KingWantsYourHelpWithFathersDeath
-King Richard III needs your help! His fathers death was somewhat suspicious."]
-KingsFatherDiedMysteriously [label ="KingsFatherDiedMysteriously
-Dies under mysterious circumstances."]
-KingsFatherHadWeirdSymptoms [label ="KingsFatherHadWeirdSymptoms
-Had weird symptoms shortly before his death TODO WHICH SYMPTOMS?"]
-KingsFatherWasPoisoned [label ="KingsFatherWasPoisoned
-Was probably poisoned to death"]
-KingsAdvisorBehavesWeird [label ="KingsAdvisorBehavesWeird
-Did not quite like to investigate the death of King George IV further"]
+richard3_needsHelp [label ="richard3_needsHelp
+Needs your help. His Fathers death was somewhat suspicious"]
+george4_diedMysteriously [label ="george4_diedMysteriously
+died under mysterious circumstances"]
+george4_weirdSymptoms [label ="george4_weirdSymptoms
+had weird symptoms shortly before his death"]
+george4_wasPoisoned [label ="george4_wasPoisoned
+was probably poisoned to death"]
+severin_behavesWeirdly [label ="severin_behavesWeirdly
+did not quite like to investigate the death of King George IV further"]
 
-KingsFatherDiedMysteriously -> KingsFatherHadWeirdSymptoms
-KingWantsYourHelpWithFathersDeath -> KingsFatherHadWeirdSymptoms
-KingsFatherHadWeirdSymptoms -> KingsFatherWasPoisoned
-KingsFatherWasPoisoned -> KingsAdvisorBehavesWeird
+richard3_needsHelp -> george4_weirdSymptoms
+george4_diedMysteriously -> george4_weirdSymptoms
+george4_weirdSymptoms -> george4_wasPoisoned
+george4_wasPoisoned -> severin_behavesWeirdly
 
 }
 @enduml

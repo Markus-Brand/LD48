@@ -29,12 +29,12 @@ public class Notebook : MonoBehaviour
 	{
 		string result = "";
 
-		foreach (var topic in Util.getAllEnumValues<FactTopic>()) {
+		foreach (var topic in FactsManager.Instance.Topics) {
 			var discoveredFactsOfTopic = GetDiscoveredFactsOfTopic(topic);
 			if (discoveredFactsOfTopic.Count == 0) continue;
-			result += topic.GetDisplayText() + "\n";
+			result += topic.CurrentName + "\n";
 			foreach (var fact in discoveredFactsOfTopic) {
-				result += "- " + fact.GetDisplayText() + "\n";
+				result += "- " + fact.Text + "\n";
 			}
 			result += "\n";
 		}
@@ -42,10 +42,9 @@ public class Notebook : MonoBehaviour
 		return result;
 	}
 
-	private static List<Fact> GetDiscoveredFactsOfTopic(FactTopic topic)
+	private static List<FactBehaviour> GetDiscoveredFactsOfTopic(TopicBehaviour topic)
 	{
-		return Util.getAllEnumValues<Fact>()
-			.Where(fact => fact.GetState() == FactState.Discovered && fact.GetTopic() == topic).ToList();
+		return topic.Facts.Where(fact => fact.Discovered).ToList();
 	}
 
 	public Vector3 OpenDisplacement = Vector3.zero;
@@ -62,7 +61,8 @@ public class Notebook : MonoBehaviour
 	public GameObject PreviousPageButton;
 	public GameObject NextPageButton;
 
-	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f);
+	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f, SmoothToggle.Smoothing.SmoothStep);
+	private readonly SmoothToggle _raisedForOpen = new SmoothToggle(false, 0.3f, SmoothToggle.Smoothing.ToTrue);
 	private readonly AutoResettingSmoothToggle _notificationBlink = new AutoResettingSmoothToggle(false, 0.2f);
 
 	private Vector3 _initialPosition;
@@ -87,7 +87,9 @@ public class Notebook : MonoBehaviour
 	{
 		_open.Update();
 		_notificationBlink.Update();
-		ClosedNotebook.transform.localPosition = _open.Lerp(_initialPosition, _openPosition);
+		_raisedForOpen.Update();
+		
+		ClosedNotebook.transform.localPosition = _open.Lerp(_initialPosition, _openPosition) + _raisedForOpen.CurrentValue * 100 * Vector3.up;
 		ClosedNotebook.transform.localScale = _open.Lerp(_initialScale, _openScale) * _notificationBlink.Lerp(1, NotificationScale);
 		var openVisible = _open.IsTrue();
 		OpenNotebook.SetActive(openVisible);
@@ -99,17 +101,20 @@ public class Notebook : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.M)) {
 			if (_open.IsTrue() && MapContent.activeSelf) {
-				_open.SetFalse();
+				Close();
 			} else {
 				OpenMap();
 			}
 		}
 		if (Input.GetKeyDown(KeyCode.N)) {
 			if (_open.IsTrue() && NotesContent.activeSelf) {
-				_open.SetFalse();
+				Close();
 			} else {
 				OpenNotes();
 			}
+		}
+		if (_open.IsTrue()) {
+			_raisedForOpen.SetFalse(true);
 		}
 	}
 	
@@ -152,6 +157,7 @@ public class Notebook : MonoBehaviour
 
 	public void Close()
 	{
+		_raisedForOpen.SetFalse();
 		_open.SetFalse();
 	}
 
@@ -172,6 +178,11 @@ public class Notebook : MonoBehaviour
 		if (MapContent.activeSelf) {
 			SwitchToNotes();
 		} // TODO else do pagination!
+	}
+
+	public void OnClosedBookHover(bool hover)
+	{
+		_raisedForOpen.SetTo(hover);
 	}
 
 	private void UpdateText()

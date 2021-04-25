@@ -20,7 +20,7 @@ public class SmoothToggle
 
 	public enum Smoothing
 	{
-		None, SmoothStep, ToFalse, ToTrue, ToEnds
+		None, SmoothStep, ToFalse, ToTrue, ToEnds, SmootherStep, SmoothestStep
 	}
 
 	public SmoothToggle(bool initialValue, float fadingTime = DefaultFadingTime, Smoothing smoothingMode = DefaultSmoothing)
@@ -69,6 +69,10 @@ public class SmoothToggle
 			switch (SmoothingMode) {
 				case Smoothing.SmoothStep:
 					return Mathf.SmoothStep(0, 1, raw);
+				case Smoothing.SmootherStep:
+					return Mathf.SmoothStep(0, 1, Mathf.SmoothStep(0, 1, raw));
+				case Smoothing.SmoothestStep:
+					return Mathf.SmoothStep(0, 1, Mathf.SmoothStep(0, 1, Mathf.SmoothStep(0, 1, raw)));
 				case Smoothing.ToFalse:
 					return raw * raw * raw;
 				case Smoothing.ToTrue:
