@@ -565,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Accuse the Advisor
-  conditions: 03000000
+  conditions: []
   dialogue:
   - speaker: 1
     text: Have you found something out?
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayName: Ask about the letter
-  conditions: 00000000
+  conditions: []
   dialogue:
   - speaker: 1
     text: So you can help me?
@@ -850,6 +850,10 @@ PrefabInstance:
 
         His Wife, His Son,
         and his personal Advisor'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390587761454386067, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
+      propertyPath: Title
+      value: History Of Kings
       objectReference: {fileID: 0}
     - target: {fileID: 5935295110029771740, guid: 6bc240e3926940919960cec7ce45da45, type: 3}
       propertyPath: m_LocalPosition.x

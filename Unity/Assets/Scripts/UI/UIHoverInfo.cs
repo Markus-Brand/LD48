@@ -16,7 +16,7 @@ public class UIHoverInfo : MonoBehaviour, IHoverInfo, IPointerEnterHandler, IPoi
 		Text = newText;
 	}
 
-	public string GetText()
+	public string GetHoverText()
 	{
 		return Text;
 	}

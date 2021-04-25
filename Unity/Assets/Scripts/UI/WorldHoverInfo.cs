@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(Collider2D))]
 public class WorldHoverInfo : MonoBehaviour, IHoverInfo
 {
 	[TextArea(1,10)]
@@ -17,7 +18,7 @@ public class WorldHoverInfo : MonoBehaviour, IHoverInfo
 		Text = newText;
 	}
 
-	public string GetText()
+	public string GetHoverText()
 	{
 		return Text;
 	}

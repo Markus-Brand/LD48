@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class HoverMaster : MonoBehaviour
@@ -28,6 +28,13 @@ public class HoverMaster : MonoBehaviour
 	{
 		_canvasScaler = GetComponentInParent<CanvasScaler>();
 		_defaultTextSize = Text.fontSize;
+	}
+
+	private void Start()
+	{
+		RenderPipelineManager.beginContextRendering += (ctx, cam) => {
+			ReScale();
+		};
 	}
 
 	private TextMeshProUGUI _text;
@@ -88,6 +95,9 @@ public class HoverMaster : MonoBehaviour
 		}
 	}
 
+	private float TextPreferredWidth => (Text.preferredWidth + 20);
+	private float TextPreferredHeight => (Text.preferredHeight + 20);
+
 	private Vector2 TargetPosition()
 	{
 		const int minimumSpaceToScreenBorder = 20;
@@ -95,13 +105,13 @@ public class HoverMaster : MonoBehaviour
 		int offsetFromCursor = Mathf.RoundToInt(baseOffsetFromCursor);
 		
 		
-		var textWidth = (Text.preferredWidth + 24) / 2;
-		var textHeight = (Text.preferredHeight + 16) / 2;
+		var textWidth = TextPreferredWidth;
+		var textHeight = TextPreferredHeight;
 		
 		var canvasWidth = _canvasScaler.referenceResolution.x; // our canvas scaler!
 		var canvasHeight = canvasWidth * Screen.height / Screen.width;
 
-		if (InGameScene) {
+		if (true) {
 			//sorry for that hack, but it is just all broken as hell
 			float canvasAspect = _canvasScaler.referenceResolution.x / _canvasScaler.referenceResolution.y;
 			float screenAspect = Screen.width / (float)Screen.height;
@@ -164,7 +174,7 @@ public class HoverMaster : MonoBehaviour
 	public void ShowInfo(IHoverInfo hoverInfo)
 	{
 		_hoveredObject = hoverInfo.GetTransform();
-		Text.text = hoverInfo.GetText().Replace("\\n", "\n");
+		Text.text = hoverInfo.GetHoverText().Replace("\\n", "\n");
 		_forceHidden = false;
 
 		HoverDisplay.transform.localPosition = TargetPosition();
@@ -183,20 +193,13 @@ public class HoverMaster : MonoBehaviour
 		if (_forceHidden || _visibleTime <= 0.001) _visibleTime = -2f;
 	}
 
-	private static bool InGameScene => true;
-
 	private void ReScale()
 	{
-		// 4:3: 1,33333 - 16:9: 1,7777 - 21:9: 2,33333
-		var aspect = Screen.width / (float) Screen.height;
-		if (!InGameScene && aspect > 1.8) {
-			Text.fontSize = _defaultTextSize - 5;
-		}
-		
+		if (HoverDisplay == null) return;
 		HoverDisplay.GetComponent<RectTransform>()
-			.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, (Text.preferredWidth + 24) / 2);
+			.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, TextPreferredWidth);
 		HoverDisplay.GetComponent<RectTransform>()
-			.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (Text.preferredHeight + 16) / 2);
+			.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, TextPreferredHeight);
 	}
 
 	public void HideInfo(IHoverInfo hoverInfo)
