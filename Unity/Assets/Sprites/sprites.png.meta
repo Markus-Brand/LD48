@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: -2423230811885516303
     second: Advisor
+  - first:
+      213: 1211998406744890917
+    second: page_edge
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -270,7 +273,7 @@ TextureImporter:
         width: 20
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -278,6 +281,27 @@ TextureImporter:
       bones: []
       spriteID: 1f948c85a64fe5ed0800000000000000
       internalID: -2423230811885516303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: page_edge
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 511
+        width: 27
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e5e562122e1d010800000000000000
+      internalID: 1211998406744890917
       vertices: []
       indices: 
       edges: []
