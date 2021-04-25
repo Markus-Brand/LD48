@@ -29,7 +29,7 @@ public class Notebook : MonoBehaviour
 	{
 		string result = "";
 
-		foreach (var topic in FactsManager.Instance.Topics) {
+		foreach (var topic in FactManager.Instance.Topics) {
 			var discoveredFactsOfTopic = GetDiscoveredFactsOfTopic(topic);
 			if (discoveredFactsOfTopic.Count == 0) continue;
 			result += topic.CurrentName + "\n";
@@ -42,7 +42,7 @@ public class Notebook : MonoBehaviour
 		return result;
 	}
 
-	private static List<FactBehaviour> GetDiscoveredFactsOfTopic(TopicBehaviour topic)
+	private static List<Fact> GetDiscoveredFactsOfTopic(Topic topic)
 	{
 		return topic.Facts.Where(fact => fact.Discovered).ToList();
 	}

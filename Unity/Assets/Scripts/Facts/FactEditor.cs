@@ -2,15 +2,15 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(FactBehaviour), true)]
+[CustomEditor(typeof(Fact), true)]
 public class FactEditor : Editor
 {
 	public override void OnInspectorGUI()
 	{
 		base.OnInspectorGUI();
-		var fact = target as FactBehaviour;
+		var fact = target as Fact;
 		if (GUILayout.Button("Add Sibling Fact")) {
-			TopicBehaviour.CreateFactFor(fact.Topic);
+			Topic.CreateFactFor(fact.Topic);
 		}
 		if (GUILayout.Button("Copy ID")) {
 			CopyToClipboard(fact.ID);

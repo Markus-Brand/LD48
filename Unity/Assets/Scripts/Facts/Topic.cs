@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-public class TopicBehaviour : MonoBehaviour
+public class Topic : MonoBehaviour
 {
 	[Serializable]
 	public class NameOption
@@ -20,8 +19,8 @@ public class TopicBehaviour : MonoBehaviour
 	
 	public string InternalID => name;
 
-	private List<FactBehaviour> _facts;
-	public List<FactBehaviour> Facts => _facts ??= GetComponentsInChildren<FactBehaviour>().ToList();
+	private List<Fact> _facts;
+	public List<Fact> Facts => _facts ??= GetComponentsInChildren<Fact>().ToList();
 	
 	public List<NameOption> Names;
 	
@@ -35,19 +34,19 @@ public class TopicBehaviour : MonoBehaviour
 	[MenuItem("GameObject/Add Fact", true, 0)]
 	static bool createFactVisible(MenuCommand menuCommand)
 	{
-		return Selection.activeGameObject?.GetComponent<TopicBehaviour>() != null;
+		return Selection.activeGameObject?.GetComponent<Topic>() != null;
 	}
 
 	[MenuItem("GameObject/Add Fact", false, 0)]
 	static void createFact(MenuCommand menuCommand)
 	{
-		CreateFactFor((menuCommand.context as GameObject)?.GetComponent<TopicBehaviour>());
+		CreateFactFor((menuCommand.context as GameObject)?.GetComponent<Topic>());
 	}
 
-	public static void CreateFactFor(TopicBehaviour topic)
+	public static void CreateFactFor(Topic topic)
 	{
 		GameObject go = new GameObject("UNNAMED");
-		go.AddComponent<FactBehaviour>();
+		go.AddComponent<Fact>();
 		// Ensure it gets reparented if this was a context click (otherwise does nothing)
 		GameObjectUtility.SetParentAndAlign(go, topic.gameObject);
 		Undo.RegisterCreatedObjectUndo(go, $"Create {go.name} fact");
