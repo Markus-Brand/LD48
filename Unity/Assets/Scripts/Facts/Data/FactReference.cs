@@ -11,11 +11,12 @@ public class FactReference
 		get => !IsNull ? FactsManager.GetFactState(FactID) : FactState.Discovered;
 		set => FactsManager.SetFactState(FactID, value);
 	}
+	
+	public bool Discovered => State == FactState.Discovered;
 
 	public void Discover()
 	{
 		FactsManager.Discover(FactID);
 	}
 
-	public bool Discovered => State == FactState.Discovered;
 }

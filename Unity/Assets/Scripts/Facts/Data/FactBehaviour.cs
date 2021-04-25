@@ -18,6 +18,8 @@ public class FactBehaviour : MonoBehaviour
 		set => FactsManager.SetFactState(ID, value);
 	}
 	
+	public bool Discovered => State == FactState.Discovered;
+	
 	public void Discover()
 	{
 		FactsManager.Discover(ID);

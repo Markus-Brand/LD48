@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -74,4 +75,26 @@ public class FactsManager : MonoBehaviour
 			SetFactState(id, FactState.Discovered);
 		}
 	}
+	
+#if UNITY_EDITOR
+	public static void GeneratePuml()
+	{
+		string content = "@startuml\ndigraph facts {\n\n";
+		foreach (var fact in Instance.AllFacts.Values) {
+			content += fact.ID + " [label =\"" + fact.ID + "\n" + fact.Text + "\"]\n";
+		}
+		content += "\n";
+		foreach (var fact in Instance.AllFacts.Values) {
+			foreach (var cond in fact.Dependencies) {
+				content += cond.FactID + " -> " + fact.ID + "\n";
+			}
+		}
+		content += "\n}\n@enduml";
+
+		string path = "Assets" + Path.DirectorySeparatorChar + "fact-diagram.puml";
+		using (var sw = File.CreateText(path)) {
+			sw.Write(content);
+		}
+	}
+#endif
 }
