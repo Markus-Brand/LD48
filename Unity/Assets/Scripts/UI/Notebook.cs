@@ -29,12 +29,12 @@ public class Notebook : MonoBehaviour
 	{
 		string result = "";
 
-		foreach (var topic in Util.getAllEnumValues<FactTopic>()) {
+		foreach (var topic in FactsManager.Instance.Topics) {
 			var discoveredFactsOfTopic = GetDiscoveredFactsOfTopic(topic);
 			if (discoveredFactsOfTopic.Count == 0) continue;
-			result += topic.GetDisplayText() + "\n";
+			result += topic.CurrentName + "\n";
 			foreach (var fact in discoveredFactsOfTopic) {
-				result += "- " + fact.GetDisplayText() + "\n";
+				result += "- " + fact.Text + "\n";
 			}
 			result += "\n";
 		}
@@ -42,10 +42,9 @@ public class Notebook : MonoBehaviour
 		return result;
 	}
 
-	private static List<Fact> GetDiscoveredFactsOfTopic(FactTopic topic)
+	private static List<FactBehaviour> GetDiscoveredFactsOfTopic(TopicBehaviour topic)
 	{
-		return Util.getAllEnumValues<Fact>()
-			.Where(fact => fact.GetState() == FactState.Discovered && fact.GetTopic() == topic).ToList();
+		return topic.Facts.Where(fact => fact.Discovered).ToList();
 	}
 
 	public Vector3 OpenDisplacement = Vector3.zero;
