@@ -508,6 +508,8 @@ MonoBehaviour:
   ClosedNotebook: {fileID: 3549833379584338596}
   OpenNotebook: {fileID: 4859665445620205015}
   NotesText: {fileID: 524145919532048371}
+  NotesContent: {fileID: 8989525756786048483}
+  MapContent: {fileID: 7198993562695075066}
 --- !u!1 &4859665445620205015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8710058181182866198}
   m_Layer: 5
-  m_Name: TextContent
+  m_Name: NotesContent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1434,6 +1436,22 @@ PrefabInstance:
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: SceneName
       value: Throne Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939073806875320488, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939073806875320488, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939073806875320488, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939073806875320488, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4051860169245919837, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: m_Pivot.x
