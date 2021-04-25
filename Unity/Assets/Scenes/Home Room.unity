@@ -221,12 +221,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1876d075834bc28e4fa01ae6c68e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Overlay: {fileID: 4511240694025428753, guid: 5161ad0d224f0453294e36b53c236d24, type: 3}
   Text: 'To NAME, Investigator extaordinaire.
 
 
     I write to you in a matter of
-    great importance. Recently, my father has passed away. <fact=KingsFatherDiedMysteriously>I
-    suspect that this might not have been of a natural cause</fact>. <fact=KingWantsYourHelpWithFathersDeath>I
+    great importance. Recently, my father has passed away. <fact=george4_diedMysteriously>I
+    suspect that this might not have been of a natural cause</fact>. <fact=richard3_needsHelp>I
     need your help to get to the bottom of this</fact>.
 
 
@@ -234,7 +235,6 @@ MonoBehaviour:
 
     King
     Richard III'
-  Overlay: {fileID: 4511240694025428753, guid: 5161ad0d224f0453294e36b53c236d24, type: 3}
 --- !u!61 &602763261
 BoxCollider2D:
   m_ObjectHideFlags: 0
