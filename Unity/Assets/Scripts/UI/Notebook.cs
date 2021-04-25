@@ -79,6 +79,8 @@ public class Notebook : MonoBehaviour
 			StartCoroutine(LoadScene("SampleScene"));
 		} else if (Input.GetKey(KeyCode.T)) {
 			StartCoroutine(LoadScene("Throne Room"));
+		} else if (Input.GetKey(KeyCode.R)) {
+			StartCoroutine(LoadScene("Ruins"));
 		}
 	}
 
