@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OpenDisplacement: {x: 700, y: 500, z: 0}
   OpenScale: 2.5
+  NotificationScale: 1.2
   ClosedNotebook: {fileID: 3549833379584338596}
   OpenNotebook: {fileID: 4859665445620205015}
   NotesText: {fileID: 524145919532048371}
@@ -438,8 +439,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -732,8 +733,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
