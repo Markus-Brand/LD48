@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 564602528465233708}
   - component: {fileID: 564602528465233707}
   - component: {fileID: 564602528465233704}
+  - component: {fileID: 10915730221800035}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -131,6 +132,20 @@ HingeJoint2D:
   m_AngleLimits:
     m_LowerAngle: 0
     m_UpperAngle: 359
+--- !u!114 &10915730221800035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564602528465233711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bd93167b4e4044eb29e6d7370e652e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanternFact:
+    FactID: easterEggs_lanternFact
 --- !u!1 &564602529207706468
 GameObject:
   m_ObjectHideFlags: 0

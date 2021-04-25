@@ -48,6 +48,52 @@ MonoBehaviour:
   - FactID: george4_weirdSymptoms
   HelpText: The way that King George IV died was indeed mysterious. But I think I
     have heard of these sympoms before... Where could I read more about this?
+--- !u!1 &3170822956406859238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9052447749120665312}
+  - component: {fileID: 3895471156365740690}
+  m_Layer: 0
+  m_Name: lanternFact
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9052447749120665312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3170822956406859238}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7824659554396145394}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3895471156365740690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3170822956406859238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: Playing with the lantern is fun
+  Dependencies: []
+  HelpText: 
 --- !u!1 &3216419785151378007
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +172,7 @@ Transform:
   - {fileID: 3756751003867712795}
   - {fileID: 3789878806661172379}
   - {fileID: 1778996678350610421}
+  - {fileID: 7824659554396145394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -141,6 +188,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624ab7920f274456866c83679a66056e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4516909814209406547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7824659554396145394}
+  - component: {fileID: 2882860031142481217}
+  m_Layer: 0
+  m_Name: easterEggs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7824659554396145394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516909814209406547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 9052447749120665312}
+  m_Father: {fileID: 5677392511697954768}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2882860031142481217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4516909814209406547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0765a27d55440cbd9b00000a2b0182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Easter eggs
+  Names: []
 --- !u!1 &5100353497090747318
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ george4_wasPoisoned [label ="george4_wasPoisoned
 was probably poisoned to death"]
 severin_behavesWeirdly [label ="severin_behavesWeirdly
 did not quite like to investigate the death of King George IV further"]
+easterEggs_lanternFact [label ="easterEggs_lanternFact
+Playing with the lantern is fun"]
 
 richard3_needsHelp -> george4_weirdSymptoms
 george4_diedMysteriously -> george4_weirdSymptoms
