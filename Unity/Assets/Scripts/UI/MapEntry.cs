@@ -14,6 +14,11 @@ public class MapEntry : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	private Image _image;
 
 	public string SceneName;
+	public string LocationDisplayName;
+	[TextArea(3, 10)]
+	public string LocationDisplayDescription;
+
+	private MapManager Manager => transform.parent.GetComponent<MapManager>();
 
 	private void Start()
 	{
@@ -24,11 +29,13 @@ public class MapEntry : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		_image.color = HighlightColor;
+		Manager.OnHoverEntry(this);
 	}
 
 	public void OnPointerExit(PointerEventData eventData)
 	{
 		_image.color = NonHighlightColor;
+		Manager.OnHoverNothing();
 	}
 
 	public void OnPointerClick(PointerEventData eventData)
