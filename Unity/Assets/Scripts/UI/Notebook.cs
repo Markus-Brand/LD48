@@ -16,7 +16,15 @@ public class Notebook : MonoBehaviour
 		}
 		return _instance;
 	}
-	
+
+	private void Awake()
+	{
+		if (this != GetInstance()) {
+			Destroy(this);
+			Destroy(gameObject);
+		}
+	}
+
 	public static string GetNotebookFactText()
 	{
 		string result = "";
@@ -86,17 +94,17 @@ public class Notebook : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown(KeyCode.M)) {
-			if (_open.IsTrue()) {
-				OpenMap();
-			} else {
+			if (_open.IsTrue() && MapContent.activeSelf) {
 				_open.SetFalse();
+			} else {
+				OpenMap();
 			}
 		}
 		if (Input.GetKeyDown(KeyCode.N)) {
-			if (_open.IsTrue()) {
-				OpenNotes();
-			} else {
+			if (_open.IsTrue() && NotesContent.activeSelf) {
 				_open.SetFalse();
+			} else {
+				OpenNotes();
 			}
 		}
 	}
@@ -126,6 +134,7 @@ public class Notebook : MonoBehaviour
 
 	public void SwitchToNotes()
 	{
+		Debug.Log(this == GetInstance());
 		MapContent.SetActive(false);
 		NotesContent.SetActive(true);
 	}
