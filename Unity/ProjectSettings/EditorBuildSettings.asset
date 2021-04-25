@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Throne Room.unity
     guid: 3dc21bb45a5edb694bad7e1992f9eca8
+  - enabled: 1
+    path: Assets/Scenes/Home Room.unity
+    guid: 6c87bc74fb96675d98c4758e746d7399
   m_configObjects: {}

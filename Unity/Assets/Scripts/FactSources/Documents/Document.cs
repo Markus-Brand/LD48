@@ -1,11 +1,11 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(HoverTint))]
 public class Document : MonoBehaviour
 {
 	[TextArea(3, 999)]
 	public string Text;
-
 	public GameObject Overlay;
 
 	public void OpenText()
