@@ -1,4 +1,4 @@
-namespace EventSystem.Events
+namespace WgEventSystem.Events
 {
 	public abstract class GameEvent
 	{

@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 6708733205153277002
     second: book4
+  - first:
+      213: 6813553822765877458
+    second: envelope
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -206,6 +209,27 @@ TextureImporter:
       bones: []
       spriteID: a4467024e453a1d50800000000000000
       internalID: 6708733205153277002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: envelope
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 622
+        width: 32
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 1.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d807ff1a1b9e8e50800000000000000
+      internalID: 6813553822765877458
       vertices: []
       indices: 
       edges: []

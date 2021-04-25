@@ -99,7 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: 
   Overlay: {fileID: 4511240694025428753, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
-  Facts: []
 --- !u!61 &1792329403712384991
 BoxCollider2D:
   m_ObjectHideFlags: 0

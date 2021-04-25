@@ -1,7 +1,7 @@
-using EventSystem.Events;
 using UnityEngine.Events;
+using WgEventSystem.Events;
 
-namespace EventSystem
+namespace WgEventSystem
 {
 	public abstract class EventWrapper
 	{

@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using EventSystem;
-using EventSystem.Events;
+using WgEventSystem;
+using WgEventSystem.Events;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Notebook : MonoBehaviour
 {
@@ -69,6 +71,20 @@ public class Notebook : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Tab)) {
 			_open.Flip();
+		}
+
+		if (Input.GetKey(KeyCode.H)) {
+			StartCoroutine(LoadScene("Home Room"));
+		} else if (Input.GetKey(KeyCode.B)) {
+			StartCoroutine(LoadScene("SampleScene"));
+		}
+	}
+
+	private static IEnumerator LoadScene(string name)
+	{
+		var load = SceneManager.LoadSceneAsync(name);
+		while (!load.isDone) {
+			yield return null;
 		}
 	}
 

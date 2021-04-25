@@ -1,8 +1,8 @@
 using System;
-using EventSystem.Events;
+using WgEventSystem.Events;
 using Object = UnityEngine.Object;
 
-namespace EventSystem
+namespace WgEventSystem
 {
 	public class LifetimeConstrainedEventListener<TEvent> : EventListener<TEvent> where TEvent : GameEvent
 	{

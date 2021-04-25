@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using EventSystem.Events;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using WgEventSystem.Events;
 using Object = UnityEngine.Object;
 
-namespace EventSystem
+namespace WgEventSystem
 {
 	public class EventManager : MonoBehaviour
 	{

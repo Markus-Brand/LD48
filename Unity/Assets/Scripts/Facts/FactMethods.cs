@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using System.IO;
+#endif
 using System.Linq;
-using EventSystem;
-using EventSystem.Events;
+using WgEventSystem;
+using WgEventSystem.Events;
 using UnityEngine;
 
 public static class FactMethods
@@ -68,6 +70,7 @@ public static class FactMethods
 		return true;
 	}
 
+#if UNITY_EDITOR
 	public static void CheckCompleteness()
 	{
 		foreach (var fact in Util.getAllEnumValues<Fact>()) {
@@ -102,4 +105,5 @@ public static class FactMethods
 			sw.Write(content);
 		}
 	}
+#endif
 }

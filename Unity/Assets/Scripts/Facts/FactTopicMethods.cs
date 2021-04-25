@@ -15,6 +15,7 @@ public static class FactTopicMethods
 		return DisplayTexts[topic];
 	}
 
+#if UNITY_EDITOR
 	public static void CheckCompleteness()
 	{
 		foreach (var topic in Util.getAllEnumValues<FactTopic>()) {
@@ -23,4 +24,5 @@ public static class FactTopicMethods
 			}
 		}
 	}
+#endif
 }
