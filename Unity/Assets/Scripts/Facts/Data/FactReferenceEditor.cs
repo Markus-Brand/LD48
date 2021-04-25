@@ -7,7 +7,7 @@ using UnityEngine;
 public class FactReferenceEditor : PropertyDrawer
 {
 
-	public void showFactsMenuFor(SerializedProperty property)
+	public void showFactsMenuFor(string currentValue, Action<string> handler)
 	{
 		GenericMenu menu = new GenericMenu();
 		var factsData = PrefabUtility.LoadPrefabContents("Assets/Fact Data.prefab");
@@ -16,22 +16,16 @@ public class FactReferenceEditor : PropertyDrawer
 
 		menu.AddItem(
 			new GUIContent("NONE"),
-			property.stringValue == "",
-			() => {
-				property.stringValue = "";
-				property.serializedObject.ApplyModifiedProperties();
-			});
+			currentValue == "",
+			() => handler(""));
 		
 		foreach (var topic in topics) {
 			foreach (var fact in topic.Facts) {
 				var factID = fact.ID;
 				menu.AddItem(
 					new GUIContent($"{topic.InternalID}/{fact.InternalID}"),
-					property.stringValue == factID,
-					() => {
-						property.stringValue = factID;
-						property.serializedObject.ApplyModifiedProperties();
-					});
+					currentValue == factID,
+					() => handler(factID));
 			}
 		}
 		
@@ -42,10 +36,14 @@ public class FactReferenceEditor : PropertyDrawer
 	{
 		
 		EditorGUI.BeginProperty(position, label, property);
-		var id = property.FindPropertyRelative("FactID").stringValue;
+		var propertyID = property.FindPropertyRelative("FactID");
+		var id = propertyID.stringValue;
 		var isSet = id != "";
 		if (EditorGUI.DropdownButton(position, new GUIContent(isSet ? id : "NONE"), FocusType.Passive)) {
-			showFactsMenuFor(property.FindPropertyRelative("FactID"));
+			showFactsMenuFor(propertyID.stringValue, id => {
+				propertyID.stringValue = id;
+				propertyID.serializedObject.ApplyModifiedProperties();
+			});
 		}
 		
 		EditorGUI.EndProperty();

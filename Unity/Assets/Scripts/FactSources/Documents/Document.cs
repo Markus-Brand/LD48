@@ -4,9 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(HoverTint))]
 public class Document : MonoBehaviour
 {
+	public GameObject Overlay;
+
 	[TextArea(3, 999)]
 	public string Text;
-	public GameObject Overlay;
 
 	public void OpenText()
 	{
