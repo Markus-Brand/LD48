@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class HelpManager : MonoBehaviour
@@ -8,9 +9,9 @@ public class HelpManager : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.H)) {
 			if (!Dm.IsCurrentlyActive) {
-				var discoverableFacts = FactManager.Instance.AllDiscoverableFacts;
+				var discoverableFacts = FactManager.Instance.AllDiscoverableFacts.Where(f => f.HelpText.Length > 0).ToList();
 				if (discoverableFacts.Count == 0) {
-					ShowHelp("There is nothing more to do, you won the game!");
+					ShowHelp("I just don't know what to do now...");
 				} else {
 					ShowHelp(discoverableFacts[0].HelpText);
 				}
