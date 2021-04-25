@@ -1,7 +1,7 @@
 using System;
-using EventSystem.Events;
+using WgEventSystem.Events;
 
-namespace EventSystem
+namespace WgEventSystem
 {
 	public abstract class EventListener {}
 	

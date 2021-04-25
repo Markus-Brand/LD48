@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 #endif
 using System.Linq;
-using EventSystem;
-using EventSystem.Events;
+using WgEventSystem;
+using WgEventSystem.Events;
 using UnityEngine;
 
 public static class FactMethods

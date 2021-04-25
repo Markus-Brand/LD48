@@ -1,5 +1,5 @@
-using EventSystem;
-using EventSystem.Events;
+using WgEventSystem;
+using WgEventSystem.Events;
 using UnityEngine;
 
 public class GameStart : MonoBehaviour
