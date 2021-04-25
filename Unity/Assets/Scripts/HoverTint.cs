@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider2D))]
 public class HoverTint : MonoBehaviour
 {
 	private SpriteRenderer _sprite;

@@ -46,6 +46,8 @@ MonoBehaviour:
   Text: was probably poisoned to death
   Dependencies:
   - FactID: george4_weirdSymptoms
+  HelpText: The way that King George IV died was indeed mysterious. But I think I
+    have heard of these sympoms before... Where could I read more about this?
 --- !u!1 &3216419785151378007
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: Needs your help. His Fathers death was somewhat suspicious
   Dependencies: []
+  HelpText: A letter from the King? I guess I should read it and copy the most important
+    fracts from it into my notebook.
 --- !u!1 &3372938980656988079
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +233,8 @@ MonoBehaviour:
   Text: did not quite like to investigate the death of King George IV further
   Dependencies:
   - FactID: george4_wasPoisoned
+  HelpText: The King needs to know about this! I need to go to the palace and tell
+    him!
 --- !u!1 &7237734311662127550
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +374,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: died under mysterious circumstances
   Dependencies: []
+  HelpText: A letter from the King? I guess I should read it and copy the most important
+    fracts from it into my notebook.
 --- !u!1 &8615793690411635789
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,3 +423,5 @@ MonoBehaviour:
   Dependencies:
   - FactID: richard3_needsHelp
   - FactID: george4_diedMysteriously
+  HelpText: Maybe I can go to the library to look up Facts about King George IV.
+    I should copy down all important discoveries into my notebook.
