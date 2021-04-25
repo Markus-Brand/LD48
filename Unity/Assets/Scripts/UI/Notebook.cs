@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using WgEventSystem;
@@ -73,9 +74,17 @@ public class Notebook : MonoBehaviour
 		}
 
 		if (Input.GetKey(KeyCode.H)) {
-			SceneManager.LoadScene("Home Room");
+			StartCoroutine(LoadScene("Home Room"));
 		} else if (Input.GetKey(KeyCode.B)) {
-			SceneManager.LoadScene("SampleScene");
+			StartCoroutine(LoadScene("SampleScene"));
+		}
+	}
+
+	private static IEnumerator LoadScene(string name)
+	{
+		var load = SceneManager.LoadSceneAsync(name);
+		while (!load.isDone) {
+			yield return null;
 		}
 	}
 
