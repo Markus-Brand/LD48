@@ -118,10 +118,10 @@ TextureImporter:
       name: castle-highlight
       rect:
         serializedVersion: 2
-        x: 11
-        y: 83
-        width: 49
-        height: 50
+        x: 17
+        y: 81
+        width: 42
+        height: 46
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,10 +139,10 @@ TextureImporter:
       name: library-highlight
       rect:
         serializedVersion: 2
-        x: 63
-        y: 65
-        width: 39
-        height: 43
+        x: 62
+        y: 67
+        width: 38
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,10 +160,10 @@ TextureImporter:
       name: home-highlight
       rect:
         serializedVersion: 2
-        x: 14
-        y: 39
-        width: 39
-        height: 41
+        x: 16
+        y: 43
+        width: 36
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: ruins-highlight
       rect:
         serializedVersion: 2
-        x: 57
-        y: 17
-        width: 43
-        height: 42
+        x: 54
+        y: 18
+        width: 39
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
