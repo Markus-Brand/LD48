@@ -75,6 +75,17 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 
+	public void OnLineHover(int line)
+	{
+		if (_currentOptions != null) {
+			if (line < 0 || line >= _currentOptions.Length) return;
+			if (_currentChoiceSelection != line) {
+				_currentChoiceSelection = line;
+				RefreshOptions();
+			}
+		}
+	}
+
 	public bool IsCurrentlyActive => textBox.activeSelf;
 
 	private void RefreshOptions()
