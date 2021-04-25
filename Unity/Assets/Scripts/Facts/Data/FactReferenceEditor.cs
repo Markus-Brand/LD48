@@ -7,14 +7,14 @@ using UnityEngine;
 public class FactReferenceEditor : PropertyDrawer
 {
 
-	public void showFactsMenuFor(string currentValue, Action<string> handler)
+	static public void ShowFactsMenuFor(string currentValue, Action<string> handler, bool includeNone = true)
 	{
 		GenericMenu menu = new GenericMenu();
 		var factsData = PrefabUtility.LoadPrefabContents("Assets/Fact Data.prefab");
 		var manager = factsData.GetComponent<FactsManager>();
 		var topics = manager.Topics;
 
-		menu.AddItem(
+		if (includeNone) menu.AddItem(
 			new GUIContent("NONE"),
 			currentValue == "",
 			() => handler(""));
@@ -40,7 +40,7 @@ public class FactReferenceEditor : PropertyDrawer
 		var id = propertyID.stringValue;
 		var isSet = id != "";
 		if (EditorGUI.DropdownButton(position, new GUIContent(isSet ? id : "NONE"), FocusType.Passive)) {
-			showFactsMenuFor(propertyID.stringValue, id => {
+			ShowFactsMenuFor(propertyID.stringValue, id => {
 				propertyID.stringValue = id;
 				propertyID.serializedObject.ApplyModifiedProperties();
 			});
