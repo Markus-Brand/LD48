@@ -16,4 +16,6 @@ public class FactReference
 	{
 		FactsManager.Discover(FactID);
 	}
+
+	public bool Discovered => State == FactState.Discovered;
 }

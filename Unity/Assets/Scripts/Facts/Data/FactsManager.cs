@@ -68,8 +68,10 @@ public class FactsManager : MonoBehaviour
 		EventManager.getInstance().Trigger(new FactStateChangedEvent());
 	}
 	
-	public static void Discover(string id)
+	public static void Discover(string id, bool force = false)
 	{
-		SetFactState(id, FactState.Discovered);
+		if (force || Instance.AllFacts[id].Dependencies.All(reference => reference.Discovered)) {
+			SetFactState(id, FactState.Discovered);
+		}
 	}
 }
