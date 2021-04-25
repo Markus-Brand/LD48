@@ -57,6 +57,8 @@ public class Notebook : MonoBehaviour
 
 	public GameObject NotesContent;
 	public GameObject MapContent;
+	public GameObject NotesBookmark;
+	public GameObject MapBookmark;
 	public GameObject PreviousPageButton;
 	public GameObject NextPageButton;
 
@@ -132,6 +134,8 @@ public class Notebook : MonoBehaviour
 	{
 		NotesContent.SetActive(false);
 		MapContent.SetActive(true);
+		MapBookmark.SetActive(false);
+		NotesBookmark.SetActive(true);
 		PreviousPageButton.SetActive(false);
 		NextPageButton.SetActive(true);
 	}
@@ -140,6 +144,8 @@ public class Notebook : MonoBehaviour
 	{
 		MapContent.SetActive(false);
 		NotesContent.SetActive(true);
+		NotesBookmark.SetActive(false);
+		MapBookmark.SetActive(true);
 		PreviousPageButton.SetActive(true);
 		NextPageButton.SetActive(false); // TODO true for pagination?
 	}
