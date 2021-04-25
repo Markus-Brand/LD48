@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 602763260}
   - component: {fileID: 602763261}
   - component: {fileID: 602763262}
+  - component: {fileID: 602763263}
   m_Layer: 0
   m_Name: envelope
   m_TagString: Untagged
@@ -273,6 +274,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83eb4e8e4c80482a9ca8f640ba8f4862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &602763263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602763257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9d8dd879684787988e6b300504830b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: envelopeee mamaaa!
 --- !u!1 &968928133
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +533,10 @@ PrefabInstance:
     - target: {fileID: 4230964560467837579, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_Name
       value: SurviveBetweenScenes
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
