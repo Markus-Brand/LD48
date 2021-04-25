@@ -57,6 +57,8 @@ public class Notebook : MonoBehaviour
 
 	public GameObject NotesContent;
 	public GameObject MapContent;
+	public GameObject PreviousPageButton;
+	public GameObject NextPageButton;
 
 	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f);
 	private readonly AutoResettingSmoothToggle _notificationBlink = new AutoResettingSmoothToggle(false, 0.2f);
@@ -130,13 +132,16 @@ public class Notebook : MonoBehaviour
 	{
 		NotesContent.SetActive(false);
 		MapContent.SetActive(true);
+		PreviousPageButton.SetActive(false);
+		NextPageButton.SetActive(true);
 	}
 
 	public void SwitchToNotes()
 	{
-		Debug.Log(this == GetInstance());
 		MapContent.SetActive(false);
 		NotesContent.SetActive(true);
+		PreviousPageButton.SetActive(true);
+		NextPageButton.SetActive(false); // TODO true for pagination?
 	}
 
 	public void Close()
@@ -147,6 +152,20 @@ public class Notebook : MonoBehaviour
 	public void NotifyBlink()
 	{
 		_notificationBlink.SetTrue();
+	}
+
+	public void GoToPreviousPage()
+	{
+		if (NotesContent.activeSelf) { // TODO and on first page of pagination
+			SwitchToMap();
+		}
+	}
+
+	public void GoToNextPage()
+	{
+		if (MapContent.activeSelf) {
+			SwitchToNotes();
+		} // TODO else do pagination!
 	}
 
 	private void UpdateText()
