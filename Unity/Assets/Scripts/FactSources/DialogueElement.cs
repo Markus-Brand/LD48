@@ -7,7 +7,7 @@ public class DialogueElement
 {
 	public Speaker speaker;
 	public string text;
-	public List<Fact> factsToLearn;
+	public List<FactReference> factsToLearn;
 
 	public void Execute(List<DialogueElement> restDialogueElements, int nextIndex)
 	{

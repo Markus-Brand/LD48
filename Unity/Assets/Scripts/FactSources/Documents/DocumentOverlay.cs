@@ -28,7 +28,7 @@ public class DocumentOverlay : MonoBehaviour
         var type = split[0];
         switch (type) {
 	        case "unlock-fact":
-		        Util.parse<Fact>(split[1]).Discover();
+		        FactsManager.Discover(split[1]);
 		        UpdateText();
 		        break;
         }

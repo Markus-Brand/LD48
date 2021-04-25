@@ -32,8 +32,8 @@ public class TextUtilities
 		});
 		
 		return _factRegex.Replace(text, match => {
-			var fact = (Fact)Enum.Parse(typeof(Fact), match.Groups[1].Value);
-			if (fact.GetState() != FactState.Undiscovered) {
+			var factID = match.Groups[1].Value;
+			if (FactsManager.GetFactState(factID) != FactState.Undiscovered) {
 				return $"<mark>{match.Groups[2].Value}</mark>";
 			} else {
 				return $"<link=unlock-fact:{match.Groups[1].Value}>{match.Groups[2].Value}</link>";

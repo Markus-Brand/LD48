@@ -3,22 +3,24 @@ using UnityEngine;
 
 public class FactBehaviour : MonoBehaviour
 {
-	public string Text; 
+	[TextArea(3, 1000)]
+	public string Text;
 	public string InternalID => name;
 	public string ID => $"{Topic.InternalID}_{InternalID}";
 
 	private TopicBehaviour _topic;
-	public TopicBehaviour Topic {
-		get {
-			if (_topic == null) _topic = GetComponentInParent<TopicBehaviour>();
-			return _topic;
-		}
-	}
+	public TopicBehaviour Topic => _topic ??= GetComponentInParent<TopicBehaviour>();
 
 	public List<FactReference> Dependencies;
 
-	[ExecuteInEditMode]
-	private void Awake()
-	{
+	public FactState State {
+		get => FactsManager.GetFactState(ID);
+		set => FactsManager.SetFactState(ID, value);
 	}
+	
+	public void Discover()
+	{
+		FactsManager.Discover(ID);
+	}
+
 }
