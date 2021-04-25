@@ -47,6 +47,9 @@ public class Notebook : MonoBehaviour
 	public GameObject OpenNotebook;
 	public TMP_Text NotesText;
 
+	public GameObject NotesContent;
+	public GameObject MapContent;
+
 	private readonly SmoothToggle _open = new SmoothToggle(false, 0.2f);
 	private readonly AutoResettingSmoothToggle _notificationBlink = new AutoResettingSmoothToggle(false, 0.2f);
 
@@ -63,7 +66,9 @@ public class Notebook : MonoBehaviour
 		_openScale = _initialScale * OpenScale;
 		EventManager.getInstance().On<FactStateChangedEvent>(e => UpdateText());
 		EventManager.getInstance().On<FactStateChangedEvent>(e => NotifyBlink());
+		EventManager.getInstance().On<FactStateChangedEvent>(e => SwitchToNotes());
 		UpdateText();
+		SwitchToNotes();
 	}
 
 	private void Update()
@@ -79,11 +84,50 @@ public class Notebook : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Tab)) {
 			_open.Flip();
 		}
+
+		if (Input.GetKeyDown(KeyCode.M)) {
+			if (_open.IsTrue()) {
+				OpenMap();
+			} else {
+				_open.SetFalse();
+			}
+		}
+		if (Input.GetKeyDown(KeyCode.N)) {
+			if (_open.IsTrue()) {
+				OpenNotes();
+			} else {
+				_open.SetFalse();
+			}
+		}
 	}
 	
 	public void OpenClose()
 	{
 		_open.Flip();
+	}
+
+	public void OpenMap()
+	{
+		SwitchToMap();
+		_open.SetTrue();
+	}
+
+	public void OpenNotes()
+	{
+		SwitchToNotes();
+		_open.SetTrue();
+	}
+
+	public void SwitchToMap()
+	{
+		NotesContent.SetActive(false);
+		MapContent.SetActive(true);
+	}
+
+	public void SwitchToNotes()
+	{
+		MapContent.SetActive(false);
+		NotesContent.SetActive(true);
 	}
 
 	public void Close()
