@@ -518,6 +518,7 @@ GameObject:
   - component: {fileID: 5685679417862845436}
   - component: {fileID: 65948868529706606}
   - component: {fileID: 8362817197713107161}
+  - component: {fileID: 5583898111426446684}
   m_Layer: 5
   m_Name: Notebook-Closed
   m_TagString: Untagged
@@ -624,6 +625,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5583898111426446684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549833379584338596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d122513d3f41d58298192b072764ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: This is my notebook - it contains all of my notes and the map.
 --- !u!1 &4058294281210341094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,7 +2025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: LocationDisplayDescription
-      value: Not an overly impressive house, but expensive enough.
+      value: Not an overly impressive house, but quite expensive nonetheless.
       objectReference: {fileID: 0}
     - target: {fileID: 2939073806875320488, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: m_Sprite
