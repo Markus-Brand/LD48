@@ -44,6 +44,15 @@ TextureImporter:
   - first:
       213: -7039003182478323700
     second: map-woodstock-manor
+  - first:
+      213: -5559150632450785296
+    second: queen
+  - first:
+      213: -8987557684774062561
+    second: Woodstock
+  - first:
+      213: -6751597515445260605
+    second: envelope_open
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -246,7 +255,7 @@ TextureImporter:
         width: 32
         height: 18
       alignment: 9
-      pivot: {x: 0.5, y: 1.2}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -414,7 +423,7 @@ TextureImporter:
         width: 53
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -422,6 +431,69 @@ TextureImporter:
       bones: []
       spriteID: c00198756ef605e90800000000000000
       internalID: -7039003182478323700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: queen
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 320
+        width: 31
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fff1e314fde9d2b0800000000000000
+      internalID: -5559150632450785296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Woodstock
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 320
+        width: 20
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f16b5b067e7c54380800000000000000
+      internalID: -8987557684774062561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: envelope_open
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 584
+        width: 32
+        height: 29
+      alignment: 9
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cea979c4d18d42a0800000000000000
+      internalID: -6751597515445260605
       vertices: []
       indices: 
       edges: []
