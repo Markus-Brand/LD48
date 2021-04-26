@@ -553,12 +553,12 @@ PrefabInstance:
         by its classification as a poison.
 
 
-        Nevertheless can the consumption
-        of large amounts result in death.'
+        Nevertheless the consumption
+        of large amounts can result in death.'
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
       propertyPath: Title
-      value: Death Causes
+      value: A Treatise on Poisons
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
       propertyPath: Overlay
@@ -570,6 +570,153 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+--- !u!1001 &709598714
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1037816191}
+    m_Modifications:
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2147836
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3386662938922423588, guid: 8c2b35d483a092646a882a373a78e367, type: 3}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Text
+      value: 'The ruins of Newport were built by a mysterious civilization known
+        as The Precursors.
+
+
+        Navigation through these ruins is complicated
+        and defies logic, although well funded explorers have made progress.
+
+
+
+
+
+
+
+
+
+
+
+        In
+        these ruins, strange carvings can be found:
+
+
+        <lang=Precursor>Internal
+        Announcement
+
+        The Cleansing Light Project has been hidden in a magical
+        pathway. The route is LRRLRL.</lang>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Title
+      value: Ruins of Newport
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Overlay
+      value: 
+      objectReference: {fileID: 4511240694025428753, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+    - target: {fileID: 7647103215889876218, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Name
+      value: Ruins of Newport
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+--- !u!4 &709598715 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+  m_PrefabInstance: {fileID: 709598714}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &756670779
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +909,161 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &806919655
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1037816191}
+    m_Modifications:
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2147836
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3386662938922423588, guid: 8c2b35d483a092646a882a373a78e367, type: 3}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Text
+      value: 'The ruins near Drumchapel differ from most ruins in the kingdom. They
+        were seemingly build by the silver machines that can be found nearby.
+
+
+        These
+        ruins do not contain any runes, at least not at first glance. They do contain
+        strange glass cubes, which emit some form of writing when lit from the right
+        angle:
+
+
+
+
+
+
+
+
+
+
+        <lang=Kyr>OPERATION LOG
+
+        [2385.8721] PLANET
+        A74-12 IS HABITABLE
+
+        [2385.8934] ESTABLISHED CRADLE ON A74-12
+
+        [2386.1082]
+        NATIVE POPULATION MOUNTED EFFECTIVE DEFENSE, ACTIVATING AGGRESSOR PROTOCOL
+
+        HDAHEOWHTJKC
+
+        27.593X]
+        CRITICAL NETWORK FAILURE
+
+        </lang>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Title
+      value: Ruins of Drumchapel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Overlay
+      value: 
+      objectReference: {fileID: 4511240694025428753, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+    - target: {fileID: 7647103215889876218, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Name
+      value: Ruins of Drumchapel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+--- !u!4 &806919656 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+  m_PrefabInstance: {fileID: 806919655}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1015072073
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +1127,9 @@ Transform:
   m_Children:
   - {fileID: 1979644085}
   - {fileID: 1653742174}
+  - {fileID: 709598715}
+  - {fileID: 806919656}
+  - {fileID: 1342712484}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1041,6 +1346,139 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1342712483
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1037816191}
+    m_Modifications:
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2147836
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6708733205153277002, guid: 8c2b35d483a092646a882a373a78e367, type: 3}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Text
+      value: 'Little is known about the language of the Precursors. Many researchers
+        have tried and failed to decipher their writing.
+
+
+        Those who made
+        their work public produced seemingly little insight.
+
+
+        Well known
+        facts are common patterns within the language, such as <font=Precursor>alf</font>,
+        <font=Precursor>brb</font>, <font=Precursor>opt</font>, <font=Precursor>zyg</font>,
+        <font=Precursor>kru</font> and <font=Precursor>ber</font>.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Title
+      value: Precursor Carvings
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Overlay
+      value: 
+      objectReference: {fileID: 4511240694025428753, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+    - target: {fileID: 7647103215889876218, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Name
+      value: Precursor Carvings
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+--- !u!4 &1342712484 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+  m_PrefabInstance: {fileID: 1342712483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1653742174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
