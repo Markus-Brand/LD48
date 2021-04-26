@@ -5,14 +5,14 @@ using UnityEngine;
 [Serializable]
 public class DialogueElement
 {
-	public Speaker speaker;
-	public string text;
-	public List<FactReference> factsToLearn;
+	public TopicReference Speaker;
+	public string Text;
+	public List<FactReference> FactsToLearn;
 
 	public void Execute(List<DialogueElement> restDialogueElements, int nextIndex)
 	{
-		DialogueManager.GetInstance().ShowDialogue(speaker, text, () => {
-			foreach (var fact in factsToLearn) {
+		DialogueManager.GetInstance().ShowDialogue(Speaker.Topic, Text, () => {
+			foreach (var fact in FactsToLearn) {
 				fact.Discover();
 			}
 			if (nextIndex < restDialogueElements.Count) {

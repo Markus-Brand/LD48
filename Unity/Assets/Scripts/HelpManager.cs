@@ -23,7 +23,7 @@ public class HelpManager : MonoBehaviour
 
 	private void ShowHelp(string helpText)
 	{
-		Dm.ShowDialogue(Speaker.You, helpText, () => { });
+		Dm.ShowDialogue(FactManager.Instance.TopicsById["you"], helpText, () => { });
 		Dm.ShowsHelpText = true;
 	}
 }

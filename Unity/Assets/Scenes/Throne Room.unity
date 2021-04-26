@@ -604,6 +604,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
 --- !u!1 &1608125560
@@ -661,34 +669,43 @@ MonoBehaviour:
   conditions:
   - FactID: george4_wasPoisoned
   dialogue:
-  - speaker: 1
-    text: Have you found something out?
-    factsToLearn: []
-  - speaker: 0
-    text: Please send away your helper first
-    factsToLearn: []
-  - speaker: 1
-    text: Is this necessary?
-    factsToLearn: []
-  - speaker: 0
-    text: Yes, absolutely
-    factsToLearn: []
-  - speaker: 1
-    text: Ok, Severin, please leave!
-    factsToLearn: []
-  - speaker: 2
-    text: As you whish, my lord.
-    factsToLearn:
+  - Speaker:
+      TopicID: richard3
+    Text: Have you found something out?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Please send away your helper first
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: Is this necessary?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Yes, absolutely
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: Ok, Severin, please leave!
+    FactsToLearn: []
+  - Speaker:
+      TopicID: severin
+    Text: As you whish, my lord.
+    FactsToLearn:
     - FactID: severin_behavesWeirdly
-  - speaker: 1
-    text: So, what have you found out?
-    factsToLearn: []
-  - speaker: 0
-    text: Your advisor has poisoned your father!
-    factsToLearn: []
-  - speaker: 1
-    text: You win!
-    factsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: So, what have you found out?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Your advisor has poisoned your father!
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: You win!
+    FactsToLearn: []
 --- !u!114 &1608125563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,15 +722,18 @@ MonoBehaviour:
   conditions:
   - FactID: richard3_needsHelp
   dialogue:
-  - speaker: 1
-    text: So you can help me?
-    factsToLearn: []
-  - speaker: 0
-    text: Sure thing!
-    factsToLearn: []
-  - speaker: 1
-    text: Thank you very much!
-    factsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: So you can help me?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Sure thing!
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: Thank you very much!
+    FactsToLearn: []
 --- !u!114 &1608125564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,6 +746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c246d321455f436bb688a5e4d2f90bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Person:
+    TopicID: richard3
 --- !u!114 &1608125565
 MonoBehaviour:
   m_ObjectHideFlags: 0
