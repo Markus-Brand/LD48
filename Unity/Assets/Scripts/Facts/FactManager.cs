@@ -81,6 +81,11 @@ public class FactManager : MonoBehaviour
 		}
 	}
 	
+	public static void Discard(string id)
+	{
+		SetFactState(id, FactState.Discarded);
+	}
+	
 #if UNITY_EDITOR
 	public static void GeneratePuml()
 	{

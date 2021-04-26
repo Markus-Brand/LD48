@@ -2,22 +2,26 @@
 digraph facts {
 
 richard3_needsHelp [label ="richard3_needsHelp
-Needs your help. His Fathers death was somewhat suspicious"]
+Needs your help again."]
 george4_diedMysteriously [label ="george4_diedMysteriously
-died under mysterious circumstances"]
+died from a mysterious sickness"]
 george4_weirdSymptoms [label ="george4_weirdSymptoms
 had weird symptoms shortly before his death"]
 george4_wasPoisoned [label ="george4_wasPoisoned
-was probably poisoned to death"]
-severin_behavesWeirdly [label ="severin_behavesWeirdly
-did not quite like to investigate the death of King George IV further"]
+was probably poisoned"]
+george4_diedOneYearAgo [label ="george4_diedOneYearAgo
+died exactly one year ago"]
+castle_mysteriousEvents [label ="castle_mysteriousEvents
+Mysterious events are happening in the castle."]
+library_canBeAccessed [label ="library_canBeAccessed
+King Richard III granted you access"]
 easterEggs_lanternFact [label ="easterEggs_lanternFact
 Playing with the lantern is fun"]
 
-richard3_needsHelp -> george4_weirdSymptoms
+richard3_needsHelp -> george4_diedMysteriously
+castle_mysteriousEvents -> george4_diedMysteriously
 george4_diedMysteriously -> george4_weirdSymptoms
 george4_weirdSymptoms -> george4_wasPoisoned
-george4_wasPoisoned -> severin_behavesWeirdly
 
 }
 @enduml

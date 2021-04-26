@@ -11,13 +11,13 @@ public class DialoguePerson : MonoBehaviour, IHoverInfo
 		var options = GetComponents<DialogueOption>().Where(o => o.IsAvailable()).ToList();
 		if (options.Count == 0) return;
 		DialogueManager.GetInstance().ShowChoice(
-			options.Select(o => new DialogueManager.ChoiceOption(o.displayName, o.Execute))
+			options.Select(o => new DialogueManager.ChoiceOption(o.DisplayName, o.Execute))
 				.Concat(new[] {new DialogueManager.ChoiceOption("Nothing", () => { })})
 				.ToArray()
 		);
 	}
 
-	private void OnMouseDown()
+	private void OnMouseUp()
 	{
 		SpeakTo();
 	}
