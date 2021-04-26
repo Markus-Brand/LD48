@@ -189,4 +189,9 @@ public class Notebook : MonoBehaviour
 	{
 		NotesText.text = GetNotebookFactText();
 	}
+
+	public bool IsOpen()
+	{
+		return _open.IsTrueBy(0.1f);
+	}
 }
