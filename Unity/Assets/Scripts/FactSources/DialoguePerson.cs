@@ -2,7 +2,6 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(DialogueOption))]
 public class DialoguePerson : MonoBehaviour, IHoverInfo
 {
 	public TopicReference Person;

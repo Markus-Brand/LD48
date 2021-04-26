@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_Name
-      value: Person
+      value: lord woodstock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
