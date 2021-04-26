@@ -74,6 +74,12 @@ TextureImporter:
   - first:
       213: -3525548655422949061
     second: ArrowUp
+  - first:
+      213: -577312649904740640
+    second: Torus
+  - first:
+      213: -3114738102144766914
+    second: torus-runes
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -662,6 +668,48 @@ TextureImporter:
       bones: []
       spriteID: b39b8235d2cb21fc0800000000000000
       internalID: -3525548655422949061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Torus
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 555
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6a6122439fcf7f0800000000000000
+      internalID: -577312649904740640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: torus-runes
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 530
+        width: 87
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c694dd23a36c4d0800000000000000
+      internalID: -3114738102144766914
       vertices: []
       indices: 
       edges: []
