@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using WgEventSystem;
 using WgEventSystem.Events;
@@ -87,24 +88,52 @@ public class FactManager : MonoBehaviour
 	}
 	
 #if UNITY_EDITOR
-	public static void GeneratePuml()
+	public void GeneratePuml()
 	{
+		Debug.Log("Lol");
 		string content = "@startuml\ndigraph facts {\n\n";
-		foreach (var fact in Instance.AllFacts.Values) {
-			content += fact.ID + " [label =\"" + fact.ID + "\n" + fact.Text + "\"]\n";
+		foreach (var fact in AllFacts.Values) {
+			content += fact.ID + " [label =\"" + fact.ID + "\\n" + fact.Text + "\"]\n";
 		}
 		content += "\n";
-		foreach (var fact in Instance.AllFacts.Values) {
+		foreach (var fact in AllFacts.Values) {
 			foreach (var cond in fact.Dependencies) {
 				content += cond.FactID + " -> " + fact.ID + "\n";
 			}
 		}
+		content += "\n";
+		
+		
+		string[] scenesToSearch = { "Home Room", "Library", "Ruins", "Throne Room" };
+		foreach (var sceneName in scenesToSearch) {
+			string scenePath = "Assets/Scenes/" + sceneName + ".unity";
+			var scene = EditorSceneManager.OpenScene(scenePath);
+			foreach (var rootGameObject in scene.GetRootGameObjects()) {
+				var dialogues = rootGameObject.GetComponentsInChildren<DialoguePerson>();
+				foreach (var dialoguePerson in dialogues) {
+					content += "'" + dialoguePerson.Person.TopicID + "\n";
+					foreach (var dialogueOption in dialoguePerson.GetComponents<DialogueOption>()) {
+						foreach (var dialogueElement in dialogueOption.Dialogue.Concat(dialogueOption.RepeatedDialogue)) {
+							foreach (var factToLearn in dialogueElement.FactsToLearn) {
+								foreach (var condition in dialogueOption.Conditions) {
+									content += condition.FactID + " -> " + factToLearn.FactID +
+									           " : \"" + dialoguePerson.Person.TopicID + ", " + dialogueOption.DisplayName + "\"\n";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		AssetDatabase.OpenAsset(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Fact Data.prefab"));
+		
 		content += "\n}\n@enduml";
 
 		string path = "Assets" + Path.DirectorySeparatorChar + "fact-diagram.puml";
 		using (var sw = File.CreateText(path)) {
 			sw.Write(content);
 		}
+		Debug.Log("done");
 	}
 #endif
 }

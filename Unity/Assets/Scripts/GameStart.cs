@@ -7,7 +7,7 @@ public class GameStart : MonoBehaviour
 	private void Start()
 	{
 #if UNITY_EDITOR
-		FactManager.GeneratePuml();
+		// FactManager.GeneratePuml();
 #endif
 		
 		EventManager.getInstance().On<FactStateChangedEvent>(e =>

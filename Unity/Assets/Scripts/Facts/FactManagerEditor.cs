@@ -13,5 +13,9 @@ public class FactManagerEditor : Editor
 		if (GUILayout.Button("Add Topic")) {
 			FactManager.CreateTopicFor(manager);
 		}
+		if (GUILayout.Button("Generate Topic Graph PUML")) {
+			Debug.Log("ji");
+			manager.GeneratePuml();
+		}
 	}
 }

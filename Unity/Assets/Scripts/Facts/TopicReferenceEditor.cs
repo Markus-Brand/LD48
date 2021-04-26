@@ -35,10 +35,7 @@ public class TopicReferenceEditor : PropertyDrawer
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 	{
 		EditorGUI.BeginProperty(position, label, property);
-		Debug.Log(label);
-		Debug.Log(property);
 		var propertyID = property.FindPropertyRelative("TopicID");
-		Debug.Log(propertyID);
 		var id = propertyID.stringValue;
 		var isSet = id != "";
 		if (EditorGUI.DropdownButton(position, new GUIContent(isSet ? id : "NONE"), FocusType.Passive)) {

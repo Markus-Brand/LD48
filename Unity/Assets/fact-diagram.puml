@@ -1,27 +1,24 @@
 @startuml
 digraph facts {
 
-richard3_needsHelp [label ="richard3_needsHelp
-Needs your help again."]
-george4_diedMysteriously [label ="george4_diedMysteriously
-died from a mysterious sickness"]
-george4_weirdSymptoms [label ="george4_weirdSymptoms
-had weird symptoms shortly before his death"]
-george4_wasPoisoned [label ="george4_wasPoisoned
-was probably poisoned"]
-george4_diedOneYearAgo [label ="george4_diedOneYearAgo
-died exactly one year ago"]
-castle_mysteriousEvents [label ="castle_mysteriousEvents
-Mysterious events are happening in the castle."]
-library_canBeAccessed [label ="library_canBeAccessed
-King Richard III granted you access"]
-easterEggs_lanternFact [label ="easterEggs_lanternFact
-Playing with the lantern is fun"]
+richard3_needsHelp [label ="richard3_needsHelp\nNeeds your help again."]
+george4_diedMysteriously [label ="george4_diedMysteriously\ndied from a mysterious sickness"]
+george4_weirdSymptoms [label ="george4_weirdSymptoms\nhad weird symptoms shortly before his death"]
+george4_wasPoisoned [label ="george4_wasPoisoned\nwas probably poisoned"]
+george4_diedOneYearAgo [label ="george4_diedOneYearAgo\ndied exactly one year ago"]
+castle_mysteriousEvents [label ="castle_mysteriousEvents\nMysterious events are happening in the castle."]
+library_canBeAccessed [label ="library_canBeAccessed\nKing Richard III granted you access"]
+easterEggs_lanternFact [label ="easterEggs_lanternFact\nPlaying with the lantern is fun"]
 
 richard3_needsHelp -> george4_diedMysteriously
 castle_mysteriousEvents -> george4_diedMysteriously
 george4_diedMysteriously -> george4_weirdSymptoms
 george4_weirdSymptoms -> george4_wasPoisoned
+
+'richard3
+richard3_needsHelp -> george4_diedOneYearAgo : "richard3, Ask about the letter"
+richard3_needsHelp -> george4_diedMysteriously : "richard3, Ask about the letter"
+richard3_needsHelp -> library_canBeAccessed : "richard3, Ask about the letter"
 
 }
 @enduml
