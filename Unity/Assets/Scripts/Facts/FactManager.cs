@@ -89,6 +89,11 @@ public class FactManager : MonoBehaviour
 	}
 
 #if UNITY_EDITOR
+	private string Sanitize(string content)
+	{
+		return content.Replace(" ", "_").Replace("'", "_").Replace("-", "_");
+	}
+	
 	public void GeneratePuml()
 	{
 		var validFactIDs = new HashSet<string>();
@@ -103,9 +108,6 @@ public class FactManager : MonoBehaviour
 			foreach (var cond in fact.Dependencies) {
 				content += cond.FactID + " -> " + fact.ID + "\n";
 			}
-			/*if (fact.Dependencies.Count == 0) {
-				content += startNodeName + " -> " + fact.ID + "\n";
-			}/**/
 		}
 		content += "\n";
 
@@ -114,9 +116,9 @@ public class FactManager : MonoBehaviour
 			.ToDictionary(m => m.SceneName, m => m.UnlockCondition.FactID);
 		PrefabUtility.UnloadPrefabContents(notebook);
 		foreach (var scene in sceneToUnlockFact.Keys) {
-			content += scene.Replace(" ", "_") + " [label = \" <Scene> " + scene + "\"]\n";
+			content += Sanitize(scene) + " [label = \" <Scene> " + scene + "\"]\n";
 			if (sceneToUnlockFact[scene] != "") {
-				content += sceneToUnlockFact[scene] + " -> " + scene.Replace(" ", "_") + "\n";
+				content += sceneToUnlockFact[scene] + " -> " + Sanitize(scene) + "\n";
 			}
 		}
 		content += "\n";
@@ -129,9 +131,9 @@ public class FactManager : MonoBehaviour
 					var dialoguePerson = dialogueOption.GetComponent<DialoguePerson>();
 					var personId = dialoguePerson?.Person?.TopicID ?? "_";
 
-					var dialogueID = personId + "_" + dialogueOption.DisplayName.Replace(" ", "_");
+					var dialogueID = personId + "_" + Sanitize(dialogueOption.DisplayName);
 
-					content += sceneName.Replace(" ", "_") + " -> " + dialogueID + "\n";
+					content += Sanitize(sceneName) + " -> " + dialogueID + "\n";
 					content += dialogueID + " [label =\"<Dialogue>" + personId + "\\n" +
 					           dialogueOption.DisplayName + "\"]\n";
 
@@ -154,9 +156,9 @@ public class FactManager : MonoBehaviour
 
 				var documents = rootGameObject.GetComponentsInChildren<Document>();
 				foreach (var document in documents) {
-					var documentId = document.name.Replace(" ", "_");
+					var documentId = Sanitize(document.name);
 
-					content += sceneName.Replace(" ", "_") + " -> " + documentId + "\n";
+					content += Sanitize(sceneName) + " -> " + documentId + "\n";
 					content += documentId + " [label =\"<Document>" + document.name + "\"]\n";
 					foreach (var factId in document.GetContainedFactIds()) {
 						content += documentId + " -> " + factId + "\n";
