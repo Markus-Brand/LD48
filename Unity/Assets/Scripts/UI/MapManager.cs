@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,12 @@ public class MapManager : MonoBehaviour
 
 	public TMP_Text TitleText;
 	public TMP_Text DescriptionText;
-	
+
+	private void Start()
+	{
+		OnHoverNothing();
+	}
+
 	public void OnHoverEntry(MapEntry entry)
 	{
 		_showDescription(entry.LocationDisplayName, entry.LocationDisplayDescription);
