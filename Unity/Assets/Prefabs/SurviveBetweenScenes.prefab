@@ -528,6 +528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6108672183612302566}
   - component: {fileID: 1281744678001161646}
+  - component: {fileID: 7890079018322197001}
   m_Layer: 0
   m_Name: HelpManager
   m_TagString: Untagged
@@ -561,6 +562,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bdbe7a66328470e88ab5c601286c77f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controls: {fileID: 7890079018322197001}
+--- !u!114 &7890079018322197001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836919506906052567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Controls
+  Conditions: []
+  Dialogue:
+  - Speaker:
+      TopicID: you
+    Text: 'H - Show Hint
+
+      Click Text in Book to mark relevant information.
+
+      M
+      - Open Map
+
+      N - Open Notes'
+    FactsToLearn: []
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5925188492321286728
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8827139396845975337, guid: 8315739d9fef6b09887aa49397a7ce2d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150.99991
+      value: -150.99988
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8315739d9fef6b09887aa49397a7ce2d, type: 3}
