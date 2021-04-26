@@ -667,12 +667,14 @@ MonoBehaviour:
   - Speaker:
       TopicID: lordWoodstock
     Text: Will he find out that you did it?
-    FactsToLearn: []
+    FactsToLearn:
+    - FactID: severin_responsibleForKingDeath
   - Speaker:
       TopicID: severin
     Text: No, I left no evidence. The vial is hidden behind a loose brick in my chambers
       that nobody else knows about.
-    FactsToLearn: []
+    FactsToLearn:
+    - FactID: severin_hiddenPlaceInOffice
   - Speaker:
       TopicID: lordWoodstock
     Text: Very good Severin.
@@ -685,7 +687,11 @@ MonoBehaviour:
       TopicID: lordWoodstock
     Text: I recently talked to the contact again. It is coming along nicely. At this
       rate, we will be ready to perform the ritual in a few months.
-    FactsToLearn: []
+    FactsToLearn:
+    - FactID: oro_sok_conspiracyContact
+    - FactID: conspiracy_tryRitual
+    - FactID: severin_partOfConspiracy
+    - FactID: lordWoodstock_partOfConspiracy
   - Speaker:
       TopicID: severin
     Text: That is good to hear.
