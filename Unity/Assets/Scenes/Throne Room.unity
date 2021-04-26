@@ -143,7 +143,7 @@ MonoBehaviour:
   Invisible: 1
   DisableCollider: 1
   VisibleOnce:
-    FactID: QueenDowager_isPoisonSuspect
+    FactID: lordWoodstock_partOfConspiracy
   VisibleUntil:
     FactID: 
 --- !u!114 &11206946
