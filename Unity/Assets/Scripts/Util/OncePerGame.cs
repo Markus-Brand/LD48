@@ -13,4 +13,9 @@ public class OncePerGame : MonoBehaviour
 		_instance = this;
 		DontDestroyOnLoad(gameObject);
 	}
+
+	public static void DestroyInstance()
+	{
+		Destroy(_instance.gameObject);
+	}
 }
