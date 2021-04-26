@@ -26,11 +26,13 @@ public class DialoguePerson : MonoBehaviour, IHoverInfo
 	
 	public void OnMouseEnter()
 	{
+		CursorManager.GetInstance().SetTalkCursor();
 		HoverMaster.GetInstance().ShowInfo(this);
 	}
 
 	public void OnMouseExit()
 	{
+		CursorManager.GetInstance().SetDefaultCursor();
 		HoverMaster.GetInstance().HideInfo(this);
 	}
 

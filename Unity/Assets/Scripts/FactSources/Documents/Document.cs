@@ -32,11 +32,13 @@ public class Document : MonoBehaviour, IHoverInfo
 	
 	public void OnMouseEnter()
 	{
+		CursorManager.GetInstance().SetInvestigateCursor();
 		HoverMaster.GetInstance().ShowInfo(this);
 	}
 
 	public void OnMouseExit()
 	{
+		CursorManager.GetInstance().SetTalkCursor();
 		HoverMaster.GetInstance().HideInfo(this);
 	}
 

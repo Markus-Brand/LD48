@@ -20,6 +20,7 @@ public class HoverTint : MonoBehaviour
 
 	private void OnMouseExit()
 	{
+		Cursor.SetCursor(null, new Vector2(32, 32), CursorMode.Auto);
 		_sprite?.material.SetColor(OverlayColor, Color.white.WithAlpha(0));
 	}
 }
