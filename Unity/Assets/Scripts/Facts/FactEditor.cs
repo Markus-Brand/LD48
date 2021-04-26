@@ -1,4 +1,4 @@
-
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -25,3 +25,4 @@ public class FactEditor : Editor
 	}
 	
 }
+#endif

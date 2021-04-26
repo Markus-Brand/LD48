@@ -628,6 +628,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38acdccd0bc342b49576d1de8a98d28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1850070501}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1730681249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,17 +677,8 @@ MonoBehaviour:
     FactsToLearn: []
   - Speaker:
       TopicID: severin
-    Text: No, we should be safe.
-    FactsToLearn: []
-  - Speaker:
-      TopicID: lordWoodstock
-    Text: Will he find out that you did it?
-    FactsToLearn:
-    - FactID: severin_responsibleForKingDeath
-  - Speaker:
-      TopicID: severin
-    Text: No, I left no evidence. The vial is hidden behind a loose brick in my chambers
-      that nobody else knows about.
+    Text: No, we should be safe, I left no evidence. The vial is hidden behind a
+      loose brick in my chambers that nobody else knows about.
     FactsToLearn:
     - FactID: severin_hiddenPlaceInOffice
   - Speaker:
@@ -681,7 +687,7 @@ MonoBehaviour:
     FactsToLearn: []
   - Speaker:
       TopicID: severin
-    Text: So how is the project coming along?
+    Text: So how is the project coming along? Any news from the ancient ruins?
     FactsToLearn: []
   - Speaker:
       TopicID: lordWoodstock
@@ -692,6 +698,7 @@ MonoBehaviour:
     - FactID: conspiracy_tryRitual
     - FactID: severin_partOfConspiracy
     - FactID: lordWoodstock_partOfConspiracy
+    - FactID: ruins_relatedToConspiracy
   - Speaker:
       TopicID: severin
     Text: That is good to hear.
@@ -801,8 +808,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Severin
       objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+--- !u!1 &1850070501 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+  m_PrefabInstance: {fileID: 1850070500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1909935588
 PrefabInstance:
   m_ObjectHideFlags: 0

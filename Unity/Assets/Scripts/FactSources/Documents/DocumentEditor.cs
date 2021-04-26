@@ -1,5 +1,5 @@
 
-
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 
@@ -48,3 +48,5 @@ public class DocumentEditor : Editor
 		return true;
 	}
 }
+
+#endif

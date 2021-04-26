@@ -20,6 +20,11 @@ public static class Util
 	{
 		return String.Join(" ", Regex.Split(name, "(?:[\\W_]+|(?<![A-Z])(?=[A-Z])|(?<!^)(?=[A-Z][a-z]))"));
 	}
+	
+	public static Color WithAlpha(this Color color, float alpha)
+	{
+		return new Color(color.r, color.g, color.b, alpha);
+	}
 
 	public static float SmoothToOne(float raw, int amount = 3)
 	{
