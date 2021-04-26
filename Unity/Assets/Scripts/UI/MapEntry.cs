@@ -57,6 +57,10 @@ public class MapEntry : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 	public void OnPointerClick(PointerEventData eventData)
 	{
 		if (!UnlockCondition.Discovered) return;
+		if (SceneName == SceneManager.GetActiveScene().name) return;
+		
+		if (DialogueManager.GetInstance().IsCurrentlyActive) return;
+		
 		OnPointerExit(null);
 		Notebook.GetInstance().Close();
 		StartCoroutine(LoadScene(SceneName));
