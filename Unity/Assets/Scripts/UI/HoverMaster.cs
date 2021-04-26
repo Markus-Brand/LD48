@@ -63,9 +63,16 @@ public class HoverMaster : MonoBehaviour
 	public AxisState PreferredYState;
 	private CanvasScaler _canvasScaler;
 	private float _defaultTextSize;
+	private bool _hoveringWorldObject;
+
+	public bool DisableWorldHoverElements => Notebook.GetInstance().IsOpen() || FindObjectsOfType<DocumentOverlay>(true).Length > 0; // TODO also open documents
 
 	private void Update()
 	{
+		if (DisableWorldHoverElements && _hoveringWorldObject) {
+			ForceHide();
+		}
+		
 		if (_visible) _visibleTime = Math.Min(_visibleTime + Time.unscaledDeltaTime * 10, 1.0f);
 		if (!_visible) _visibleTime = Math.Max(_visibleTime - Time.unscaledDeltaTime * 5, 0.0f);
 		Vector2 newMousePosition = Input.mousePosition;
@@ -173,7 +180,9 @@ public class HoverMaster : MonoBehaviour
 
 	public void ShowInfo(IHoverInfo hoverInfo)
 	{
+		if (DisableWorldHoverElements && !(hoverInfo is UIHoverInfo)) return;
 		_hoveredObject = hoverInfo.GetTransform();
+		_hoveringWorldObject = !(hoverInfo is UIHoverInfo);
 		Text.text = hoverInfo.GetHoverText().Replace("\\n", "\n");
 		_forceHidden = false;
 
