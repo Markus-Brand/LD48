@@ -53,6 +53,9 @@ TextureImporter:
   - first:
       213: -6751597515445260605
     second: envelope_open
+  - first:
+      213: 5182299067807867188
+    second: Archeologist
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -494,6 +497,27 @@ TextureImporter:
       bones: []
       spriteID: 3cea979c4d18d42a0800000000000000
       internalID: -6751597515445260605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Archeologist
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 256
+        width: 20
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431a6809b893be740800000000000000
+      internalID: 5182299067807867188
       vertices: []
       indices: 
       edges: []
