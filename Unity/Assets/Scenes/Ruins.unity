@@ -537,9 +537,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   Title: Cleansing Light
-  Text: <lang=Precursor>The development of the cleansing light is proceeding rapidly.
-    We think we found the correct runes to provide the required power. The runes
-    need to be activated clockwise</lang>
+  Text: <lang=Precursor>The development of the <fact=CleansingLight_name>Cleansing
+    Light</fact> is proceeding rapidly. We think we found the correct runes to provide
+    the required power. <fact=CleansingLight_operation1>The runes need to be activated
+    clockwise.</fact></lang>
 --- !u!114 &234005775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,7 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_Name
-      value: Person
+      value: Oro'Sok
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
@@ -1678,8 +1679,13 @@ MonoBehaviour:
   OnDocumentOpen:
     m_PersistentCalls:
       m_Calls: []
-  Title: War with Kyr
-  Text: <lang=Precursor>Something went wrong</lang>
+  Title: Stone Tablet
+  Text: '<lang=Precursor>Minor Researcher Report
+
+
+    I have discovered a problem
+    with the magical flow routes. This might have catastrophic consequences on the
+    targeting routines of the project.</lang>'
 --- !u!114 &924231314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2202,7 +2208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1481446514
 Transform:
   m_ObjectHideFlags: 0
@@ -2289,7 +2295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627214810607511885, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150.99991
+      value: -150.99988
       objectReference: {fileID: 0}
     - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2705,7 +2711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1882674711
 Transform:
   m_ObjectHideFlags: 0
@@ -3235,8 +3241,10 @@ MonoBehaviour:
   OnDocumentOpen:
     m_PersistentCalls:
       m_Calls: []
-  Title: 
-  Text: <lang=Precursor>Kry are bad. We use cleansing light to teleport them away!</lang>
+  Title: Stone Table
+  Text: <lang=Precursor><fact=precursors_war>The war with the</fact> <fact=kyr_nameKyr>Kyr</fact>
+    has come to a standstill. After <fact=kyr_nameKyr>their landing north of here,
+    their machines</fact> continue to attack us, but we will stand our ground.</lang>
 --- !u!114 &2049757277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3317,6 +3325,92 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2081913116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+  m_PrefabInstance: {fileID: 820351408}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2081913117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081913116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5186a356604e6a93e0dffdccae77a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Invisible: 1
+  DisableCollider: 1
+  VisibleOnce:
+    FactID: oro_sok_summoned
+  VisibleUntil:
+    FactID: 
+--- !u!114 &2081913118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081913116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Are you an Aru?
+  Conditions:
+  - FactID: oro_sok_summoned
+  Dialogue:
+  - Speaker:
+      TopicID: oro_sok
+    Text: You are not the usual one...
+    FactsToLearn: []
+  - Speaker:
+      TopicID: oro_sok
+    Text: No matter. Yes. I am Oro'Sok, a researcher. I built this machine.
+    FactsToLearn:
+    - FactID: oro_sok_aruResearcher
+  - Speaker:
+      TopicID: oro_sok
+    Text: We were at war and desperate. This was a last ditch effort to hold of the
+      Kyr. It should have sealed them away.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: oro_sok
+    Text: But something went wrong. It sealed our people as well.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: oro_sok
+    Text: I have fixed the issue. You can revert the activation by chanting...
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Yes yes, I can figure this out myself.
+    FactsToLearn:
+    - FactID: CleansingLight_operation2
+  - Speaker:
+      TopicID: oro_sok
+    Text: Please help free my people!
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: But what about the Kyr?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: oro_sok
+    Text: We will deal with them.
+    FactsToLearn: []
+  RepeatedDialogue:
+  - Speaker:
+      TopicID: oro_sok
+    Text: Please help free my people!
+    FactsToLearn: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2097096402
 GameObject:
   m_ObjectHideFlags: 0
@@ -3328,6 +3422,11 @@ GameObject:
   - component: {fileID: 2097096403}
   - component: {fileID: 2097096405}
   - component: {fileID: 2097096404}
+  - component: {fileID: 2097096407}
+  - component: {fileID: 2097096406}
+  - component: {fileID: 2097096408}
+  - component: {fileID: 2097096409}
+  - component: {fileID: 2097096410}
   m_Layer: 0
   m_Name: Runes
   m_TagString: Untagged
@@ -3417,6 +3516,117 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2097096406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097096402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c246d321455f436bb688a5e4d2f90bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Person:
+    TopicID: CleansingLight
+--- !u!114 &2097096407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097096402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83eb4e8e4c80482a9ca8f640ba8f4862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2097096408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097096402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Activate Energy Runes
+  Conditions:
+  - FactID: CleansingLight_operation1
+  Dialogue:
+  - Speaker:
+      TopicID: you
+    Text: Ok, so now I activate these runes in clockwise order...
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Who are you?!
+    FactsToLearn:
+    - FactID: oro_sok_summoned
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2097096409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097096402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Reverse Cleansing Light
+  Conditions:
+  - FactID: richard3_youDecide
+  Dialogue:
+  - Speaker:
+      TopicID: you
+    Text: Let's hope freeing them is not a bad idea.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Now to chant the reversing sequence...
+    FactsToLearn: []
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2097096410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097096402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Destroy Cleansing Light
+  Conditions:
+  - FactID: richard3_youDecide
+  Dialogue:
+  - Speaker:
+      TopicID: you
+    Text: The ancients are best left out of this world.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Now to break this machine...
+    FactsToLearn: []
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!20 &2110760527 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2952276370686902163, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
