@@ -824,6 +824,13 @@ MonoBehaviour:
       TopicID: you
     Text: Yes, I will do so, your majesty.
     FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: My mother is currently not here, so you will have to talk to her later.
+      But you can probably find Severin in Woodstock Manor.
+    FactsToLearn:
+    - FactID: woodstockManor_isUnlocked
+    - FactID: severin_isInWoodstockManor
   RepeatedDialogue:
   - Speaker:
       TopicID: richard3

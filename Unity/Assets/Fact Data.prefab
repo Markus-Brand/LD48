@@ -92,52 +92,6 @@ MonoBehaviour:
   Text: is one of the suspects for poisoning King Goerge IV
   Dependencies: []
   HelpText: 
---- !u!1 &2245442472408379182
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5456446077580965173}
-  - component: {fileID: 1937726372185678643}
-  m_Layer: 0
-  m_Name: mysteriousEvents
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5456446077580965173
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2245442472408379182}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6425009673767617496}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1937726372185678643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2245442472408379182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Text: Mysterious events are happening in the castle.
-  Dependencies: []
-  HelpText: 
 --- !u!1 &2372758787343085679
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,6 +136,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: died exactly one year ago
+  Dependencies: []
+  HelpText: 
+--- !u!1 &2400329306474057266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4252329560366868227}
+  - component: {fileID: 5614486928636216460}
+  m_Layer: 0
+  m_Name: isInWoodstockManor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4252329560366868227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400329306474057266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1778996678350610421}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5614486928636216460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400329306474057266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: is currently in Woodstock Manor, discussing Politics with Lord Woodstock
   Dependencies: []
   HelpText: 
 --- !u!1 &2469772383765151126
@@ -363,6 +363,7 @@ Transform:
   - {fileID: 2926231324957423946}
   - {fileID: 7698213997452753959}
   - {fileID: 5217613389165229784}
+  - {fileID: 2478867697306854215}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -405,8 +406,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5456446077580965173}
+  m_Children: []
   m_Father: {fileID: 5677392511697954768}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -549,6 +549,7 @@ Transform:
   - {fileID: 7012806768747262079}
   - {fileID: 7134006924918213817}
   - {fileID: 8515296414249600719}
+  - {fileID: 4252329560366868227}
   m_Father: {fileID: 5677392511697954768}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -566,6 +567,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanBeSpeaker: 1
   Name: Severin
+  Names: []
+--- !u!1 &5226396366161819527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2478867697306854215}
+  - component: {fileID: 631769366955703284}
+  m_Layer: 0
+  m_Name: woodstockManor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2478867697306854215
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5226396366161819527}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3919380118413609089}
+  m_Father: {fileID: 5677392511697954768}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &631769366955703284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5226396366161819527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e0765a27d55440cbd9b00000a2b0182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CanBeSpeaker: 1
+  Name: 
   Names: []
 --- !u!1 &5287752654287423739
 GameObject:
@@ -659,6 +707,52 @@ MonoBehaviour:
   CanBeSpeaker: 1
   Name: Archeologist
   Names: []
+--- !u!1 &6629765897443579271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3919380118413609089}
+  - component: {fileID: 6940847799633234540}
+  m_Layer: 0
+  m_Name: isUnlocked
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3919380118413609089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629765897443579271}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2478867697306854215}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6940847799633234540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6629765897443579271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: is probably worth a visit to learn about Severin
+  Dependencies: []
+  HelpText: 
 --- !u!1 &6668912127542683565
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +907,7 @@ GameObject:
   - component: {fileID: 2926231324957423946}
   - component: {fileID: 4262432227746779783}
   m_Layer: 0
-  m_Name: woodstock
+  m_Name: lordWoodstock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -944,7 +1038,6 @@ MonoBehaviour:
   Text: died from a mysterious sickness
   Dependencies:
   - FactID: richard3_needsHelp
-  - FactID: castle_mysteriousEvents
   HelpText: I should go to the castle and talk with the king about this matter.
 --- !u!1 &8085381863428790236
 GameObject:

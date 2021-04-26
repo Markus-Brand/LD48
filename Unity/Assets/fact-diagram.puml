@@ -9,13 +9,13 @@ george4_diedOneYearAgo [label ="george4_diedOneYearAgo\ndied exactly one year ag
 severin_wasFatherAdvisor [label ="severin_wasFatherAdvisor\nwas the advisor of King George III"]
 severin_isCurrentAdvisor [label ="severin_isCurrentAdvisor\nis still the advisor of the current King Richard III"]
 severin_isPoisonSuspect [label ="severin_isPoisonSuspect\nis one of the suspects for poisoning King Goerge IV"]
-castle_mysteriousEvents [label ="castle_mysteriousEvents\nMysterious events are happening in the castle."]
+severin_isInWoodstockManor [label ="severin_isInWoodstockManor\nis currently in Woodstock Manor, discussing Politics with Lord Woodstock"]
 library_canBeAccessed [label ="library_canBeAccessed\nKing Richard III granted you access"]
 easterEggs_lanternFact [label ="easterEggs_lanternFact\nPlaying with the lantern is fun"]
 QueenDowager_isPoisonSuspect [label ="QueenDowager_isPoisonSuspect\nis one of the suspects for poisoning King Goerge IV"]
+woodstockManor_isUnlocked [label ="woodstockManor_isUnlocked\nis probably worth a visit to learn about Severin"]
 
 richard3_needsHelp -> george4_diedMysteriously
-castle_mysteriousEvents -> george4_diedMysteriously
 george4_diedMysteriously -> george4_weirdSymptoms
 george4_weirdSymptoms -> george4_wasPoisoned
 
@@ -29,6 +29,8 @@ richard3_Tell_about_the_mercury_poison -> severin_isPoisonSuspect
 richard3_Tell_about_the_mercury_poison -> QueenDowager_isPoisonSuspect
 richard3_Tell_about_the_mercury_poison -> severin_wasFatherAdvisor
 richard3_Tell_about_the_mercury_poison -> severin_isCurrentAdvisor
+richard3_Tell_about_the_mercury_poison -> woodstockManor_isUnlocked
+richard3_Tell_about_the_mercury_poison -> severin_isInWoodstockManor
 richard3_Ask_about_the_letter [label =" <Dialogue>richard3\nAsk about the letter"]
 richard3_needsHelp -> richard3_Ask_about_the_letter
 richard3_Ask_about_the_letter -> george4_diedOneYearAgo
@@ -36,9 +38,9 @@ richard3_Ask_about_the_letter -> george4_diedMysteriously
 richard3_Ask_about_the_letter -> library_canBeAccessed
 'QueenDowager
 'severin
-'woodstock
-woodstock_Say_Hello [label =" <Dialogue>woodstock\nSay Hello"]
-Start -> woodstock_Say_Hello
+'lordWoodstock
+lordWoodstock_Say_Hello [label =" <Dialogue>lordWoodstock\nSay Hello"]
+Start -> lordWoodstock_Say_Hello
 
 }
 @enduml
