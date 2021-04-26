@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HoverMaster : MonoBehaviour
@@ -35,6 +36,7 @@ public class HoverMaster : MonoBehaviour
 		RenderPipelineManager.beginContextRendering += (ctx, cam) => {
 			ReScale();
 		};
+		SceneManager.sceneLoaded += (e, m) => ForceHide();
 	}
 
 	private TextMeshProUGUI _text;

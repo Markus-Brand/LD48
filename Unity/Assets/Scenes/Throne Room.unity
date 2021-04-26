@@ -1103,6 +1103,84 @@ MonoBehaviour:
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1608125565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608125560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: I solved the ruin's mystery
+  Conditions:
+  - FactID: CleansingLight_operation2
+  Dialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: Any progress?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Yes, I have solved the ruins mystery. They were built by the Precursors,
+      also called Aru.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: They were at war with another civilization the called the Kyr, we call
+      them the silver machines.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Out of desperation they developed a magical weapon to seal the Kyr away.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: But something went wrong. They sealed themselves away as well.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Lord Woodstocks Conspiracy intented to reverse the effect of the weapon
+      and cooperate with the precursors.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Your father probably figured something out as well and was a threat to
+      the conspiracy. So he was eliminated.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: I have made contact with an Aru in the ruins. He told me how to reverse
+      the activation of the weapon, freeing both the Aru and the Kyr.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: 'However, I do not know if it is a good idea to free them both.
+
+      What
+      shall I do, your Majesty?'
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: This is a lot to wrap one's head around. I still wish there would have
+      been a more peaceful way to resolve the conflict with my father...
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: It seems that I cannot even trust my own advisor.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: I leave this matter to you. Do what you think is best for the Kingdom!
+    FactsToLearn:
+    - FactID: richard3_youDecide
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1628364604
 GameObject:
   m_ObjectHideFlags: 0

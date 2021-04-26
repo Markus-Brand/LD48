@@ -19,7 +19,7 @@ public class InitialSceneDialogue : MonoBehaviour
 		_triggeredScenes.Add(sceneName);
 		OnStart?.Invoke();
 		var option = GetComponent<DialogueOption>();
-		Invoker.InvokeUnscaled(() => option.Execute(), 1.5f);
+		Invoker.InvokeUnscaled(() => option.Execute(), 0.1f);
 		// option.Execute();
 	}
 
