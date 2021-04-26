@@ -1139,6 +1139,10 @@ MonoBehaviour:
       TopicID: severin
     Text: Yes my Lord.
     FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: I'd better disappear as well, before someone notices me here.
+    FactsToLearn: []
   RepeatedDialogue: []
   DialogueDone:
     m_PersistentCalls:

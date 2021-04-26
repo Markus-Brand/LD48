@@ -25,18 +25,19 @@ public class Notebook : MonoBehaviour
 		}
 	}
 
-	public static string GetNotebookFactText()
+	public static List<string> GetNotebookFactText()
 	{
-		string result = "";
+		var result = new List<string>();
 
 		foreach (var topic in FactManager.Instance.Topics) {
 			var discoveredFactsOfTopic = GetDiscoveredFactsOfTopic(topic);
 			if (discoveredFactsOfTopic.Count == 0) continue;
-			result += topic.CurrentName + "\n";
+			var topicText = topic.CurrentName + "\n";
 			foreach (var fact in discoveredFactsOfTopic) {
-				result += "- " + fact.Text + "\n";
+				topicText += "- " + fact.Text + "\n";
 			}
-			result += "\n";
+			topicText += "\n";
+			result.Add(topicText);
 		}
 
 		return result;
@@ -52,7 +53,8 @@ public class Notebook : MonoBehaviour
 	public float NotificationScale = 1.2f;
 	public GameObject ClosedNotebook;
 	public GameObject OpenNotebook;
-	public TMP_Text NotesText;
+	public TMP_Text NotesTextLeft;
+	public TMP_Text NotesTextRight;
 
 	public GameObject NotesContent;
 	public GameObject MapContent;
@@ -69,6 +71,9 @@ public class Notebook : MonoBehaviour
 	private Vector3 _initialScale;
 	private Vector3 _openPosition;
 	private Vector3 _openScale;
+
+	private int _notesPage = 0;
+	private List<string> TopicTexts = new List<string>();
 
 	private void Start()
 	{
@@ -137,6 +142,7 @@ public class Notebook : MonoBehaviour
 
 	public void SwitchToMap()
 	{
+		_notesPage = 0;
 		NotesContent.SetActive(false);
 		MapContent.SetActive(true);
 		MapBookmark.SetActive(false);
@@ -147,12 +153,14 @@ public class Notebook : MonoBehaviour
 
 	public void SwitchToNotes()
 	{
+		_notesPage = 0;
+		UpdateText();
 		MapContent.SetActive(false);
 		NotesContent.SetActive(true);
 		NotesBookmark.SetActive(false);
 		MapBookmark.SetActive(true);
 		PreviousPageButton.SetActive(true);
-		NextPageButton.SetActive(false); // TODO true for pagination?
+		NextPageButton.SetActive(TopicTexts.Count >= 3);
 	}
 
 	public void Close()
@@ -168,8 +176,15 @@ public class Notebook : MonoBehaviour
 
 	public void GoToPreviousPage()
 	{
-		if (NotesContent.activeSelf) { // TODO and on first page of pagination
-			SwitchToMap();
+		if (NotesContent.activeSelf) {
+			if (_notesPage == 0) {
+				SwitchToMap();
+			} else {
+				_notesPage--;
+				UpdateText();
+				PreviousPageButton.SetActive(true);
+				NextPageButton.SetActive(true);
+			}
 		}
 	}
 
@@ -177,7 +192,12 @@ public class Notebook : MonoBehaviour
 	{
 		if (MapContent.activeSelf) {
 			SwitchToNotes();
-		} // TODO else do pagination!
+		} else if (_notesPage < TopicTexts.Count / 2) {
+			_notesPage++;
+			UpdateText();
+			PreviousPageButton.SetActive(true);
+			NextPageButton.SetActive(TopicTexts.Count > _notesPage * 2 + 2);
+		}
 	}
 
 	public void OnClosedBookHover(bool hover)
@@ -187,7 +207,17 @@ public class Notebook : MonoBehaviour
 
 	private void UpdateText()
 	{
-		NotesText.text = GetNotebookFactText();
+		TopicTexts = GetNotebookFactText();
+		if (TopicTexts.Count > 0) {
+			NotesTextLeft.text = TopicTexts[_notesPage * 2];
+		} else {
+			NotesTextLeft.text = "";
+		}
+		if (TopicTexts.Count > _notesPage * 2 + 1) {
+			NotesTextRight.text = TopicTexts[_notesPage * 2 + 1];
+		} else {
+			NotesTextRight.text = "";
+		}
 	}
 
 	public bool IsOpen()
