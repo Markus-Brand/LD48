@@ -23,13 +23,15 @@ public class DocumentOverlay : MonoBehaviour
 
 	public void PerformLinkAction(string action)
 	{
-		Debug.Log($"Perform Link Action: {action}");
 		var split = action.Split(":".ToCharArray());
         var type = split[0];
         switch (type) {
 	        case "unlock-fact":
 		        FactManager.Discover(split[1]);
 		        UpdateText();
+		        break;
+	        default:
+		        Debug.LogError($"Perform Unknown Link Action: {action}");
 		        break;
         }
 	}

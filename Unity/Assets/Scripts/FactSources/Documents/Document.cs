@@ -18,7 +18,6 @@ public class Document : MonoBehaviour, IHoverInfo
 	
 	public void OpenText()
 	{
-		Debug.Log("You are now reading: " + Text);
 		var overlayObject = Instantiate(Overlay);
 		var overlay = overlayObject.GetComponent<DocumentOverlay>();
 		overlay.Text = Text;
