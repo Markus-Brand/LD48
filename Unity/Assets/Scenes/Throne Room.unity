@@ -810,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627214810607511885, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150.00003
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   DisplayName: Ask to Investigate Woodstock Manor
   Conditions:
   - FactID: ruins_weirdStructure
-  - FactID: lordWoodstock_fundsExcavations
+  - FactID: lordWoodstock_fascinatedByAru
   Dialogue:
   - Speaker:
       TopicID: richard3
@@ -1089,7 +1089,8 @@ MonoBehaviour:
       TopicID: richard3
     Text: No problem. There are indeed urgent political topics to discuss, so I will
       summon him at once. Now go and do your investigation.
-    FactsToLearn: []
+    FactsToLearn:
+    - FactID: lordWoodstock_summoned
   - Speaker:
       TopicID: you
     Text: Thank you very much, I will do so, your majesty.

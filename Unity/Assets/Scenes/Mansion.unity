@@ -551,6 +551,24 @@ MonoBehaviour:
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1121809327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121809324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5186a356604e6a93e0dffdccae77a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Invisible: 1
+  DisableCollider: 1
+  VisibleOnce:
+    FactID: 
+  VisibleUntil:
+    FactID: lordWoodstock_summoned
 --- !u!1 &1237340422
 GameObject:
   m_ObjectHideFlags: 0
