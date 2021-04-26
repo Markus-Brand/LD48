@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color="red">Sace</color>/<color="red">Enter</color> - Continue Dialogue
+  m_text: '<color="red">Space</color>/<color="red">Enter</color> - Continue Dialogue
 
     <color="red">Up</color>/<color="red">Down</color>
     - Choose Dialogue Options'
