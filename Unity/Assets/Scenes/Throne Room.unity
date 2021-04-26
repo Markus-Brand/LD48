@@ -1049,6 +1049,59 @@ MonoBehaviour:
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1608125564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608125560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Ask to Investigate Woodstock Manor
+  Conditions:
+  - FactID: ruins_weirdStructure
+  - FactID: lordWoodstock_fundsExcavations
+  Dialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: Yes? Any progress?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: I discovered mysterious things. Lord Woodstock heavily funds the excavation
+      project in the Newport Ruins. I suspect that this is somehow connected to their
+      conspiracy, or he would not spend so much money on it.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: How should we proceed?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: I would like to look a bit around in his house. Can you somehow distract
+      him?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: No problem. There are indeed urgent political topics to discuss, so I will
+      summon him at once. Now go and do your investigation.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Thank you very much, I will do so, your majesty.
+    FactsToLearn: []
+  RepeatedDialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: I will lure Lord Woodstock out of his Manor. Please go and do your investigations.
+    FactsToLearn: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1628364604
 GameObject:
   m_ObjectHideFlags: 0

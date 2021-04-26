@@ -175,6 +175,9 @@ public class FactManager : MonoBehaviour
 		}
 		AssetDatabase.OpenAsset(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Fact Data.prefab"));
 
+		content += "\n";
+		content += "Ruins -> ruins_weirdStructure\n";
+
 		content += "\n}\n@enduml";
 
 		var path = "Assets" + Path.DirectorySeparatorChar + "fact-diagram.puml";
