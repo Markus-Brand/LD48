@@ -3427,6 +3427,7 @@ GameObject:
   - component: {fileID: 2097096408}
   - component: {fileID: 2097096409}
   - component: {fileID: 2097096410}
+  - component: {fileID: 2097096411}
   m_Layer: 0
   m_Name: Runes
   m_TagString: Untagged
@@ -3584,8 +3585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Reverse Cleansing Light
-  Conditions:
-  - FactID: richard3_youDecide
+  Conditions: []
   Dialogue:
   - Speaker:
       TopicID: you
@@ -3598,7 +3598,19 @@ MonoBehaviour:
   RepeatedDialogue: []
   DialogueDone:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2097096411}
+        m_TargetAssemblyTypeName: GoToEndScene, Assembly-CSharp
+        m_MethodName: ReverseMachine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2097096410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3612,8 +3624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Destroy Cleansing Light
-  Conditions:
-  - FactID: richard3_youDecide
+  Conditions: []
   Dialogue:
   - Speaker:
       TopicID: you
@@ -3626,7 +3637,31 @@ MonoBehaviour:
   RepeatedDialogue: []
   DialogueDone:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2097096411}
+        m_TargetAssemblyTypeName: GoToEndScene, Assembly-CSharp
+        m_MethodName: DestroyMachine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2097096411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097096402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c28ae0fcfe4805994ab449c49afa7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &2110760527 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2952276370686902163, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}

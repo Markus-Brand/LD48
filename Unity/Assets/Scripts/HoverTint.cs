@@ -15,11 +15,11 @@ public class HoverTint : MonoBehaviour
 
 	private void OnMouseEnter()
 	{
-		_sprite.material.SetColor(OverlayColor,  Color.white.WithAlpha(0.5f));
+		_sprite?.material.SetColor(OverlayColor,  Color.white.WithAlpha(0.5f));
 	}
 
 	private void OnMouseExit()
 	{
-		_sprite.material.SetColor(OverlayColor, Color.white.WithAlpha(0));
+		_sprite?.material.SetColor(OverlayColor, Color.white.WithAlpha(0));
 	}
 }

@@ -13,7 +13,7 @@ public class EndScene : MonoBehaviour
 		OncePerGame.DestroyInstance();
 		_rescuedPrecursors = rescuedPrecursors;
 		Debug.Log(_rescuedPrecursors);
-		SceneManager.LoadScene("End");
+		SceneManager.LoadSceneAsync("End");
 	}
 
 	[TextArea(20, 100)]

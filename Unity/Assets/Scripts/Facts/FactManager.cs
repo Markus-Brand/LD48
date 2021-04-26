@@ -96,7 +96,7 @@ public class FactManager : MonoBehaviour
 #if UNITY_EDITOR
 	private string Sanitize(string content)
 	{
-		return content.Replace(" ", "_").Replace("'", "_").Replace("-", "_");
+		return content.Replace(" ", "_").Replace("'", "_").Replace("-", "_").Replace("?", "_");
 	}
 	
 	public void GeneratePuml()
@@ -139,6 +139,7 @@ public class FactManager : MonoBehaviour
 					var personId = dialoguePerson?.Person?.TopicID ?? "_";
 
 					var dialogueID = personId + "_" + Sanitize(dialogueOption.DisplayName);
+					if (dialogueID == "__Controls") continue;
 
 					content += Sanitize(sceneName) + " -> " + dialogueID + "\n";
 					content += dialogueID + " [label =\"<Dialogue>" + personId + "\\n" +

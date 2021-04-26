@@ -933,7 +933,7 @@ MonoBehaviour:
   Dialogue:
   - Speaker:
       TopicID: richard3
-    Text: Thank you for coming! I have a new Task for you.
+    Text: Thank you for coming! I have a new task for you.
     FactsToLearn: []
   - Speaker:
       TopicID: you
@@ -972,7 +972,7 @@ MonoBehaviour:
     FactsToLearn: []
   - Speaker:
       TopicID: you
-    Text: I will do so, your Majesty.
+    Text: I will do so, your majesty.
     FactsToLearn: []
   RepeatedDialogue:
   - Speaker:

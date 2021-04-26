@@ -2,6 +2,7 @@
 digraph facts {
 
 richard3_needsHelp [label ="richard3_needsHelp\nneeds your help"]
+richard3_youDecide [label ="richard3_youDecide\nordered me to decide what to do about the Cleansing Light"]
 george4_diedMysteriously [label ="george4_diedMysteriously\ndied from a mysterious sickness"]
 george4_weirdSymptoms [label ="george4_weirdSymptoms\nhad weird symptoms shortly before his death"]
 george4_wasPoisoned [label ="george4_wasPoisoned\nwas probably poisoned"]
@@ -32,6 +33,8 @@ ruins_pathLogs [label ="ruins_pathLogs\nthere is a path through the ruins: LLRRL
 ruins_pathMachine [label ="ruins_pathMachine\nthere is another path through the ruins: LRRLRL"]
 conspiracy_tryRitual [label ="conspiracy_tryRitual\nmembers want to execute some ritual"]
 oro_sok_conspiracyContact [label ="oro_sok_conspiracyContact\ncontact person of the conspiracy"]
+oro_sok_summoned [label ="oro_sok_summoned\nappeared as apparition in the ruins"]
+oro_sok_aruResearcher [label ="oro_sok_aruResearcher\nAru researcher"]
 precursors_ancientCivilization [label ="precursors_ancientCivilization\nancient civilization"]
 precursors_longDead [label ="precursors_longDead\napparently disappeared thousand"]
 precursors_leftRuins [label ="precursors_leftRuins\nleft ruins"]
@@ -42,7 +45,12 @@ precursorLanguage_rtl [label ="precursorLanguage_rtl\nread from right to left"]
 precursorLanguage_patterns [label ="precursorLanguage_patterns\nI can decipher them"]
 kyr_existence [label ="kyr_existence\nRuins near the city of Drumchapel"]
 kyr_nameKyr [label ="kyr_nameKyr\ncalled Kyr by the Precursors"]
+kyrLanguage_deciphered [label ="kyrLanguage_deciphered\nI can fully decipher this"]
+CleansingLight_name [label ="CleansingLight_name\nprecursor weapon"]
+CleansingLight_operation1 [label ="CleansingLight_operation1\nrunes power this machine, I can activate them in clockwise order"]
+CleansingLight_operation2 [label ="CleansingLight_operation2\nancient chants can activate the machine"]
 
+CleansingLight_operation2 -> richard3_youDecide
 richard3_needsHelp -> george4_diedMysteriously
 george4_diedMysteriously -> george4_weirdSymptoms
 george4_weirdSymptoms -> george4_wasPoisoned
@@ -51,11 +59,17 @@ ruins_weirdStructure -> lordWoodstock_exploredRuins
 lordWoodstock_fundsExcavations -> lordWoodstock_fascinatedByAru
 lordWoodstock_exploredRuins -> lordWoodstock_summoned
 lordWoodstock_summoned -> ruins_pathLogs
+CleansingLight_operation1 -> oro_sok_summoned
+oro_sok_summoned -> oro_sok_aruResearcher
 precursors_ancientCivilization -> precursors_aru
 kyr_nameKyr -> precursors_war
 precursorLanguage_vowels -> precursorLanguage_patterns
 precursorLanguage_rtl -> precursorLanguage_patterns
 kyr_existence -> kyr_nameKyr
+kyr_existence -> kyrLanguage_deciphered
+precursorLanguage_patterns -> CleansingLight_name
+CleansingLight_name -> CleansingLight_operation1
+ -> CleansingLight_operation2
 
 Throne_Room [label = " <Scene> Throne Room"]
 richard3_needsHelp -> Throne_Room
@@ -93,6 +107,10 @@ richard3_Ask_to_Investigate_Woodstock_Manor [label ="<Dialogue>richard3\nAsk to 
 ruins_weirdStructure -> richard3_Ask_to_Investigate_Woodstock_Manor
 lordWoodstock_fascinatedByAru -> richard3_Ask_to_Investigate_Woodstock_Manor
 richard3_Ask_to_Investigate_Woodstock_Manor -> lordWoodstock_summoned
+Throne_Room -> richard3_I_solved_the_ruin_s_mystery
+richard3_I_solved_the_ruin_s_mystery [label ="<Dialogue>richard3\nI solved the ruin's mystery"]
+CleansingLight_operation2 -> richard3_I_solved_the_ruin_s_mystery
+richard3_I_solved_the_ruin_s_mystery -> richard3_youDecide
 Throne_Room -> QueenDowager_Ask_about_George_IV_s_death
 QueenDowager_Ask_about_George_IV_s_death [label ="<Dialogue>QueenDowager\nAsk about George IV's death"]
 QueenDowager_isPoisonSuspect -> QueenDowager_Ask_about_George_IV_s_death
@@ -137,10 +155,30 @@ precursors_aru -> archeologist_Chat_about_the_Aru
 archeologist_Chat_about_the_Aru -> precursorLanguage_rtl
 Ruins -> War_with_Kyr
 War_with_Kyr [label ="<Document>War with Kyr"]
+War_with_Kyr -> precursors_war
+War_with_Kyr -> kyr_nameKyr
+War_with_Kyr -> kyr_nameKyr
 Ruins -> Bug_Report
 Bug_Report [label ="<Document>Bug Report"]
 Ruins -> Cleansing_Light
 Cleansing_Light [label ="<Document>Cleansing Light"]
+Cleansing_Light -> CleansingLight_name
+Cleansing_Light -> CleansingLight_operation1
+Ruins -> CleansingLight_Activate_Energy_Runes
+CleansingLight_Activate_Energy_Runes [label ="<Dialogue>CleansingLight\nActivate Energy Runes"]
+CleansingLight_operation1 -> CleansingLight_Activate_Energy_Runes
+CleansingLight_Activate_Energy_Runes -> oro_sok_summoned
+Ruins -> CleansingLight_Reverse_Cleansing_Light
+CleansingLight_Reverse_Cleansing_Light [label ="<Dialogue>CleansingLight\nReverse Cleansing Light"]
+richard3_youDecide -> CleansingLight_Reverse_Cleansing_Light
+Ruins -> CleansingLight_Destroy_Cleansing_Light
+CleansingLight_Destroy_Cleansing_Light [label ="<Dialogue>CleansingLight\nDestroy Cleansing Light"]
+richard3_youDecide -> CleansingLight_Destroy_Cleansing_Light
+Ruins -> oro_sok_Are_you_an_Aru_
+oro_sok_Are_you_an_Aru_ [label ="<Dialogue>oro_sok\nAre you an Aru?"]
+oro_sok_summoned -> oro_sok_Are_you_an_Aru_
+oro_sok_Are_you_an_Aru_ -> oro_sok_aruResearcher
+oro_sok_Are_you_an_Aru_ -> CleansingLight_operation2
 Mansion -> Notes_on_Runes
 Notes_on_Runes [label ="<Document>Notes on Runes"]
 Notes_on_Runes -> precursorLanguage_vowels

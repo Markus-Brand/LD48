@@ -574,7 +574,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press <color="red">H</color> to show Help whenever you are stuck!
+  m_text: '<color="red">Click</color> on important text to copy it into your notebook!
+
+    Press
+    <color="red">H</color> to show Help whenever you are stuck!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 74d613fef6a5b46ad818f9bb110543d3, type: 2}
   m_sharedMaterial: {fileID: 8051676980696819629, guid: 74d613fef6a5b46ad818f9bb110543d3, type: 2}
@@ -601,8 +604,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
