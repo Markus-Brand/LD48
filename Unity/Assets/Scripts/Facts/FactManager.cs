@@ -16,6 +16,9 @@ public class FactManager : MonoBehaviour
 
 	private List<Topic> _topics;
 	public List<Topic> Topics => _topics ??= GetComponentsInChildren<Topic>().ToList();
+
+	private Dictionary<string, Topic> _topicsById;
+	public Dictionary<string, Topic> TopicsById => _topicsById ??= Topics.ToDictionary(t => t.InternalID);
 	
 	private Dictionary<string, Fact> _allFacts;
 	public Dictionary<string, Fact> AllFacts => _allFacts ??= Topics.SelectMany(topic => topic.Facts).ToDictionary(fact => fact.ID);

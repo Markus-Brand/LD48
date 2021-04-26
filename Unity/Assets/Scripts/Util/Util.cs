@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -40,5 +41,14 @@ public static class Util
 	public static bool Equalish(this Vector3 a, Vector3 b, float tolerance = 0.001f)
 	{
 		return Mathf.Abs((a - b).sqrMagnitude) <= tolerance;
+	}
+
+	public static TValue GetOrDefault<TKey, TValue>
+	(this IDictionary<TKey, TValue> dictionary,
+		TKey key,
+		TValue defaultValue = default)
+	{
+		TValue value;
+		return dictionary.TryGetValue(key, out value) ? value : defaultValue;
 	}
 }

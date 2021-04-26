@@ -604,6 +604,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
 --- !u!1 &1608125560
@@ -726,6 +734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c246d321455f436bb688a5e4d2f90bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Person:
+    TopicID: richard3
 --- !u!114 &1608125565
 MonoBehaviour:
   m_ObjectHideFlags: 0

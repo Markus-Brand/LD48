@@ -24,7 +24,7 @@ public class Topic : MonoBehaviour
 	
 	public List<NameOption> Names;
 	
-	public string CurrentName => Names.Where(option => option.Applicable).Select(option => option.Name).FirstOrDefault() ?? Name;
+	public string CurrentName => Names.Where(option => option.Applicable).Select(option => option.Name).LastOrDefault() ?? Name;
 
 	private void Awake()
 	{

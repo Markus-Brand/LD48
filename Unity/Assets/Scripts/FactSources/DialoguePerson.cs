@@ -2,8 +2,10 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-public class DialoguePerson : MonoBehaviour
+public class DialoguePerson : MonoBehaviour, IHoverInfo
 {
+	public TopicReference Person;
+	
 	public void SpeakTo()
 	{
 		var options = GetComponents<DialogueOption>().Where(o => o.IsAvailable()).ToList();
@@ -18,5 +20,25 @@ public class DialoguePerson : MonoBehaviour
 	private void OnMouseDown()
 	{
 		SpeakTo();
+	}
+	
+	public void OnMouseEnter()
+	{
+		HoverMaster.GetInstance().ShowInfo(this);
+	}
+
+	public void OnMouseExit()
+	{
+		HoverMaster.GetInstance().HideInfo(this);
+	}
+
+	public Transform GetTransform()
+	{
+		return transform;
+	}
+
+	public string GetHoverText()
+	{
+		return Person.CurrentName;
 	}
 }

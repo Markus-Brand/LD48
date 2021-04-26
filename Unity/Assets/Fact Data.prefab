@@ -375,7 +375,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: King George IV
-  Names: []
+  Names:
+  - Condition:
+      FactID: 
+    Name: 
 --- !u!1 &7534418899903455752
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,8 +423,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e0765a27d55440cbd9b00000a2b0182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: King Richard III
-  Names: []
+  Name: The Current King
+  Names:
+  - Condition:
+      FactID: richard3_needsHelp
+    Name: King Richard III
+  - Condition:
+      FactID: easterEggs_lanternFact
+    Name: King of not balancing Lamps
 --- !u!1 &7867040843771909730
 GameObject:
   m_ObjectHideFlags: 0

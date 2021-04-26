@@ -2,8 +2,8 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-[CustomPropertyDrawer(typeof(FactReference))]
-public class FactReferenceEditor : PropertyDrawer
+[CustomPropertyDrawer(typeof(TopicReference))]
+public class TopicReferenceEditor : PropertyDrawer
 {
 	static public void ShowFactsMenuFor(string currentValue, Action<string> handler, bool includeNone = true)
 	{
@@ -19,13 +19,11 @@ public class FactReferenceEditor : PropertyDrawer
 				() => handler(""));
 
 		foreach (var topic in topics) {
-			foreach (var fact in topic.Facts) {
-				var factID = fact.ID;
-				menu.AddItem(
-					new GUIContent($"{topic.InternalID}/{fact.InternalID}"),
-					currentValue == factID,
-					() => handler(factID));
-			}
+			var topicInternalID = topic.InternalID;
+			menu.AddItem(
+				new GUIContent($"{topicInternalID}"),
+				currentValue == topicInternalID,
+				() => handler(topicInternalID));
 		}
 
 		menu.ShowAsContext();
@@ -35,7 +33,10 @@ public class FactReferenceEditor : PropertyDrawer
 	public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 	{
 		EditorGUI.BeginProperty(position, label, property);
-		var propertyID = property.FindPropertyRelative("FactID");
+		Debug.Log(label);
+		Debug.Log(property);
+		var propertyID = property.FindPropertyRelative("TopicID");
+		Debug.Log(propertyID);
 		var id = propertyID.stringValue;
 		var isSet = id != "";
 		if (EditorGUI.DropdownButton(position, new GUIContent(isSet ? id : "NONE"), FocusType.Passive)) {
