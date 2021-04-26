@@ -851,7 +851,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanBeSpeaker: 1
   Name: Advisor of the King
-  Names: []
+  Names:
+  - Condition:
+      FactID: severin_partOfConspiracy
+    Name: Severin, Advisor of the King
 --- !u!1 &5226396366161819527
 GameObject:
   m_ObjectHideFlags: 0
