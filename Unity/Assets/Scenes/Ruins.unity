@@ -263,10 +263,12 @@ MonoBehaviour:
     - FactID: ruins_fromPrecursors
   - Speaker:
       TopicID: archeologist
-    Text: 'We do not understand the symbols on the walls inside this maze of connected
+    Text: We do not understand the symbols on the walls inside this maze of connected
       rooms. It is not their writing font, that much we know. We have discovered
-      multiple documents from them, and can already understand part of it. '
-    FactsToLearn: []
+      multiple documents from them, and can already understand part of it. We also
+      not it is read from right to left.
+    FactsToLearn:
+    - FactID: precursorLanguage_rtl
   - Speaker:
       TopicID: archeologist
     Text: Those symbols on the other hand are not understood at all. Some people
@@ -344,14 +346,13 @@ MonoBehaviour:
   - Speaker:
       TopicID: archeologist
     Text: Yes, that is what they called themselves. Quite fascinating, isn't it?
-      Did you know that their language is written from right to left? We just discovered
-      that today!
-    FactsToLearn:
-    - FactID: precursorLanguage_rtl
-  - Speaker:
-      TopicID: you
-    Text: No, I did not know that before. Thank you.
     FactsToLearn: []
+  - Speaker:
+      TopicID: archeologist
+    Text: Also, I know a path through these ruins! Go left twice, right twice,  right
+      twice, and you arrive in some sort of an archive.
+    FactsToLearn:
+    - FactID: ruins_pathLogs
   RepeatedDialogue:
   - Speaker:
       TopicID: archeologist
@@ -536,7 +537,7 @@ MonoBehaviour:
   OnDocumentOpen:
     m_PersistentCalls:
       m_Calls: []
-  Title: Cleansing Light
+  Title: Stone Tablet
   Text: <lang=Precursor>The development of the <fact=CleansingLight_name>Cleansing
     Light</fact> is proceeding rapidly. We think we found the correct runes to provide
     the required power. <fact=CleansingLight_operation1>The runes need to be activated
