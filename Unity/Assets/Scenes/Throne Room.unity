@@ -123,6 +123,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &11206944 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+  m_PrefabInstance: {fileID: 71700447}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &11206945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11206944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5186a356604e6a93e0dffdccae77a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Invisible: 1
+  VisibleOnce:
+    FactID: QueenDowager_isPoisonSuspect
+  VisibleUntil:
+    FactID: 
 --- !u!1001 &71700447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -840,6 +862,9 @@ MonoBehaviour:
       TopicID: you
     Text: Yes, I will do so, your majesty.
     FactsToLearn: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1608125562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +934,9 @@ MonoBehaviour:
       TopicID: you
     Text: I will do so, your majesty.
     FactsToLearn: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1672880853
 GameObject:
   m_ObjectHideFlags: 0
