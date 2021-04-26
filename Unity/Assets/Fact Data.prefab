@@ -2707,10 +2707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanBeSpeaker: 1
   Name: King Richard III
-  Names:
-  - Condition:
-      FactID: easterEggs_lanternFact
-    Name: King of not balancing Lamps
+  Names: []
 --- !u!1 &7610310312495741069
 GameObject:
   m_ObjectHideFlags: 0
