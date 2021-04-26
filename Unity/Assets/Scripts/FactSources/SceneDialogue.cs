@@ -20,6 +20,7 @@ public class SceneDialogue : MonoBehaviour
 		// option.Execute();
 	}
 
+	//TODO: If we need another SceneDialogue, this logic needs to find a new home
 	public void DialogueDone()
 	{
 		SceneManager.LoadScene("Throne Room");
