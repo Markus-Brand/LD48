@@ -19,21 +19,43 @@ library_canBeAccessed [label ="library_canBeAccessed\nKing Richard III granted y
 easterEggs_lanternFact [label ="easterEggs_lanternFact\nPlaying with the lantern is fun"]
 lordWoodstock_partOfConspiracy [label ="lordWoodstock_partOfConspiracy\nmember of the conspiracy"]
 lordWoodstock_fundsExcavations [label ="lordWoodstock_fundsExcavations\nheavily funds local archeology projects"]
+lordWoodstock_exploredRuins [label ="lordWoodstock_exploredRuins\nsuccessfully explored ruins"]
+lordWoodstock_fascinatedByAru [label ="lordWoodstock_fascinatedByAru\nopenly fascinated by the ruins"]
+lordWoodstock_summoned [label ="lordWoodstock_summoned\nsummoned to the Castle"]
 QueenDowager_isPoisonSuspect [label ="QueenDowager_isPoisonSuspect\nis one of the suspects for poisoning King Goerge IV"]
 QueenDowager_isSad [label ="QueenDowager_isSad\nis very sad about the death of her Husband"]
 woodstockManor_isUnlocked [label ="woodstockManor_isUnlocked\nis probably worth a visit to learn about Severin"]
 ruins_relatedToConspiracy [label ="ruins_relatedToConspiracy\nrelated to the Conspiracy"]
 ruins_fromPrecursors [label ="ruins_fromPrecursors\nleft by the precursors"]
 ruins_weirdStructure [label ="ruins_weirdStructure\nhave weird geometry: no matter the path, I always end up outside again"]
+ruins_pathLogs [label ="ruins_pathLogs\nthere is a path through the ruins: LLRRLL"]
+ruins_pathMachine [label ="ruins_pathMachine\nthere is another path through the ruins: LRRLRL"]
 conspiracy_tryRitual [label ="conspiracy_tryRitual\nmembers want to execute some ritual"]
 oro_sok_conspiracyContact [label ="oro_sok_conspiracyContact\ncontact person of the conspiracy"]
 precursors_ancientCivilization [label ="precursors_ancientCivilization\nancient civilization"]
 precursors_longDead [label ="precursors_longDead\napparently disappeared thousand"]
 precursors_leftRuins [label ="precursors_leftRuins\nleft ruins"]
+precursors_aru [label ="precursors_aru\ncalled themselves Aru"]
+precursors_war [label ="precursors_war\nwere at war with the Kyr"]
+precursorLanguage_vowels [label ="precursorLanguage_vowels\nsome runes are vowels"]
+precursorLanguage_rtl [label ="precursorLanguage_rtl\nread from right to left"]
+precursorLanguage_patterns [label ="precursorLanguage_patterns\nI can decipher them"]
+kyr_existence [label ="kyr_existence\nRuins near the city of Drumchapel"]
+kyr_nameKyr [label ="kyr_nameKyr\ncalled Kyr by the Precursors"]
 
 richard3_needsHelp -> george4_diedMysteriously
 george4_diedMysteriously -> george4_weirdSymptoms
 george4_weirdSymptoms -> george4_wasPoisoned
+lordWoodstock_fundsExcavations -> lordWoodstock_exploredRuins
+ruins_weirdStructure -> lordWoodstock_exploredRuins
+lordWoodstock_fundsExcavations -> lordWoodstock_fascinatedByAru
+lordWoodstock_exploredRuins -> lordWoodstock_summoned
+lordWoodstock_summoned -> ruins_pathLogs
+precursors_ancientCivilization -> precursors_aru
+kyr_nameKyr -> precursors_war
+precursorLanguage_vowels -> precursorLanguage_patterns
+precursorLanguage_rtl -> precursorLanguage_patterns
+kyr_existence -> kyr_nameKyr
 
 Throne_Room [label = " <Scene> Throne Room"]
 richard3_needsHelp -> Throne_Room
@@ -69,7 +91,8 @@ ruins_relatedToConspiracy -> richard3_I_discovered_the_Poison
 Throne_Room -> richard3_Ask_to_Investigate_Woodstock_Manor
 richard3_Ask_to_Investigate_Woodstock_Manor [label ="<Dialogue>richard3\nAsk to Investigate Woodstock Manor"]
 ruins_weirdStructure -> richard3_Ask_to_Investigate_Woodstock_Manor
-lordWoodstock_fundsExcavations -> richard3_Ask_to_Investigate_Woodstock_Manor
+lordWoodstock_fascinatedByAru -> richard3_Ask_to_Investigate_Woodstock_Manor
+richard3_Ask_to_Investigate_Woodstock_Manor -> lordWoodstock_summoned
 Throne_Room -> QueenDowager_Ask_about_George_IV_s_death
 QueenDowager_Ask_about_George_IV_s_death [label ="<Dialogue>QueenDowager\nAsk about George IV's death"]
 QueenDowager_isPoisonSuspect -> QueenDowager_Ask_about_George_IV_s_death
@@ -82,6 +105,17 @@ A_History_of_Kings -> george4_weirdSymptoms
 Library -> A_Treatise_on_Poisons
 A_Treatise_on_Poisons [label ="<Document>A Treatise on Poisons"]
 A_Treatise_on_Poisons -> george4_wasPoisoned
+Library -> Ruins_of_Newport
+Ruins_of_Newport [label ="<Document>Ruins of Newport"]
+Ruins_of_Newport -> precursors_ancientCivilization
+Ruins_of_Newport -> lordWoodstock_exploredRuins
+Ruins_of_Newport -> ruins_pathMachine
+Library -> Ruins_of_Drumchapel
+Ruins_of_Drumchapel [label ="<Document>Ruins of Drumchapel"]
+Ruins_of_Drumchapel -> kyr_existence
+Library -> Precursor_Carvings
+Precursor_Carvings [label ="<Document>Precursor Carvings"]
+Precursor_Carvings -> precursorLanguage_patterns
 Home_Room -> Letter_from_the_King
 Letter_from_the_King [label ="<Document>Letter from the King"]
 Letter_from_the_King -> richard3_needsHelp
@@ -99,6 +133,21 @@ archeologist_Ask_about_the_Funding_of_the_Project [label ="<Dialogue>archeologis
 archeologist_Ask_about_the_Funding_of_the_Project -> lordWoodstock_fundsExcavations
 Ruins -> StoneOnWall
 StoneOnWall [label ="<Document>StoneOnWall"]
+Mansion -> Notes_on_Runes
+Notes_on_Runes [label ="<Document>Notes on Runes"]
+Notes_on_Runes -> precursorLanguage_vowels
+Mansion -> Exploration_Log
+Exploration_Log [label ="<Document>Exploration Log"]
+Exploration_Log -> ruins_pathLogs
+Mansion -> lordWoodstock_Ask_about_King_George_IV_s_death
+lordWoodstock_Ask_about_King_George_IV_s_death [label ="<Dialogue>lordWoodstock\nAsk about King George IV's death"]
+george4_diedMysteriously -> lordWoodstock_Ask_about_King_George_IV_s_death
+Mansion -> lordWoodstock_Ask_about_Precursors
+lordWoodstock_Ask_about_Precursors [label ="<Dialogue>lordWoodstock\nAsk about Precursors"]
+lordWoodstock_fundsExcavations -> lordWoodstock_Ask_about_Precursors
+precursors_ancientCivilization -> lordWoodstock_Ask_about_Precursors
+lordWoodstock_Ask_about_Precursors -> lordWoodstock_fascinatedByAru
+lordWoodstock_Ask_about_Precursors -> precursors_aru
 Mansion -> __Spying
 __Spying [label ="<Dialogue>_\nSpying"]
 __Spying -> severin_hiddenPlaceInOffice
