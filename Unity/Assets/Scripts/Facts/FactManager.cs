@@ -11,7 +11,6 @@ using Random = UnityEngine.Random;
 
 public class FactManager : MonoBehaviour
 {
-
 	public static FactManager Instance { get; private set; }
 
 
@@ -20,15 +19,17 @@ public class FactManager : MonoBehaviour
 
 	private Dictionary<string, Topic> _topicsById;
 	public Dictionary<string, Topic> TopicsById => _topicsById ??= Topics.ToDictionary(t => t.InternalID);
-	
+
 	private Dictionary<string, Fact> _allFacts;
-	public Dictionary<string, Fact> AllFacts => _allFacts ??= Topics.SelectMany(topic => topic.Facts).ToDictionary(fact => fact.ID);
+
+	public Dictionary<string, Fact> AllFacts =>
+		_allFacts ??= Topics.SelectMany(topic => topic.Facts).ToDictionary(fact => fact.ID);
 
 	public IEnumerable<Fact> AllDiscoverableFacts => _allFacts.Values.Where(fact => fact.IsDiscoverable);
 
 	public Dictionary<string, FactState> FactStates { get; private set; }
-	
-	
+
+
 	private void Awake()
 	{
 		Instance ??= this;
@@ -40,13 +41,13 @@ public class FactManager : MonoBehaviour
 	{
 		return Selection.activeGameObject?.GetComponent<FactManager>() != null;
 	}
-	
+
 	[MenuItem("GameObject/Add Topic", false, 0)]
 	static void CreateTopic(MenuCommand menuCommand)
 	{
 		CreateTopicFor((menuCommand.context as GameObject)?.GetComponent<FactManager>());
 	}
-	
+
 	public static void CreateTopicFor(FactManager manager)
 	{
 		GameObject go = new GameObject("UNNAMED");
@@ -64,7 +65,7 @@ public class FactManager : MonoBehaviour
 #endif
 		return Instance.FactStates.ContainsKey(id) ? Instance.FactStates[id] : FactState.Undiscovered;
 	}
-	
+
 	public static void SetFactState(string id, FactState state)
 	{
 #if UNITY_EDITOR
@@ -74,14 +75,14 @@ public class FactManager : MonoBehaviour
 		Instance.FactStates[id] = state;
 		EventManager.getInstance().Trigger(new FactStateChangedEvent());
 	}
-	
+
 	public static void Discover(string id, bool force = false)
 	{
 		if (force || Instance.AllFacts[id].IsDiscoverable) {
 			SetFactState(id, FactState.Discovered);
 		}
 	}
-	
+
 	public static void Discard(string id)
 	{
 		SetFactState(id, FactState.Discarded);
@@ -107,7 +108,7 @@ public class FactManager : MonoBehaviour
 			}/**/
 		}
 		content += "\n";
-		
+
 		var notebook = PrefabUtility.LoadPrefabContents("Assets/Prefabs/Notebook Canvas.prefab");
 		var sceneToUnlockFact = notebook.GetComponentsInChildren<MapEntry>(true)
 			.ToDictionary(m => m.SceneName, m => m.UnlockCondition.FactID);
@@ -124,38 +125,37 @@ public class FactManager : MonoBehaviour
 			var scenePath = "Assets/Scenes/" + sceneName + ".unity";
 			var scene = EditorSceneManager.OpenScene(scenePath);
 			foreach (var rootGameObject in scene.GetRootGameObjects()) {
-				
-				var dialogues = rootGameObject.GetComponentsInChildren<DialoguePerson>();
-				foreach (var dialoguePerson in dialogues) {
-					content += "'" + dialoguePerson.Person.TopicID + "\n";
-					foreach (var dialogueOption in dialoguePerson.GetComponents<DialogueOption>()) {
-						var dialogueID = dialoguePerson.Person.TopicID + "_" + dialogueOption.DisplayName.Replace(" ", "_");
-						
-						content += sceneName.Replace(" ", "_") + " -> " + dialogueID + "\n";
-						content += dialogueID + " [label =\"<Dialogue>" + dialoguePerson.Person.TopicID + "\\n" + dialogueOption.DisplayName + "\"]\n";
+				foreach (var dialogueOption in rootGameObject.GetComponentsInChildren<DialogueOption>()) {
+					var dialoguePerson = dialogueOption.GetComponent<DialoguePerson>();
+					var personId = dialoguePerson?.Person?.TopicID ?? "_";
 
-						var dialogueOptionConditions = dialogueOption.Conditions.Select(f => f.FactID).ToList();
-						foreach (var condition in dialogueOptionConditions) {
-							content += condition + " -> " + dialogueID + "\n";
-						}
-						foreach (var dialogueElement in
-							dialogueOption.Dialogue.Concat(dialogueOption.RepeatedDialogue)) {
-							foreach (var factToLearn in dialogueElement.FactsToLearn) {
-								if (!validFactIDs.Contains(factToLearn.FactID)) {
-									Debug.LogError("Invalid Fact reference to '" + factToLearn.FactID + "' in " +
-									               sceneName + " > " + dialoguePerson.Person.TopicID + " > " +
-									               dialogueOption.DisplayName + " > " + dialogueElement.Text);
-								}
-								content += dialogueID + " -> " + factToLearn.FactID + "\n";
+					var dialogueID = personId + "_" + dialogueOption.DisplayName.Replace(" ", "_");
+
+					content += sceneName.Replace(" ", "_") + " -> " + dialogueID + "\n";
+					content += dialogueID + " [label =\"<Dialogue>" + personId + "\\n" +
+					           dialogueOption.DisplayName + "\"]\n";
+
+					var dialogueOptionConditions = dialogueOption.Conditions.Select(f => f.FactID).ToList();
+					foreach (var condition in dialogueOptionConditions) {
+						content += condition + " -> " + dialogueID + "\n";
+					}
+					foreach (var dialogueElement in
+						dialogueOption.Dialogue.Concat(dialogueOption.RepeatedDialogue)) {
+						foreach (var factToLearn in dialogueElement.FactsToLearn) {
+							if (!validFactIDs.Contains(factToLearn.FactID)) {
+								Debug.LogError("Invalid Fact reference to '" + factToLearn.FactID + "' in " +
+								               sceneName + " > " + personId + " > " +
+								               dialogueOption.DisplayName + " > " + dialogueElement.Text);
 							}
+							content += dialogueID + " -> " + factToLearn.FactID + "\n";
 						}
 					}
 				}
-				
+
 				var documents = rootGameObject.GetComponentsInChildren<Document>();
 				foreach (var document in documents) {
 					var documentId = document.name.Replace(" ", "_");
-					
+
 					content += sceneName.Replace(" ", "_") + " -> " + documentId + "\n";
 					content += documentId + " [label =\"<Document>" + document.name + "\"]\n";
 					foreach (var factId in document.GetContainedFactIds()) {
