@@ -24,6 +24,7 @@ QueenDowager_isSad [label ="QueenDowager_isSad\nis very sad about the death of h
 woodstockManor_isUnlocked [label ="woodstockManor_isUnlocked\nis probably worth a visit to learn about Severin"]
 ruins_relatedToConspiracy [label ="ruins_relatedToConspiracy\nrelated to the Conspiracy"]
 ruins_fromPrecursors [label ="ruins_fromPrecursors\nleft by the precursors"]
+ruins_weirdStructure [label ="ruins_weirdStructure\nhave weird geometry: no matter the path, I always end up outside again"]
 conspiracy_tryRitual [label ="conspiracy_tryRitual\nmembers want to execute some ritual"]
 oro_sok_conspiracyContact [label ="oro_sok_conspiracyContact\ncontact person of the conspiracy"]
 precursors_ancientCivilization [label ="precursors_ancientCivilization\nancient civilization"]
@@ -61,6 +62,10 @@ richard3_Ask_about_the_letter -> george4_diedOneYearAgo
 richard3_Ask_about_the_letter -> george4_diedMysteriously
 richard3_Ask_about_the_letter -> library_canBeAccessed
 richard3_Ask_about_the_letter -> severin_doesNotTrustMe
+Throne_Room -> richard3_I_discovered_the_Poison
+richard3_I_discovered_the_Poison [label ="<Dialogue>richard3\nI discovered the Poison"]
+severin_responsibleForKingDeath -> richard3_I_discovered_the_Poison
+ruins_relatedToConspiracy -> richard3_I_discovered_the_Poison
 Throne_Room -> QueenDowager_Ask_about_George_IV_s_death
 QueenDowager_Ask_about_George_IV_s_death [label ="<Dialogue>QueenDowager\nAsk about George IV's death"]
 QueenDowager_isPoisonSuspect -> QueenDowager_Ask_about_George_IV_s_death
