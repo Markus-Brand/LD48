@@ -793,6 +793,8 @@ MonoBehaviour:
     FactsToLearn:
     - FactID: severin_isPoisonSuspect
     - FactID: QueenDowager_isPoisonSuspect
+    - FactID: severin_wasFatherAdvisor
+    - FactID: severin_isCurrentAdvisor
   - Speaker:
       TopicID: richard3
     Text: Please investigate this further. I need to know if I can trust these people.

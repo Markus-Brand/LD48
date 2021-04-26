@@ -121,7 +121,7 @@ public class FactManager : MonoBehaviour
 					content += "'" + dialoguePerson.Person.TopicID + "\n";
 					foreach (var dialogueOption in dialoguePerson.GetComponents<DialogueOption>()) {
 						var dialogueID = dialoguePerson.Person.TopicID + "_" + dialogueOption.DisplayName.Replace(" ", "_");
-						content += dialogueID + " [label =\"" + dialoguePerson.Person.TopicID + "\\n" + dialogueOption.DisplayName + "\"]\n";
+						content += dialogueID + " [label =\" <Dialogue>" + dialoguePerson.Person.TopicID + "\\n" + dialogueOption.DisplayName + "\"]\n";
 						
 						var dialogueOptionConditions = dialogueOption.Conditions.Select(f => f.FactID).ToList();
 						if (dialogueOptionConditions.Count == 0) {
