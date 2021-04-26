@@ -535,20 +535,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
       propertyPath: Text
-      value: 'Death Causes
+      value: '<size=64>Mercury</size>
 
 
-        you can die of old age.
+        A metal which is usually liquid.
 
-        <fact=george4_wasPoisoned>If
-        you consume too much mercury, you show some weird symptoms TODO WHICH? That
-        is why mercury is a popular poison for assasins.</fact>
+        Consumption
+        of large amounts of mercury can lead to diverse symptoms, <fact=george4_wasPoisoned>such
+        as reduced muscle strength, vomiting, and depression</fact>. These vague
+        symptoms make it popular among assassins.
 
-        Apart frmo
-        that, people don''t die.
+        <size=64>Alcohol</size>
 
 
-        The End'
+        A
+        controverse subject. Due to its widespread popularity, some people are offended
+        by its classification as a poison.
+
+
+        Nevertheless can the consumption
+        of large amounts result in death.'
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
       propertyPath: Title
