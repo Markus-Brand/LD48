@@ -672,15 +672,12 @@ PrefabInstance:
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
       propertyPath: Text
       value: 'The ruins of Newport were built by a mysterious civilization known
-        as The Precursors.
+        as <fact=precursors_ancientCivilization>The Precursors</fact>.
 
 
-        Navigation through these ruins is complicated
-        and defies logic, although well funded explorers have made progress.
-
-
-
-
+        Navigation
+        through these ruins is complicated and defies logic, <fact=lordWoodstock_exploredRuins>although
+        well funded explorers have made progress</fact>.
 
 
 
@@ -688,15 +685,19 @@ PrefabInstance:
 
 
 
-        In
-        these ruins, strange carvings can be found:
+
+
+
+
+        In these
+        ruins, strange carvings can be found:
 
 
         <lang=Precursor>Internal
         Announcement
 
         The Cleansing Light Project has been hidden in a magical
-        pathway. The route is LRRLRL.</lang>'
+        pathway. <fact=ruins_pathMachine>The route is LRRLRL</fact>.</lang>'
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
       propertyPath: Title
@@ -1011,16 +1012,13 @@ PrefabInstance:
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
       propertyPath: Text
       value: 'The ruins near Drumchapel differ from most ruins in the kingdom. They
-        were seemingly build by the silver machines that can be found nearby.
+        were seemingly build by <fact=kyr_existence>the silver machines that can
+        be found nearby</fact>.
 
 
-        These
-        ruins do not contain any runes, at least not at first glance. They do contain
-        strange glass cubes, which emit some form of writing when lit from the right
-        angle:
-
-
-
+        These ruins do not contain any runes, at
+        least not at first glance. They do contain strange glass cubes, which emit
+        some form of writing when lit from the right angle:
 
 
 
@@ -1028,15 +1026,19 @@ PrefabInstance:
 
 
 
-        <lang=Kyr>OPERATION LOG
 
-        [2385.8721] PLANET
-        A74-12 IS HABITABLE
 
-        [2385.8934] ESTABLISHED CRADLE ON A74-12
 
-        [2386.1082]
-        NATIVE POPULATION MOUNTED EFFECTIVE DEFENSE, ACTIVATING AGGRESSOR PROTOCOL
+        <lang=Kyr>OPERATION
+        LOG
+
+        [2385.8721] PLANET A74-12 IS HABITABLE
+
+        [2385.8934]
+        ESTABLISHED CRADLE ON A74-12
+
+        [2386.1082] NATIVE POPULATION MOUNTED
+        EFFECTIVE DEFENSE, ACTIVATING AGGRESSOR PROTOCOL
 
         HDAHEOWHTJKC
 
@@ -1455,10 +1457,10 @@ PrefabInstance:
         their work public produced seemingly little insight.
 
 
-        Well known
-        facts are common patterns within the language, such as <font=Precursor>alf</font>,
+        <fact=precursorLanguage_patterns>Well
+        known facts are common patterns within the language, such as <font=Precursor>alf</font>,
         <font=Precursor>brb</font>, <font=Precursor>opt</font>, <font=Precursor>zyg</font>,
-        <font=Precursor>kru</font> and <font=Precursor>ber</font>.'
+        <font=Precursor>kru</font> and <font=Precursor>ber</font>.</fact>'
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
       propertyPath: Title

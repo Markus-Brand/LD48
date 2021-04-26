@@ -489,6 +489,68 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+--- !u!1 &1121809324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+  m_PrefabInstance: {fileID: 1121809323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1121809325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121809324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Ask about King George IV's death
+  Conditions:
+  - FactID: george4_diedMysteriously
+  Dialogue:
+  - Speaker:
+      TopicID: lordWoodstock
+    Text: Well, this is indeed a sad matter. I was very close with him and he was
+      a good man.
+    FactsToLearn: []
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1121809326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121809324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Ask about Precursors
+  Conditions:
+  - FactID: lordWoodstock_fundsExcavations
+  - FactID: precursors_ancientCivilization
+  Dialogue:
+  - Speaker:
+      TopicID: lordWoodstock
+    Text: Ah, the ruins are really fascinating. I yearn to learn more about these
+      precursors.
+    FactsToLearn:
+    - FactID: lordWoodstock_fascinatedByAru
+  - Speaker:
+      TopicID: lordWoodstock
+    Text: Did you know that they called themselves the "Aru"?
+    FactsToLearn:
+    - FactID: precursors_aru
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1237340422
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627214810607511885, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150.99997
+      value: -151
       objectReference: {fileID: 0}
     - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_SizeDelta.x
