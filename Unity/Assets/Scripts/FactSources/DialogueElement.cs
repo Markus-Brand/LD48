@@ -13,12 +13,11 @@ public class DialogueElement
 	public void Execute(List<DialogueElement> restDialogueElements, int nextIndex)
 	{
 		DialogueManager.GetInstance().ShowDialogue(Speaker.Topic, Text, () => {
-			foreach (var fact in FactsToLearn) {
-				fact.Discover();
-			}
+			FactsToLearn.ForEach(fact => fact.Discover());
 			if (nextIndex < restDialogueElements.Count) {
 				restDialogueElements[nextIndex].Execute(restDialogueElements, nextIndex + 1);
 			}
 		});
+		Invoker.InvokeUnscaled(() => FactsToLearn.ForEach(fact => fact.Discover()), 0.25f);
 	}
 }
