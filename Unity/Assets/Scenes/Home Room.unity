@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 602763261}
   - component: {fileID: 602763262}
   m_Layer: 0
-  m_Name: envelope
+  m_Name: Letter from the King
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,17 +242,17 @@ MonoBehaviour:
 
 
     I write to you in a matter of great
-    importance. <fact=richard3_needsHelp>I need your help to research something</fact>
-    of which I will not speak here.
+    importance. <fact=richard3_needsHelp>An unsolved question plagues my every waking
+    moment. I need your help to research something</fact> of which I will not speak
+    here.
 
-    Please <fact=castle_mysteriousEvents>come
-    to the castle, and I will tell you more</fact>.
+    Please <fact=richard3_needsHelp>come to the castle</fact>, and I will
+    tell you more.
 
 
     His Majesty,
 
-    King
-    Richard III'
+    King Richard III'
 --- !u!61 &602763261
 BoxCollider2D:
   m_ObjectHideFlags: 0
