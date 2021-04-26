@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -48,6 +49,17 @@ public class Document : MonoBehaviour, IHoverInfo
 	{
 		return Title + "\nMaybe there are some facts to learn?";
 	}
+	
+#if UNITY_EDITOR
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.D)) {
+			foreach (var factId in GetContainedFactIds()) {
+				FactManager.Discover(factId);
+			}
+		}
+	}
+#endif
 
 	public List<string> GetContainedFactIds()
 	{
