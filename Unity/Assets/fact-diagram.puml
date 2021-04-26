@@ -15,10 +15,13 @@ castle_mysteriousEvents -> george4_diedMysteriously
 george4_diedMysteriously -> george4_weirdSymptoms
 george4_weirdSymptoms -> george4_wasPoisoned
 
+'archeologist
 'richard3
-richard3_needsHelp -> george4_diedOneYearAgo : "richard3, Ask about the letter"
-richard3_needsHelp -> george4_diedMysteriously : "richard3, Ask about the letter"
-richard3_needsHelp -> library_canBeAccessed : "richard3, Ask about the letter"
+richard3_Ask_about_the_letter [label ="richard3\nAsk about the letter"]
+richard3_needsHelp -> richard3_Ask_about_the_letter
+richard3_Ask_about_the_letter -> george4_diedOneYearAgo
+richard3_Ask_about_the_letter -> george4_diedMysteriously
+richard3_Ask_about_the_letter -> library_canBeAccessed
 
 }
 @enduml

@@ -90,7 +90,7 @@ public class FactManager : MonoBehaviour
 #if UNITY_EDITOR
 	public void GeneratePuml()
 	{
-		Debug.Log("Lol");
+		const string startNodeName = "Start";
 		string content = "@startuml\ndigraph facts {\n\n";
 		foreach (var fact in AllFacts.Values) {
 			content += fact.ID + " [label =\"" + fact.ID + "\\n" + fact.Text + "\"]\n";
@@ -100,24 +100,36 @@ public class FactManager : MonoBehaviour
 			foreach (var cond in fact.Dependencies) {
 				content += cond.FactID + " -> " + fact.ID + "\n";
 			}
+			/*if (fact.Dependencies.Count == 0) {
+				content += startNodeName + " -> " + fact.ID + "\n";
+			}/**/
 		}
 		content += "\n";
 		
 		
 		string[] scenesToSearch = { "Home Room", "Library", "Ruins", "Throne Room" };
 		foreach (var sceneName in scenesToSearch) {
-			string scenePath = "Assets/Scenes/" + sceneName + ".unity";
+			var scenePath = "Assets/Scenes/" + sceneName + ".unity";
 			var scene = EditorSceneManager.OpenScene(scenePath);
 			foreach (var rootGameObject in scene.GetRootGameObjects()) {
 				var dialogues = rootGameObject.GetComponentsInChildren<DialoguePerson>();
 				foreach (var dialoguePerson in dialogues) {
 					content += "'" + dialoguePerson.Person.TopicID + "\n";
 					foreach (var dialogueOption in dialoguePerson.GetComponents<DialogueOption>()) {
+						var dialogueID = dialoguePerson.Person.TopicID + "_" + dialogueOption.DisplayName.Replace(" ", "_");
+						content += dialogueID + " [label =\"" + dialoguePerson.Person.TopicID + "\\n" + dialogueOption.DisplayName + "\"]\n";
+						
+						var dialogueOptionConditions = dialogueOption.Conditions.Select(f => f.FactID).ToList();
+						if (dialogueOptionConditions.Count == 0) {
+							dialogueOptionConditions = new[] { startNodeName }.ToList();
+						}
+						foreach (var condition in dialogueOptionConditions) {
+							content += condition + " -> " + dialogueID + "\n";
+						}
 						foreach (var dialogueElement in dialogueOption.Dialogue.Concat(dialogueOption.RepeatedDialogue)) {
 							foreach (var factToLearn in dialogueElement.FactsToLearn) {
-								foreach (var condition in dialogueOption.Conditions) {
-									content += condition.FactID + " -> " + factToLearn.FactID +
-									           " : \"" + dialoguePerson.Person.TopicID + ", " + dialogueOption.DisplayName + "\"\n";
+								foreach (var condition in dialogueOptionConditions) {
+									content += dialogueID + " -> " + factToLearn.FactID + "\n";
 								}
 							}
 						}
@@ -129,11 +141,10 @@ public class FactManager : MonoBehaviour
 		
 		content += "\n}\n@enduml";
 
-		string path = "Assets" + Path.DirectorySeparatorChar + "fact-diagram.puml";
+		var path = "Assets" + Path.DirectorySeparatorChar + "fact-diagram.puml";
 		using (var sw = File.CreateText(path)) {
 			sw.Write(content);
 		}
-		Debug.Log("done");
 	}
 #endif
 }
