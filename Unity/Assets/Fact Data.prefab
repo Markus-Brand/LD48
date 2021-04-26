@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: Needs your help again.
+  Text: needs your help
   Dependencies: []
   HelpText: A letter from the King? I guess I should read it and copy the most important
     fracts from it into my notebook.
