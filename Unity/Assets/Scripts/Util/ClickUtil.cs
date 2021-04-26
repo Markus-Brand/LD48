@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ClickUtil : MonoBehaviour
+[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider2D))]
+public class ClickUtil : HoverTint
 {
 	public UnityEvent Clicked;
 
