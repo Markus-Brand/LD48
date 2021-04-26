@@ -86,6 +86,9 @@ TextureImporter:
   - first:
       213: 2414474533063011785
     second: book6
+  - first:
+      213: 7829124088692640654
+    second: step
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -758,6 +761,27 @@ TextureImporter:
       bones: []
       spriteID: 9cda27e9bcfe18120800000000000000
       internalID: 2414474533063011785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: step
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 424
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b8af0d0e2a6ac60800000000000000
+      internalID: 7829124088692640654
       vertices: []
       indices: 
       edges: []
