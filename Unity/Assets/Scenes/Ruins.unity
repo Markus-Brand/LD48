@@ -226,7 +226,7 @@ MonoBehaviour:
   - Speaker:
       TopicID: archeologist
     Text: Oh, you want to try for yourself, I see? Sure, just go inside. Be sure
-      to tell me if you find anytrhing interesting.
+      to tell me if you find anything interesting.
     FactsToLearn: []
   RepeatedDialogue: []
   DialogueDone:
@@ -255,7 +255,7 @@ MonoBehaviour:
       TopicID: archeologist
     Text: Oh, where to start? Well, first of all they are really old, they existed
       long before our great Kingdom of Obrein has been founded on this continent.
-      A different civilization has lived here, and we acll them the Precursors.
+      A different civilization has lived here, and we call them the Precursors.
     FactsToLearn:
     - FactID: precursors_ancientCivilization
     - FactID: precursors_longDead
@@ -309,7 +309,7 @@ MonoBehaviour:
       TopicID: archeologist
     Text: It is indeed. But the Family of Woodstock is really supportive of our project.
       The Lord Woodstock himself comes here from time to time to see the progress.
-      Is't that wonderful? He is not one of those royal snobs living in the royal
+      Isn't that wonderful? He is not one of those royal snobs living in the royal
       bubble, but really cares about us normal people and our history!
     FactsToLearn:
     - FactID: lordWoodstock_fundsExcavations
