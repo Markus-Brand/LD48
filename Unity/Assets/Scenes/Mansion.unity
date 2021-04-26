@@ -313,7 +313,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!1 &537165974
 GameObject:
@@ -433,15 +433,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.073
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.599
+      value: -1.46
       objectReference: {fileID: 0}
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -489,38 +489,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
---- !u!1 &1121809324 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
-  m_PrefabInstance: {fileID: 1121809323}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1121809325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1121809324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DisplayName: Say Hello
-  Conditions: []
-  Dialogue:
-  - Speaker:
-      TopicID: you
-    Text: Hello Lord Woodstock!
-    FactsToLearn: []
-  - Speaker:
-      TopicID: lordWoodstock
-    Text: Hello World!
-    FactsToLearn: []
-  RepeatedDialogue: []
-  DialogueDone:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1237340422
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,12 +644,59 @@ MonoBehaviour:
   Conditions: []
   Dialogue:
   - Speaker:
+      TopicID: lordWoodstock
+    Text: You said that there is something important to talk about?
+    FactsToLearn: []
+  - Speaker:
       TopicID: severin
-    Text: Hello
+    Text: Indeed. The King hired an investigator to investigate the death of his
+      father.
     FactsToLearn: []
   - Speaker:
       TopicID: lordWoodstock
-    Text: Hi
+    Text: Oh, I see.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: lordWoodstock
+    Text: Do you think it will endanger our project?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: severin
+    Text: No, we should be safe.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: lordWoodstock
+    Text: Will he find out that you did it?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: severin
+    Text: No, I left no evidence. The vial is hidden behind a loose brick in my chambers
+      that nobody else knows about.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: lordWoodstock
+    Text: Very good Severin.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: severin
+    Text: So how is the project coming along?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: lordWoodstock
+    Text: I recently talked to the contact again. It is coming along nicely. At this
+      rate, we will be ready to perform the ritual in a few months.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: severin
+    Text: That is good to hear.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: lordWoodstock
+    Text: You should depart soon, so that nobody will become suspicious of us.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: severin
+    Text: Yes my Lord.
     FactsToLearn: []
   RepeatedDialogue: []
   DialogueDone:
@@ -711,8 +726,77 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1850070500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370473, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370473, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2423230811885516303, guid: 8c2b35d483a092646a882a373a78e367, type: 3}
+    - target: {fileID: 1593659130315370475, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: Person.TopicID
+      value: severin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: m_Name
+      value: Severin
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
 --- !u!1001 &1909935588
 PrefabInstance:
   m_ObjectHideFlags: 0
