@@ -22,7 +22,6 @@ public class RuinNavigationManager : MonoBehaviour
 	public GameObject InsideStuff;
 	public GameObject TargetRoomStuff;
 	public SpriteRenderer SymbolRenderer;
-	public Light2D GlobalLight;
 	public SpriteRenderer FadeToBlack;
 	
 	public List<Sprite> SymbolSprites;
@@ -82,7 +81,6 @@ public class RuinNavigationManager : MonoBehaviour
 		OutsideStuff.SetActive(outside);
 		InsideStuff.SetActive(!outside && !targetReached);
 		TargetRoomStuff.SetActive(!outside && targetReached);
-		GlobalLight.intensity = outside ? 1 : 0.4f;
 		if (!outside &&!targetReached) {
 			var r = new Random(HashState() + 1);
 			var spriteIndex = r.Next() % SymbolSprites.Count;
