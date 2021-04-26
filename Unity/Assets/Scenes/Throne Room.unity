@@ -1063,8 +1063,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Ask to Investigate Woodstock Manor
   Conditions:
-  - FactID: ruins_weirdStructure
-  - FactID: lordWoodstock_fascinatedByAru
+  - FactID: lordWoodstock_exploredRuins
   Dialogue:
   - Speaker:
       TopicID: richard3
