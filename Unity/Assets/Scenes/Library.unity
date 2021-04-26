@@ -545,6 +545,13 @@ PrefabInstance:
         as reduced muscle strength, vomiting, and depression</fact>. These vague
         symptoms make it popular among assassins.
 
+
+
+
+
+
+
+
         <size=64>Alcohol</size>
 
 
@@ -553,7 +560,7 @@ PrefabInstance:
         by its classification as a poison.
 
 
-        Nevertheless the consumption
+        Nevertheless, the consumption
         of large amounts can result in death.'
       objectReference: {fileID: 0}
     - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
