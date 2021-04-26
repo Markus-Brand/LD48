@@ -67,7 +67,7 @@ public class HoverMaster : MonoBehaviour
 	private float _defaultTextSize;
 	private bool _hoveringWorldObject;
 
-	public bool DisableWorldHoverElements => Notebook.GetInstance().IsOpen() || FindObjectsOfType<DocumentOverlay>(true).Length > 0; // TODO also open documents
+	public bool DisableWorldHoverElements => Notebook.GetInstance().IsOpen() || FindObjectsOfType<DocumentOverlay>(true).Length > 0;
 
 	private void Update()
 	{
