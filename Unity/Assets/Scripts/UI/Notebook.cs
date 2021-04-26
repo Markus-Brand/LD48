@@ -32,7 +32,7 @@ public class Notebook : MonoBehaviour
 		foreach (var topic in FactManager.Instance.Topics) {
 			var discoveredFactsOfTopic = GetDiscoveredFactsOfTopic(topic);
 			if (discoveredFactsOfTopic.Count == 0) continue;
-			var topicText = topic.CurrentName + "\n";
+			var topicText = "<size=130%><align=center>" + topic.CurrentName + "</align></size>\n\n";
 			foreach (var fact in discoveredFactsOfTopic) {
 				topicText += "- " + fact.Text + "\n";
 			}
@@ -45,12 +45,12 @@ public class Notebook : MonoBehaviour
 
 	public static string GetNotebookTocText()
 	{
-		var result = "<size=150%>    Table of Contents</size>\n\n";
+		var result = "<size=200%><align=center>Table of Contents</align></size>\n\n";
 
 		foreach (var topic in FactManager.Instance.Topics) {
 			var discoveredFactsOfTopic = GetDiscoveredFactsOfTopic(topic);
 			if (discoveredFactsOfTopic.Count == 0) continue;
-			result += "- <link=topic:" + topic.InternalID + ">" + topic.CurrentName + "</link>\n";
+			result += "> <link=topic:" + topic.InternalID + ">" + topic.CurrentName + "</link>\n";
 		}
 
 		return result;
