@@ -19,6 +19,7 @@ public class RuinNavigationManager : MonoBehaviour
 	public GameObject OutsideStuff;
 	public GameObject InsideStuff;
 	public GameObject TargetRoomStuff;
+	public GameObject TargetRoom2Stuff;
 	public SpriteRenderer SymbolRenderer;
 	public SpriteRenderer FadeToBlack;
 	
@@ -79,10 +80,12 @@ public class RuinNavigationManager : MonoBehaviour
 	{
 		var outside = IsOutside;
 		var targetReached = !outside && _navigations.SequenceEqual(new[] {true, true, false, false, true, true});
+		var target2Reached = !outside && _navigations.SequenceEqual(new[] {true, false, false, true, false, true});
 		OutsideStuff.SetActive(outside);
-		InsideStuff.SetActive(!outside && !targetReached);
+		InsideStuff.SetActive(!outside && !targetReached && !target2Reached);
 		TargetRoomStuff.SetActive(!outside && targetReached);
-		if (!outside &&!targetReached) {
+		TargetRoom2Stuff.SetActive(!outside && target2Reached);
+		if (!outside &&!targetReached && !target2Reached) {
 			var r = new Random(HashState() + 1);
 			var spriteIndex = r.Next() % SymbolSprites.Count;
 			var rotation = (r.Next() % 4) * 90;
