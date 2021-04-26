@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="LD48 Source Files" pattern="file[rider.module]:Assets//*&amp;&amp;!file[rider.module]:Assets/TextMesh Pro//*||file:Unity.sln||file:Assembly-CSharp.csproj||file[rider.module]:ProjectSettings//*" />
+</component>
