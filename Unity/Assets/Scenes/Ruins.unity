@@ -321,6 +321,45 @@ MonoBehaviour:
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &74895462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74895458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Chat about the Aru
+  Conditions:
+  - FactID: precursors_aru
+  Dialogue:
+  - Speaker:
+      TopicID: you
+    Text: So, this civilization was called Aru?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: archeologist
+    Text: Yes, that is what they called themselves. Quite fascinating, isn't it?
+      Did you know that their language is written from right to left? We just discovered
+      that today!
+    FactsToLearn:
+    - FactID: precursorLanguage_rtl
+  - Speaker:
+      TopicID: you
+    Text: No, I did not know that before. Thank you.
+    FactsToLearn: []
+  RepeatedDialogue:
+  - Speaker:
+      TopicID: archeologist
+    Text: These old civilizations are so fascinating!
+    FactsToLearn: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &138968045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1014,7 +1053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &611559947
 Transform:
   m_ObjectHideFlags: 0
