@@ -2,8 +2,8 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-[RequireComponent(typeof(DialogueOption))]
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(HoverTint))]
 public class DialoguePerson : MonoBehaviour, IHoverInfo
 {
 	public TopicReference Person;

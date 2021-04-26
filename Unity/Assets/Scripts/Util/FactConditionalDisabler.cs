@@ -6,7 +6,8 @@ using WgEventSystem.Events;
 public class FactConditionalDisabler : MonoBehaviour
 {
 	public bool Invisible;
-
+	public bool DisableCollider = true;
+	
 	public FactReference VisibleOnce;
 	public FactReference VisibleUntil;
 
@@ -27,6 +28,6 @@ public class FactConditionalDisabler : MonoBehaviour
 	public void UpdateVisibilty()
 	{
 		if (Invisible && _spriteRenderer != null) _spriteRenderer.enabled = Present;
-		if (_collider != null) _collider.enabled = Present;
+		if (DisableCollider && _collider != null) _collider.enabled = Present;
 	}
 }

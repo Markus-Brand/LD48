@@ -169,6 +169,8 @@ GameObject:
   - component: {fileID: 450440894}
   - component: {fileID: 450440893}
   - component: {fileID: 450440892}
+  - component: {fileID: 450440895}
+  - component: {fileID: 450440896}
   m_Layer: 0
   m_Name: Poison
   m_TagString: Untagged
@@ -255,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Person:
-    TopicID: you
+    TopicID: MercuryVial
 --- !u!114 &450440893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +277,7 @@ MonoBehaviour:
       TopicID: you
     Text: Mercury! I knew it!
     FactsToLearn:
-    - FactID: 
+    - FactID: severin_responsibleForKingDeath
   RepeatedDialogue: []
   DialogueDone:
     m_PersistentCalls:
@@ -318,6 +320,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &450440895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450440889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83eb4e8e4c80482a9ca8f640ba8f4862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &450440896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450440889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5186a356604e6a93e0dffdccae77a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Invisible: 1
+  DisableCollider: 1
+  VisibleOnce:
+    FactID: 
+  VisibleUntil:
+    FactID: severin_responsibleForKingDeath
 --- !u!1 &949026558
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +706,8 @@ GameObject:
   - component: {fileID: 1659839187}
   - component: {fileID: 1659839188}
   - component: {fileID: 1659839189}
+  - component: {fileID: 1659839190}
+  - component: {fileID: 1659839191}
   m_Layer: 0
   m_Name: BrickClosed
   m_TagString: Untagged
@@ -802,6 +836,42 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.35, y: 0.75}
   m_EdgeRadius: 0
+--- !u!114 &1659839190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659839185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5186a356604e6a93e0dffdccae77a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Invisible: 1
+  DisableCollider: 0
+  VisibleOnce:
+    FactID: 
+  VisibleUntil:
+    FactID: severin_responsibleForKingDeath
+--- !u!114 &1659839191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659839185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5186a356604e6a93e0dffdccae77a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Invisible: 0
+  DisableCollider: 1
+  VisibleOnce:
+    FactID: severin_hiddenPlaceInOffice
+  VisibleUntil:
+    FactID: 
 --- !u!1 &1672880853
 GameObject:
   m_ObjectHideFlags: 0
