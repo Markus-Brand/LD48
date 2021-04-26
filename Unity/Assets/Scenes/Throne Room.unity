@@ -707,11 +707,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1608125567}
   - component: {fileID: 1608125566}
-  - component: {fileID: 1608125565}
+  - component: {fileID: 1608125568}
+  - component: {fileID: 1608125561}
   - component: {fileID: 1608125564}
   - component: {fileID: 1608125563}
-  - component: {fileID: 1608125561}
-  - component: {fileID: 1608125568}
+  - component: {fileID: 1608125562}
   m_Layer: 0
   m_Name: King
   m_TagString: Untagged
@@ -735,6 +735,82 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.45, y: 2.5}
   m_Direction: 0
+--- !u!114 &1608125562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608125560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Tell about the mercury poison
+  Conditions:
+  - FactID: george4_wasPoisoned
+  Dialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: So you have found out about the disease that killed my father? How can
+      it be cured?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: It is no disease that killed your father! Based on the specific ways his
+      body failed him in his last days, I think it likely that he was poisoned.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: Poisoned?! You mean that somebody assassinated my father?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Indeed. Somebody must have mixed some mercury into his food.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: ...
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: Hm...
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: ...
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: This would be dreadful if it were true, even more so, since my father was
+      rather paranoid and lonely in his last days.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: The only people that he trusted were his wife, his advisor, and me, his
+      son. I cannot imagine that any of those two people wanted him any harm!
+    FactsToLearn:
+    - FactID: severin_isPoisonSuspect
+    - FactID: QueenDowager_isPoisonSuspect
+  - Speaker:
+      TopicID: richard3
+    Text: Please investigate this further. I need to know if I can trust these people.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Yes, I will do so, your majesty.
+    FactsToLearn: []
+  RepeatedDialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: Only me, my mother and our advisor yould have poisoned my father. Please
+      continue investigating who could have done this.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Yes, I will do so, your majesty.
+    FactsToLearn: []
 --- !u!114 &1608125563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,20 +884,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Person:
     TopicID: richard3
---- !u!114 &1608125565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608125560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d14253920f449b384ea6a3561286fd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 10
-  rotationSpeed: 200
 --- !u!212 &1608125566
 SpriteRenderer:
   m_ObjectHideFlags: 0

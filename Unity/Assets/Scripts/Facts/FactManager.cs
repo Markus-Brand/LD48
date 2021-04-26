@@ -91,8 +91,12 @@ public class FactManager : MonoBehaviour
 	public void GeneratePuml()
 	{
 		const string startNodeName = "Start";
+
+		var validFactIDs = new HashSet<string> {startNodeName};
+
 		string content = "@startuml\ndigraph facts {\n\n";
 		foreach (var fact in AllFacts.Values) {
+			validFactIDs.Add(fact.ID);
 			content += fact.ID + " [label =\"" + fact.ID + "\\n" + fact.Text + "\"]\n";
 		}
 		content += "\n";
@@ -128,9 +132,10 @@ public class FactManager : MonoBehaviour
 						}
 						foreach (var dialogueElement in dialogueOption.Dialogue.Concat(dialogueOption.RepeatedDialogue)) {
 							foreach (var factToLearn in dialogueElement.FactsToLearn) {
-								foreach (var condition in dialogueOptionConditions) {
-									content += dialogueID + " -> " + factToLearn.FactID + "\n";
+								if (!validFactIDs.Contains(factToLearn.FactID)) {
+									Debug.LogError("Invalid Fact reference to '" + factToLearn.FactID + "' in " + sceneName + " > " + dialoguePerson.Person.TopicID + " > " + dialogueOption.DisplayName + " > " + dialogueElement.Text);
 								}
+								content += dialogueID + " -> " + factToLearn.FactID + "\n";
 							}
 						}
 					}

@@ -6,9 +6,13 @@ george4_diedMysteriously [label ="george4_diedMysteriously\ndied from a mysterio
 george4_weirdSymptoms [label ="george4_weirdSymptoms\nhad weird symptoms shortly before his death"]
 george4_wasPoisoned [label ="george4_wasPoisoned\nwas probably poisoned"]
 george4_diedOneYearAgo [label ="george4_diedOneYearAgo\ndied exactly one year ago"]
+severin_wasFatherAdvisor [label ="severin_wasFatherAdvisor\nwas the advisor of King George III"]
+severin_isCurrentAdvisor [label ="severin_isCurrentAdvisor\nis still the advisor of the current King Richard III"]
+severin_isPoisonSuspect [label ="severin_isPoisonSuspect\nis one of the suspects for poisoning King Goerge IV"]
 castle_mysteriousEvents [label ="castle_mysteriousEvents\nMysterious events are happening in the castle."]
 library_canBeAccessed [label ="library_canBeAccessed\nKing Richard III granted you access"]
 easterEggs_lanternFact [label ="easterEggs_lanternFact\nPlaying with the lantern is fun"]
+QueenDowager_isPoisonSuspect [label ="QueenDowager_isPoisonSuspect\nis one of the suspects for poisoning King Goerge IV"]
 
 richard3_needsHelp -> george4_diedMysteriously
 castle_mysteriousEvents -> george4_diedMysteriously
@@ -22,6 +26,10 @@ richard3_needsHelp -> richard3_Ask_about_the_letter
 richard3_Ask_about_the_letter -> george4_diedOneYearAgo
 richard3_Ask_about_the_letter -> george4_diedMysteriously
 richard3_Ask_about_the_letter -> library_canBeAccessed
+richard3_Tell_about_the_mercury_poison [label ="richard3\nTell about the mercury poison"]
+george4_wasPoisoned -> richard3_Tell_about_the_mercury_poison
+richard3_Tell_about_the_mercury_poison -> severin_isPoisonSuspect
+richard3_Tell_about_the_mercury_poison -> QueenDowager_isPoisonSuspect
 
 }
 @enduml
