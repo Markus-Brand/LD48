@@ -20,18 +20,25 @@ george4_diedMysteriously -> george4_weirdSymptoms
 george4_weirdSymptoms -> george4_wasPoisoned
 
 'archeologist
+archeologist_Say_Hi [label =" <Dialogue>archeologist\nSay Hi"]
+Start -> archeologist_Say_Hi
 'richard3
-richard3_Ask_about_the_letter [label =" <Dialogue>richard3\nAsk about the letter"]
-richard3_needsHelp -> richard3_Ask_about_the_letter
-richard3_Ask_about_the_letter -> george4_diedOneYearAgo
-richard3_Ask_about_the_letter -> george4_diedMysteriously
-richard3_Ask_about_the_letter -> library_canBeAccessed
 richard3_Tell_about_the_mercury_poison [label =" <Dialogue>richard3\nTell about the mercury poison"]
 george4_wasPoisoned -> richard3_Tell_about_the_mercury_poison
 richard3_Tell_about_the_mercury_poison -> severin_isPoisonSuspect
 richard3_Tell_about_the_mercury_poison -> QueenDowager_isPoisonSuspect
 richard3_Tell_about_the_mercury_poison -> severin_wasFatherAdvisor
 richard3_Tell_about_the_mercury_poison -> severin_isCurrentAdvisor
+richard3_Ask_about_the_letter [label =" <Dialogue>richard3\nAsk about the letter"]
+richard3_needsHelp -> richard3_Ask_about_the_letter
+richard3_Ask_about_the_letter -> george4_diedOneYearAgo
+richard3_Ask_about_the_letter -> george4_diedMysteriously
+richard3_Ask_about_the_letter -> library_canBeAccessed
+'QueenDowager
+'severin
+'woodstock
+woodstock_Say_Hello [label =" <Dialogue>woodstock\nSay Hello"]
+Start -> woodstock_Say_Hello
 
 }
 @enduml
