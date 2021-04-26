@@ -145,6 +145,31 @@ MonoBehaviour:
     FactID: QueenDowager_isPoisonSuspect
   VisibleUntil:
     FactID: 
+--- !u!114 &11206946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11206944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Ask about George IV's death
+  Conditions:
+  - FactID: QueenDowager_isPoisonSuspect
+  Dialogue:
+  - Speaker:
+      TopicID: QueenDowager
+    Text: Ah yes, my dearest George. I mourn him to this very day.
+    FactsToLearn:
+    - FactID: QueenDowager_isSad
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &71700447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -152,6 +177,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1233016867419266204, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: DisplayName
+      value: Ask about George IV's death
+      objectReference: {fileID: 0}
+    - target: {fileID: -1233016867419266204, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: Dialogue.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1233016867419266204, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: Conditions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1233016867419266204, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: Dialogue.Array.data[0].Text
+      value: Ah yes, my dearest George. I mourn him to this very day.
+      objectReference: {fileID: 0}
+    - target: {fileID: -1233016867419266204, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: Conditions.Array.data[0].FactID
+      value: QueenDowager_isPoisonSuspect
+      objectReference: {fileID: 0}
+    - target: {fileID: -1233016867419266204, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+      propertyPath: Dialogue.Array.data[0].Speaker.TopicID
+      value: QueenDowager
+      objectReference: {fileID: 0}
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -1155,6 +1204,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1843904045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1593659130315370479, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
+  m_PrefabInstance: {fileID: 718197226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1843904046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843904045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5186a356604e6a93e0dffdccae77a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Invisible: 1
+  VisibleOnce:
+    FactID: 
+  VisibleUntil:
+    FactID: george4_wasPoisoned
 --- !u!20 &2110760527 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 2952276370686902163, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
