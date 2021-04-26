@@ -26,7 +26,9 @@ public class TextEventHandler : MonoBehaviour, IPointerClickHandler
 		int linkIndex = TMP_TextUtilities.FindIntersectingLink(_textComponent, Input.mousePosition, _camera);
 		if (linkIndex != -1) {
 			var link = _textComponent.textInfo.linkInfo[linkIndex];
-			ClickedLink.Invoke(link.GetLinkID());
+			if (link.linkTextfirstCharacterIndex > _textComponent.firstVisibleCharacter) {
+				ClickedLink.Invoke(link.GetLinkID());
+			}
 		}
 	}
 }
