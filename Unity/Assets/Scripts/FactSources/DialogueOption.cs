@@ -21,11 +21,9 @@ public class DialogueOption : MonoBehaviour
 
 	public void Execute()
 	{
-		if (HasBeenDoneAlready) {
-			if (RepeatedDialogue.Count == 0) return;
+		if (HasBeenDoneAlready && RepeatedDialogue.Count > 0) {
 			RepeatedDialogue[0].Execute(RepeatedDialogue, 1);
-		} else {
-			if (Dialogue.Count == 0) return;
+		} else if (Dialogue.Count != 0) {
 			Dialogue[0].Execute(Dialogue, 1);
 			DialogueDoneSet.Add(DisplayName);
 		}

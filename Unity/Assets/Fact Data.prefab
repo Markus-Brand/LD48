@@ -657,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanBeSpeaker: 1
-  Name: 
+  Name: Archeologist
   Names: []
 --- !u!1 &6668912127542683565
 GameObject:
