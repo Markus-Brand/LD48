@@ -43,6 +43,19 @@ public class Notebook : MonoBehaviour
 		return result;
 	}
 
+	public static string GetNotebookTocText()
+	{
+		var result = "<size=150%>    Table of Contents</size>\n\n";
+
+		foreach (var topic in FactManager.Instance.Topics) {
+			var discoveredFactsOfTopic = GetDiscoveredFactsOfTopic(topic);
+			if (discoveredFactsOfTopic.Count == 0) continue;
+			result += "- <link=topic:" + topic.InternalID + ">" + topic.CurrentName + "</link>\n";
+		}
+
+		return result;
+	}
+
 	private static List<Fact> GetDiscoveredFactsOfTopic(Topic topic)
 	{
 		return topic.Facts.Where(fact => fact.IsDiscovered).ToList();
@@ -74,6 +87,8 @@ public class Notebook : MonoBehaviour
 
 	private int _notesPage = 0;
 	private List<string> TopicTexts = new List<string>();
+	private string TocText = "";
+	private Dictionary<string, int> TopicIdToNotesPage;
 
 	private void Start()
 	{
@@ -160,7 +175,7 @@ public class Notebook : MonoBehaviour
 		NotesBookmark.SetActive(false);
 		MapBookmark.SetActive(true);
 		PreviousPageButton.SetActive(true);
-		NextPageButton.SetActive(TopicTexts.Count >= 3);
+		NextPageButton.SetActive(TopicTexts.Count >= 2);
 	}
 
 	public void Close()
@@ -192,11 +207,11 @@ public class Notebook : MonoBehaviour
 	{
 		if (MapContent.activeSelf) {
 			SwitchToNotes();
-		} else if (_notesPage < TopicTexts.Count / 2) {
+		} else if (_notesPage < TopicTexts.Count / 2 + 1) {
 			_notesPage++;
 			UpdateText();
 			PreviousPageButton.SetActive(true);
-			NextPageButton.SetActive(TopicTexts.Count > _notesPage * 2 + 2);
+			NextPageButton.SetActive(TopicTexts.Count > _notesPage * 2 + 1);
 		}
 	}
 
@@ -208,13 +223,19 @@ public class Notebook : MonoBehaviour
 	private void UpdateText()
 	{
 		TopicTexts = GetNotebookFactText();
-		if (TopicTexts.Count > 0) {
-			NotesTextLeft.text = TopicTexts[_notesPage * 2];
+		TocText = GetNotebookTocText();
+		var availableTopics = FactManager.Instance.Topics.Where(t => GetDiscoveredFactsOfTopic(t).Count > 0).ToList();
+		TopicIdToNotesPage = availableTopics.ToDictionary(t => t.InternalID, t => (availableTopics.IndexOf(t) + 1) / 2);
+		
+		if (_notesPage == 0) {
+			NotesTextLeft.text = TocText;
+		} else if (TopicTexts.Count > 1) {
+			NotesTextLeft.text = TopicTexts[_notesPage * 2 - 1];
 		} else {
 			NotesTextLeft.text = "";
 		}
-		if (TopicTexts.Count > _notesPage * 2 + 1) {
-			NotesTextRight.text = TopicTexts[_notesPage * 2 + 1];
+		if (TopicTexts.Count > _notesPage * 2) {
+			NotesTextRight.text = TopicTexts[_notesPage * 2];
 		} else {
 			NotesTextRight.text = "";
 		}
@@ -223,5 +244,16 @@ public class Notebook : MonoBehaviour
 	public bool IsOpen()
 	{
 		return _open.IsTrueBy(0.1f);
+	}
+
+	public void PerformLinkAction(string action)
+	{
+		if (action.StartsWith("topic:")) {
+			var targetTopicId = action.Substring("topic:".Length);
+			_notesPage = TopicIdToNotesPage[targetTopicId];
+			UpdateText();
+		} else {
+			Debug.LogError("Cannot handle link action: " + action);
+		}
 	}
 }

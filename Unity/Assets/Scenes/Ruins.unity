@@ -3585,7 +3585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Reverse Cleansing Light
-  Conditions: []
+  Conditions:
+  - FactID: richard3_youDecide
   Dialogue:
   - Speaker:
       TopicID: you
@@ -3624,7 +3625,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplayName: Destroy Cleansing Light
-  Conditions: []
+  Conditions:
+  - FactID: richard3_youDecide
   Dialogue:
   - Speaker:
       TopicID: you
