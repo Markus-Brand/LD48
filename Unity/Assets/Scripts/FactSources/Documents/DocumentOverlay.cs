@@ -16,6 +16,13 @@ public class DocumentOverlay : MonoBehaviour
 		}
 	}
 
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			Dismiss();
+		}
+	}
+
 	public void Dismiss()
 	{
 		Destroy(gameObject);

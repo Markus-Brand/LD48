@@ -67,11 +67,11 @@ public class HoverMaster : MonoBehaviour
 	private float _defaultTextSize;
 	private bool _hoveringWorldObject;
 
-	public bool DisableWorldHoverElements => Notebook.GetInstance().IsOpen() || FindObjectsOfType<DocumentOverlay>(true).Length > 0;
+	public bool FullscreenUiOpen => Notebook.GetInstance().IsOpen() || FindObjectsOfType<DocumentOverlay>(true).Length > 0;
 
 	private void Update()
 	{
-		if (DisableWorldHoverElements && _hoveringWorldObject) {
+		if (FullscreenUiOpen && _hoveringWorldObject) {
 			ForceHide();
 		}
 		
@@ -182,7 +182,7 @@ public class HoverMaster : MonoBehaviour
 
 	public void ShowInfo(IHoverInfo hoverInfo)
 	{
-		if (DisableWorldHoverElements && !(hoverInfo is UIHoverInfo)) return;
+		if (FullscreenUiOpen && !(hoverInfo is UIHoverInfo)) return;
 		_hoveredObject = hoverInfo.GetTransform();
 		_hoveringWorldObject = !(hoverInfo is UIHoverInfo);
 		Text.text = hoverInfo.GetHoverText().Replace("\\n", "\n");
