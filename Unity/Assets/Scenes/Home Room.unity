@@ -203,7 +203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602763257}
   m_LocalRotation: {x: 0, y: 0, z: -0.096366875, w: 0.9953459}
-  m_LocalPosition: {x: -2.09, y: -0.21, z: 0}
+  m_LocalPosition: {x: -2.09, y: -1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -222,6 +222,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Overlay: {fileID: 4511240694025428753, guid: 5161ad0d224f0453294e36b53c236d24, type: 3}
+  OnDocumentOpen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 602763258}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: -6751597515445260605, guid: 8c2b35d483a092646a882a373a78e367, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Title: Letter from the King
   Text: 'To NAME, Investigator extaordinaire.
 
@@ -249,10 +264,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.6299988}
+  m_Offset: {x: 0, y: 0.45}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 1.2}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1.6, y: 0.9}
     newSize: {x: 1.6, y: 0.9}
     adaptiveTilingThreshold: 0.5
@@ -260,7 +275,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 0.8999999}
+  m_Size: {x: 1.6, y: 0.9}
   m_EdgeRadius: 0
 --- !u!114 &602763262
 MonoBehaviour:
