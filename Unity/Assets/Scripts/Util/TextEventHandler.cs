@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class DocumentEventHandler : MonoBehaviour, IPointerClickHandler
+public class TextEventHandler : MonoBehaviour, IPointerClickHandler
 {
 
 	public UnityEvent<string> ClickedLink;
