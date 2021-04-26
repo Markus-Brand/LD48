@@ -124,6 +124,7 @@ public class FactManager : MonoBehaviour
 			var scenePath = "Assets/Scenes/" + sceneName + ".unity";
 			var scene = EditorSceneManager.OpenScene(scenePath);
 			foreach (var rootGameObject in scene.GetRootGameObjects()) {
+				
 				var dialogues = rootGameObject.GetComponentsInChildren<DialoguePerson>();
 				foreach (var dialoguePerson in dialogues) {
 					content += "'" + dialoguePerson.Person.TopicID + "\n";
@@ -131,7 +132,7 @@ public class FactManager : MonoBehaviour
 						var dialogueID = dialoguePerson.Person.TopicID + "_" + dialogueOption.DisplayName.Replace(" ", "_");
 						
 						content += sceneName.Replace(" ", "_") + " -> " + dialogueID + "\n";
-						content += dialogueID + " [label =\" <Dialogue>" + dialoguePerson.Person.TopicID + "\\n" + dialogueOption.DisplayName + "\"]\n";
+						content += dialogueID + " [label =\"<Dialogue>" + dialoguePerson.Person.TopicID + "\\n" + dialogueOption.DisplayName + "\"]\n";
 
 						var dialogueOptionConditions = dialogueOption.Conditions.Select(f => f.FactID).ToList();
 						foreach (var condition in dialogueOptionConditions) {
@@ -148,6 +149,17 @@ public class FactManager : MonoBehaviour
 								content += dialogueID + " -> " + factToLearn.FactID + "\n";
 							}
 						}
+					}
+				}
+				
+				var documents = rootGameObject.GetComponentsInChildren<Document>();
+				foreach (var document in documents) {
+					var documentId = document.name.Replace(" ", "_");
+					
+					content += sceneName.Replace(" ", "_") + " -> " + documentId + "\n";
+					content += documentId + " [label =\"<Document>" + document.name + "\"]\n";
+					foreach (var factId in document.GetContainedFactIds()) {
+						content += documentId + " -> " + factId + "\n";
 					}
 				}
 			}

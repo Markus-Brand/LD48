@@ -32,7 +32,7 @@ woodstockManor_isUnlocked -> Mansion
 
 'richard3
 Throne_Room -> richard3_Tell_about_the_mercury_poison
-richard3_Tell_about_the_mercury_poison [label =" <Dialogue>richard3\nTell about the mercury poison"]
+richard3_Tell_about_the_mercury_poison [label ="<Dialogue>richard3\nTell about the mercury poison"]
 george4_wasPoisoned -> richard3_Tell_about_the_mercury_poison
 richard3_Tell_about_the_mercury_poison -> severin_isPoisonSuspect
 richard3_Tell_about_the_mercury_poison -> QueenDowager_isPoisonSuspect
@@ -40,7 +40,7 @@ richard3_Tell_about_the_mercury_poison -> severin_wasFatherAdvisor
 richard3_Tell_about_the_mercury_poison -> woodstockManor_isUnlocked
 richard3_Tell_about_the_mercury_poison -> severin_isInWoodstockManor
 Throne_Room -> richard3_Ask_about_the_letter
-richard3_Ask_about_the_letter [label =" <Dialogue>richard3\nAsk about the letter"]
+richard3_Ask_about_the_letter [label ="<Dialogue>richard3\nAsk about the letter"]
 richard3_needsHelp -> richard3_Ask_about_the_letter
 richard3_Ask_about_the_letter -> george4_diedOneYearAgo
 richard3_Ask_about_the_letter -> george4_diedMysteriously
@@ -48,12 +48,26 @@ richard3_Ask_about_the_letter -> library_canBeAccessed
 richard3_Ask_about_the_letter -> severin_doesNotTrustMe
 'QueenDowager
 'severin
+Library -> HistoryOfKings
+HistoryOfKings [label ="<Document>HistoryOfKings"]
+HistoryOfKings -> george4_weirdSymptoms
+Library -> DeathCauses
+DeathCauses [label ="<Document>DeathCauses"]
+DeathCauses -> george4_wasPoisoned
+Library -> TellThePoisonToKing
+TellThePoisonToKing [label ="<Document>TellThePoisonToKing"]
+Home_Room -> Letter_from_the_King
+Letter_from_the_King [label ="<Document>Letter from the King"]
+Letter_from_the_King -> richard3_needsHelp
+Letter_from_the_King -> richard3_needsHelp
 'archeologist
 Ruins -> archeologist_Say_Hi
-archeologist_Say_Hi [label =" <Dialogue>archeologist\nSay Hi"]
+archeologist_Say_Hi [label ="<Dialogue>archeologist\nSay Hi"]
+Ruins -> StoneOnWall
+StoneOnWall [label ="<Document>StoneOnWall"]
 'lordWoodstock
 Mansion -> lordWoodstock_Say_Hello
-lordWoodstock_Say_Hello [label =" <Dialogue>lordWoodstock\nSay Hello"]
+lordWoodstock_Say_Hello [label ="<Dialogue>lordWoodstock\nSay Hello"]
 
 }
 @enduml

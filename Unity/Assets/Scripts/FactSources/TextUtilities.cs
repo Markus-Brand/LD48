@@ -9,8 +9,8 @@ using Random = System.Random;
 public class TextUtilities
 {
 
-	private static Regex _factRegex = new Regex(@"<fact=(\w*)>(.*?)</fact>", RegexOptions.Singleline);
-	private static Regex _languageRegex = new Regex(@"<lang=(\w*)>(.*?)</lang>", RegexOptions.Singleline);
+	private static readonly Regex _factRegex = new Regex(@"<fact=(\w*)>(.*?)</fact>", RegexOptions.Singleline);
+	private static readonly Regex _languageRegex = new Regex(@"<lang=(\w*)>(.*?)</lang>", RegexOptions.Singleline);
 
 	private static Dictionary<Regex, int> _illegibleRegexes = new Dictionary<Regex, int> {
 		{_factRegex, 2}
@@ -71,5 +71,15 @@ public class TextUtilities
 			output.Append($"<font=\"{language.ToString()}\">{n.ToString()}</font>");
 		}
 		return output.ToString();
+	}
+
+	public static List<string> GetFactIdsInText(string text)
+	{
+		var matches = _factRegex.Matches(text);
+		var results = new List<string>();
+		for (int i = 0; i < matches.Count; i++) {
+			results.Add(matches[i].Groups[1].Value);
+		}
+		return results;
 	}
 }
