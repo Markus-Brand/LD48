@@ -46,11 +46,11 @@ public class DialogueManager : MonoBehaviour
 		TextBox.SetActive(false);
 	}
 
-	public void ShowDialogue(Speaker speaker, string text, Action onClose)
+	public void ShowDialogue(Topic speaker, string text, Action onClose)
 	{
 		if (IsCurrentlyActive) return;
 		_currentCloseAction = onClose;
-		SpeakerTextUi.text = speaker.GetDisplayName();
+		SpeakerTextUi.text = speaker.CurrentName;
 		TextUi.text = text;
 		SpeakerNameBox.SetActive(true);
 		TextBox.GetComponent<Image>().sprite = BoxWithName;

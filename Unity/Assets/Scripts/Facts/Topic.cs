@@ -15,6 +15,7 @@ public class Topic : MonoBehaviour
 		public bool Applicable => Condition.State == FactState.Discovered;
 	}
 
+	public bool CanBeSpeaker = true;
 	public string Name;
 	
 	public string InternalID => name;

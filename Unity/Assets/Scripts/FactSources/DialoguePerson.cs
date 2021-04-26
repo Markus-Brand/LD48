@@ -39,6 +39,6 @@ public class DialoguePerson : MonoBehaviour, IHoverInfo
 
 	public string GetHoverText()
 	{
-		return Person.CurrentName;
+		return Person.Topic.CurrentName;
 	}
 }

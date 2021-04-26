@@ -19,11 +19,13 @@ public class TopicReferenceEditor : PropertyDrawer
 				() => handler(""));
 
 		foreach (var topic in topics) {
-			var topicInternalID = topic.InternalID;
-			menu.AddItem(
-				new GUIContent($"{topicInternalID}"),
-				currentValue == topicInternalID,
-				() => handler(topicInternalID));
+			if (topic.CanBeSpeaker) {
+				var topicInternalID = topic.InternalID;
+				menu.AddItem(
+					new GUIContent($"{topicInternalID}"),
+					currentValue == topicInternalID,
+					() => handler(topicInternalID));
+			}
 		}
 
 		menu.ShowAsContext();
