@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanBeSpeaker: 1
-  Name: 
+  Name: Woodstock Manor
   Names: []
 --- !u!1 &5287752654287423739
 GameObject:
@@ -1460,7 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: is ver
+  Text: is very sad about the death of her Husband
   Dependencies: []
   HelpText: 
 --- !u!1 &7867040843771909730
