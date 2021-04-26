@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
+
 
 public class DialogueOption : MonoBehaviour
 {
@@ -11,7 +13,8 @@ public class DialogueOption : MonoBehaviour
 	[FormerlySerializedAs("conditions")] public List<FactReference> Conditions;
 	[FormerlySerializedAs("dialogue")] public List<DialogueElement> Dialogue;
 	[FormerlySerializedAs("repeatedDialogue")] public List<DialogueElement> RepeatedDialogue;
-
+	public UnityEvent DialogueDone;
+	
 	public bool IsAvailable()
 	{
 		return Conditions.All(c => c.Discovered);
@@ -22,9 +25,9 @@ public class DialogueOption : MonoBehaviour
 	public void Execute()
 	{
 		if (HasBeenDoneAlready && RepeatedDialogue.Count > 0) {
-			RepeatedDialogue[0].Execute(RepeatedDialogue, 1);
+			RepeatedDialogue[0].Execute(RepeatedDialogue, 1, DialogueDone);
 		} else if (Dialogue.Count != 0) {
-			Dialogue[0].Execute(Dialogue, 1);
+			Dialogue[0].Execute(Dialogue, 1, DialogueDone);
 			DialogueDoneSet.Add(DisplayName);
 		}
 	}
