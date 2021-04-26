@@ -887,31 +887,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Exploration Log
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+    - {fileID: 7595178620678008092, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+    - {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
---- !u!1 &1398667457 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7647103215889876218, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
-  m_PrefabInstance: {fileID: 1398667456}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1398667458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398667457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b5186a356604e6a93e0dffdccae77a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Invisible: 0
-  DisableCollider: 1
-  VisibleOnce:
-    FactID: lordWoodstock_summoned
-  VisibleUntil:
-    FactID: 
 --- !u!1 &1660783139
 GameObject:
   m_ObjectHideFlags: 0

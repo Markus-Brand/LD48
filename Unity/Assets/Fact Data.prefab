@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: called Kyr by the Precursors
   Dependencies:
-  - FactID: kyr_existence
+  - FactID: precursorLanguage_patterns
   HelpText: 
 --- !u!1 &445128255215535796
 GameObject:
@@ -229,7 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: read from right to left
-  Dependencies: []
+  Dependencies:
+  - FactID: ruins_relatedToConspiracy
   HelpText: 
 --- !u!1 &1638914867744657744
 GameObject:
@@ -610,8 +611,8 @@ MonoBehaviour:
   Name: Ancient Runes
   Names:
   - Condition:
-      FactID: 
-    Name: 
+      FactID: CleansingLight_name
+    Name: Cleansing Light
 --- !u!1 &2469772383765151126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,7 +2464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: 'there is a path through the ruins: LLRRLL'
   Dependencies:
-  - FactID: lordWoodstock_summoned
+  - FactID: lordWoodstock_fascinatedByAru
   HelpText: I need to search Woodstock Manor. Maybe the King can distract the Lord.
 --- !u!1 &7152787181560434355
 GameObject:
@@ -2510,7 +2511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: were at war with the Kyr
   Dependencies:
-  - FactID: kyr_nameKyr
+  - FactID: precursorLanguage_patterns
   HelpText: 
 --- !u!1 &7209137280166013742
 GameObject:
