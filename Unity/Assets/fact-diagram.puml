@@ -32,6 +32,8 @@ ruins_pathLogs [label ="ruins_pathLogs\nthere is a path through the ruins: LLRRL
 ruins_pathMachine [label ="ruins_pathMachine\nthere is another path through the ruins: LRRLRL"]
 conspiracy_tryRitual [label ="conspiracy_tryRitual\nmembers want to execute some ritual"]
 oro_sok_conspiracyContact [label ="oro_sok_conspiracyContact\ncontact person of the conspiracy"]
+oro_sok_summoned [label ="oro_sok_summoned\nappeared as apparition in the ruins"]
+oro_sok_aruResearcher [label ="oro_sok_aruResearcher\nAru researcher"]
 precursors_ancientCivilization [label ="precursors_ancientCivilization\nancient civilization"]
 precursors_longDead [label ="precursors_longDead\napparently disappeared thousand"]
 precursors_leftRuins [label ="precursors_leftRuins\nleft ruins"]
@@ -42,6 +44,10 @@ precursorLanguage_rtl [label ="precursorLanguage_rtl\nread from right to left"]
 precursorLanguage_patterns [label ="precursorLanguage_patterns\nI can decipher them"]
 kyr_existence [label ="kyr_existence\nRuins near the city of Drumchapel"]
 kyr_nameKyr [label ="kyr_nameKyr\ncalled Kyr by the Precursors"]
+kyrLanguage_deciphered [label ="kyrLanguage_deciphered\nI can fully decipher this"]
+CleansingLight_name [label ="CleansingLight_name\nprecursor weapon"]
+CleansingLight_operation1 [label ="CleansingLight_operation1\nrunes power this machine, I can activate them in clockwise order"]
+CleansingLight_operation2 [label ="CleansingLight_operation2\nancient chants can activate the machine"]
 
 richard3_needsHelp -> george4_diedMysteriously
 george4_diedMysteriously -> george4_weirdSymptoms
@@ -51,11 +57,17 @@ ruins_weirdStructure -> lordWoodstock_exploredRuins
 lordWoodstock_fundsExcavations -> lordWoodstock_fascinatedByAru
 lordWoodstock_exploredRuins -> lordWoodstock_summoned
 lordWoodstock_summoned -> ruins_pathLogs
+CleansingLight_operation1 -> oro_sok_summoned
+oro_sok_summoned -> oro_sok_aruResearcher
 precursors_ancientCivilization -> precursors_aru
 kyr_nameKyr -> precursors_war
 precursorLanguage_vowels -> precursorLanguage_patterns
 precursorLanguage_rtl -> precursorLanguage_patterns
 kyr_existence -> kyr_nameKyr
+kyr_existence -> kyrLanguage_deciphered
+precursorLanguage_patterns -> CleansingLight_name
+CleansingLight_name -> CleansingLight_operation1
+ -> CleansingLight_operation2
 
 Throne_Room [label = " <Scene> Throne Room"]
 richard3_needsHelp -> Throne_Room
