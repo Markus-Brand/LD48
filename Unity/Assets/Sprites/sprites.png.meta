@@ -71,6 +71,9 @@ TextureImporter:
   - first:
       213: 3950689983899740486
     second: door
+  - first:
+      213: -3525548655422949061
+    second: ArrowUp
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -630,7 +633,7 @@ TextureImporter:
         width: 28
         height: 61
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -638,6 +641,27 @@ TextureImporter:
       bones: []
       spriteID: 649a904db9ba3d630800000000000000
       internalID: 3950689983899740486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ArrowUp
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 526
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39b8235d2cb21fc0800000000000000
+      internalID: -3525548655422949061
       vertices: []
       indices: 
       edges: []
