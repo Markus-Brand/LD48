@@ -18,11 +18,17 @@ severin_responsibleForKingDeath [label ="severin_responsibleForKingDeath\npoison
 library_canBeAccessed [label ="library_canBeAccessed\nKing Richard III granted you access"]
 easterEggs_lanternFact [label ="easterEggs_lanternFact\nPlaying with the lantern is fun"]
 lordWoodstock_partOfConspiracy [label ="lordWoodstock_partOfConspiracy\nmember of the conspiracy"]
+lordWoodstock_fundsExcavations [label ="lordWoodstock_fundsExcavations\nheavily funds local archeology projects"]
 QueenDowager_isPoisonSuspect [label ="QueenDowager_isPoisonSuspect\nis one of the suspects for poisoning King Goerge IV"]
 QueenDowager_isSad [label ="QueenDowager_isSad\nis very sad about the death of her Husband"]
 woodstockManor_isUnlocked [label ="woodstockManor_isUnlocked\nis probably worth a visit to learn about Severin"]
+ruins_relatedToConspiracy [label ="ruins_relatedToConspiracy\nrelated to the Conspiracy"]
+ruins_fromPrecursors [label ="ruins_fromPrecursors\nleft by the precursors"]
 conspiracy_tryRitual [label ="conspiracy_tryRitual\nmembers want to execute some ritual"]
 oro_sok_conspiracyContact [label ="oro_sok_conspiracyContact\ncontact person of the conspiracy"]
+precursors_ancientCivilization [label ="precursors_ancientCivilization\nancient civilization"]
+precursors_longDead [label ="precursors_longDead\napparently disappeared thousand"]
+precursors_leftRuins [label ="precursors_leftRuins\nleft ruins"]
 
 richard3_needsHelp -> george4_diedMysteriously
 george4_diedMysteriously -> george4_weirdSymptoms
@@ -34,8 +40,11 @@ Library [label = " <Scene> Library"]
 library_canBeAccessed -> Library
 Home_Room [label = " <Scene> Home Room"]
 Ruins [label = " <Scene> Ruins"]
+ruins_relatedToConspiracy -> Ruins
 Mansion [label = " <Scene> Mansion"]
 woodstockManor_isUnlocked -> Mansion
+Severin_Room [label = " <Scene> Severin Room"]
+severin_hiddenPlaceInOffice -> Severin_Room
 
 Throne_Room -> richard3_Tell_about_the_mercury_poisoning
 richard3_Tell_about_the_mercury_poisoning [label ="<Dialogue>richard3\nTell about the mercury poisoning"]
@@ -70,16 +79,28 @@ Letter_from_the_King -> richard3_needsHelp
 Letter_from_the_King -> richard3_needsHelp
 Ruins -> archeologist_Say_Hi
 archeologist_Say_Hi [label ="<Dialogue>archeologist\nSay Hi"]
+Ruins -> archeologist_Ask_About_Ruins
+archeologist_Ask_About_Ruins [label ="<Dialogue>archeologist\nAsk About Ruins"]
+archeologist_Ask_About_Ruins -> precursors_ancientCivilization
+archeologist_Ask_About_Ruins -> precursors_longDead
+archeologist_Ask_About_Ruins -> precursors_leftRuins
+archeologist_Ask_About_Ruins -> ruins_fromPrecursors
+Ruins -> archeologist_Ask_about_the_Funding_of_the_Project
+archeologist_Ask_about_the_Funding_of_the_Project [label ="<Dialogue>archeologist\nAsk about the Funding of the Project"]
+archeologist_Ask_about_the_Funding_of_the_Project -> lordWoodstock_fundsExcavations
 Ruins -> StoneOnWall
 StoneOnWall [label ="<Document>StoneOnWall"]
 Mansion -> __Spying
 __Spying [label ="<Dialogue>_\nSpying"]
-__Spying -> severin_responsibleForKingDeath
 __Spying -> severin_hiddenPlaceInOffice
 __Spying -> oro_sok_conspiracyContact
 __Spying -> conspiracy_tryRitual
 __Spying -> severin_partOfConspiracy
 __Spying -> lordWoodstock_partOfConspiracy
+__Spying -> ruins_relatedToConspiracy
+Severin_Room -> MercuryVial_Inspect
+MercuryVial_Inspect [label ="<Dialogue>MercuryVial\nInspect"]
+MercuryVial_Inspect -> severin_responsibleForKingDeath
 
 }
 @enduml

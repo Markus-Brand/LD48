@@ -120,6 +120,8 @@ public class FactManager : MonoBehaviour
 		var sceneToUnlockFact = notebook.GetComponentsInChildren<MapEntry>(true)
 			.ToDictionary(m => m.SceneName, m => m.UnlockCondition.FactID);
 		PrefabUtility.UnloadPrefabContents(notebook);
+		sceneToUnlockFact["Severin Room"] = "severin_hiddenPlaceInOffice";
+		
 		foreach (var scene in sceneToUnlockFact.Keys) {
 			content += Sanitize(scene) + " [label = \" <Scene> " + scene + "\"]\n";
 			if (sceneToUnlockFact[scene] != "") {

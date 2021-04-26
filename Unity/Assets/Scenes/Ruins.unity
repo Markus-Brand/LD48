@@ -225,14 +225,102 @@ MonoBehaviour:
     FactsToLearn: []
   - Speaker:
       TopicID: archeologist
-    Text: Oh, you want to try for yourself? Sure, just go inside. Be sure to tell
-      me if you find anytrhing interesting
+    Text: Oh, you want to try for yourself, I see? Sure, just go inside. Be sure
+      to tell me if you find anytrhing interesting.
+    FactsToLearn: []
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &74895460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74895458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Ask About Ruins
+  Conditions: []
+  Dialogue:
+  - Speaker:
+      TopicID: you
+    Text: What have you found out about these ruins already?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: archeologist
+    Text: Oh, where to start? Well, first of all they are really old, they existed
+      long before our great Kingdom of Obrein has been founded on this continent.
+      A different civilization has lived here, and we acll them the Precursors.
+    FactsToLearn:
+    - FactID: precursors_ancientCivilization
+    - FactID: precursors_longDead
+    - FactID: precursors_leftRuins
+    - FactID: ruins_fromPrecursors
+  - Speaker:
+      TopicID: archeologist
+    Text: 'We do not understand the symbols on the walls inside this maze of connected
+      rooms. It is not their writing font, that much we know. We have discovered
+      multiple documents from them, and can already understand part of it. '
+    FactsToLearn: []
+  - Speaker:
+      TopicID: archeologist
+    Text: Those symbols on the other hand are not understood at all. Some people
+      in my archeology team think that they might be magical, but I highly doubt
+      that. No <i>real</i> magic has ever been discovered, and I doubt that we will
+      be the first to do so.
+    FactsToLearn: []
+  RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &74895461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74895458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: Ask about the Funding of the Project
+  Conditions: []
+  Dialogue:
+  - Speaker:
+      TopicID: you
+    Text: Where did you get the financial resources for this big excavation project?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: archeologist
+    Text: 'Huh? Why do you ask that? '
     FactsToLearn: []
   - Speaker:
       TopicID: you
-    Text: Yes of course!
+    Text: Just curious. This has to be quite expensive, right?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: archeologist
+    Text: It is indeed. But the Family of Woodstock is really supportive of our project.
+      The Lord Woodstock himself comes here from time to time to see the progress.
+      Is't that wonderful? He is not one of those royal snobs living in the royal
+      bubble, but really cares about us normal people and our history!
+    FactsToLearn:
+    - FactID: lordWoodstock_fundsExcavations
+  - Speaker:
+      TopicID: you
+    Text: Yeah, sure...
     FactsToLearn: []
   RepeatedDialogue: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &174199741
 GameObject:
   m_ObjectHideFlags: 0

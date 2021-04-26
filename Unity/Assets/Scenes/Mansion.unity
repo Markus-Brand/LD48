@@ -677,17 +677,8 @@ MonoBehaviour:
     FactsToLearn: []
   - Speaker:
       TopicID: severin
-    Text: No, we should be safe.
-    FactsToLearn: []
-  - Speaker:
-      TopicID: lordWoodstock
-    Text: Will he find out that you did it?
-    FactsToLearn:
-    - FactID: severin_responsibleForKingDeath
-  - Speaker:
-      TopicID: severin
-    Text: No, I left no evidence. The vial is hidden behind a loose brick in my chambers
-      that nobody else knows about.
+    Text: No, we should be safe, I left no evidence. The vial is hidden behind a
+      loose brick in my chambers that nobody else knows about.
     FactsToLearn:
     - FactID: severin_hiddenPlaceInOffice
   - Speaker:
@@ -696,7 +687,7 @@ MonoBehaviour:
     FactsToLearn: []
   - Speaker:
       TopicID: severin
-    Text: So how is the project coming along?
+    Text: So how is the project coming along? Any news from the ancient ruins?
     FactsToLearn: []
   - Speaker:
       TopicID: lordWoodstock
@@ -707,6 +698,7 @@ MonoBehaviour:
     - FactID: conspiracy_tryRitual
     - FactID: severin_partOfConspiracy
     - FactID: lordWoodstock_partOfConspiracy
+    - FactID: ruins_relatedToConspiracy
   - Speaker:
       TopicID: severin
     Text: That is good to hear.
