@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ruins.unity
     guid: dd099ad2d72f64ef7b177145e6714880
+  - enabled: 1
+    path: Assets/Scenes/Mansion.unity
+    guid: 1ea96c9088be48f4d8973a435115831a
   m_configObjects: {}

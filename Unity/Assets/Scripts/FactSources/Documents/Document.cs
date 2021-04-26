@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -46,5 +47,10 @@ public class Document : MonoBehaviour, IHoverInfo
 	public string GetHoverText()
 	{
 		return Title + "\nMaybe there are some facts to learn?";
+	}
+
+	public List<string> GetContainedFactIds()
+	{
+		return TextUtilities.GetFactIdsInText(Text);
 	}
 }

@@ -1761,7 +1761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: LocationDisplayDescription
-      value: The Familty of Woodstock lives in a pompous mansion close to the royal
+      value: The Family of Woodstock lives in a pompous mansion close to the royal
         palace.
       objectReference: {fileID: 0}
     - target: {fileID: 2939073806875320488, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}

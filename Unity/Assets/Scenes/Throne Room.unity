@@ -767,7 +767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisplayName: Tell about the mercury poison
+  DisplayName: Tell about the mercury poisoning
   Conditions:
   - FactID: george4_wasPoisoned
   Dialogue:
@@ -893,7 +893,7 @@ MonoBehaviour:
     FactsToLearn: []
   - Speaker:
       TopicID: richard3
-    Text: Please go now, and fine a cure for this sickness.
+    Text: Please go now, and find a cure for this sickness.
     FactsToLearn: []
   - Speaker:
       TopicID: you
