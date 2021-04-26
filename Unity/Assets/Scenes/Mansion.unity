@@ -204,7 +204,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &154257084
 GameObject:
@@ -313,8 +313,100 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+--- !u!1001 &368181835
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.298
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.054
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2414474533063011785, guid: 8c2b35d483a092646a882a373a78e367, type: 3}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Text
+      value: 'The rune language remains mysterious. But, with some statistics, we
+        managed to identify the <fact=precursorLanguage_vowels>vowel symbols. They
+        are:
+
+
+        <font=Precursor>A O E U I Y</font></fact>
+
+
+        There
+        is some pattern to it, so it seems that some vowels are just slight variations
+        of the same tone. Others completely break the pattern and look more like
+        the other consonants. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Title
+      value: Notes on Runes
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Overlay
+      value: 
+      objectReference: {fileID: 4511240694025428753, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+    - target: {fileID: 7647103215889876218, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Name
+      value: Notes on Runes
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
 --- !u!1 &537165974
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +514,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1121809323
 PrefabInstance:
@@ -433,7 +525,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -676,8 +768,104 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1398667456
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.151
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 71549996172595352, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792329403712384991, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4367297891951801799, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4172163778452043772, guid: 8c2b35d483a092646a882a373a78e367, type: 3}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Text
+      value: 'An amazing breakthrough! Not all paths through these ruins lead in
+        a circle. We have identified a path that leads to a room full of ancient
+        ruins. You need to go <fact=ruins_pathLogs>left twice, then right twice,
+        and then twice left again</fact>.
+
+        This room seems to be some sort
+        of archive, judging by the amount of documents, but also their variety in
+        language and age. If only we could decipher their texts!'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Title
+      value: Exploration Log
+      objectReference: {fileID: 0}
+    - target: {fileID: 6582227815939742851, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: Overlay
+      value: 
+      objectReference: {fileID: 4511240694025428753, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+    - target: {fileID: 7647103215889876218, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
+      propertyPath: m_Name
+      value: Exploration Log
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d780ec5ed05e44ef79678d3d368ea81a, type: 3}
 --- !u!1 &1730681247
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +1007,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1850070500
 PrefabInstance:
@@ -830,7 +1018,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1593659130315370472, guid: 9812933d058200a868615b50fd66f0dc, type: 3}
       propertyPath: m_LocalPosition.x
