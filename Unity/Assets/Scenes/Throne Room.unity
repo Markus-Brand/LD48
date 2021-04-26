@@ -987,6 +987,68 @@ MonoBehaviour:
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1608125563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608125560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayName: I discovered the Poison
+  Conditions:
+  - FactID: severin_responsibleForKingDeath
+  - FactID: ruins_relatedToConspiracy
+  Dialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: Have you found out anything?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Indeed. Your Advisor Severin and Lord Woodstock were talking about all
+      sorts of interesting things.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Most importantly, I discovered a secret place inside Severins chamber.
+      It contained a bottle of mercury, not completely full.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: And you think that he used it to kill my father?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: Yes. He discussed it openly with Lord Woodstock even. They both seem to
+      be part of a little conspiracy.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: Those two? What could they want?
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: I do not know yet. But it has to do with the ruins outside the city. I
+      will continue to investigate.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: Yes, please do so.
+    FactsToLearn: []
+  RepeatedDialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: Please find out what kind of conspiracy Severin and Lord Woodstock have
+      formed.
+    FactsToLearn: []
+  DialogueDone:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1628364604
 GameObject:
   m_ObjectHideFlags: 0
