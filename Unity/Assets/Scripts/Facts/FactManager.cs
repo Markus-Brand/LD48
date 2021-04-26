@@ -96,7 +96,7 @@ public class FactManager : MonoBehaviour
 #if UNITY_EDITOR
 	private string Sanitize(string content)
 	{
-		return content.Replace(" ", "_").Replace("'", "_").Replace("-", "_");
+		return content.Replace(" ", "_").Replace("'", "_").Replace("-", "_").Replace("?", "_");
 	}
 	
 	public void GeneratePuml()
