@@ -815,7 +815,6 @@ MonoBehaviour:
     - FactID: severin_isPoisonSuspect
     - FactID: QueenDowager_isPoisonSuspect
     - FactID: severin_wasFatherAdvisor
-    - FactID: severin_isCurrentAdvisor
   - Speaker:
       TopicID: richard3
     Text: Please investigate this further. I need to know if I can trust these people.
@@ -883,12 +882,22 @@ MonoBehaviour:
     FactsToLearn:
     - FactID: library_canBeAccessed
   - Speaker:
-      TopicID: you
-    Text: I will go and have a look.
+      TopicID: severin
+    Text: Your majesty, those books hold many secrets. Are you sure you want him
+      to access our precious collection?
+    FactsToLearn:
+    - FactID: severin_doesNotTrustMe
+  - Speaker:
+      TopicID: richard3
+    Text: Yes, this matter is serious, and I trust him.
     FactsToLearn: []
   - Speaker:
       TopicID: richard3
-    Text: Thank you.
+    Text: Please go now, and fine a cure for this sickness.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: I will do so, your Majesty.
     FactsToLearn: []
   RepeatedDialogue:
   - Speaker:
