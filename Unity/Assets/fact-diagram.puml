@@ -52,6 +52,10 @@ richard3_Ask_about_the_letter -> george4_diedOneYearAgo
 richard3_Ask_about_the_letter -> george4_diedMysteriously
 richard3_Ask_about_the_letter -> library_canBeAccessed
 richard3_Ask_about_the_letter -> severin_doesNotTrustMe
+Throne_Room -> QueenDowager_Ask_about_George_IV_s_death
+QueenDowager_Ask_about_George_IV_s_death [label ="<Dialogue>QueenDowager\nAsk about George IV's death"]
+QueenDowager_isPoisonSuspect -> QueenDowager_Ask_about_George_IV_s_death
+QueenDowager_Ask_about_George_IV_s_death -> QueenDowager_isSad
 Library -> A_History_of_Kings
 A_History_of_Kings [label ="<Document>A History of Kings"]
 A_History_of_Kings -> george4_king20
