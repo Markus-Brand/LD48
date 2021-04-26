@@ -368,6 +368,8 @@ MonoBehaviour:
   - {fileID: -4015053110850514199, guid: e3058a0dfcdb86a0c98c35c54cfd9df7, type: 3}
   - {fileID: -3541654970036748001, guid: e3058a0dfcdb86a0c98c35c54cfd9df7, type: 3}
   - {fileID: -2937953654953323102, guid: e3058a0dfcdb86a0c98c35c54cfd9df7, type: 3}
+  WeirdStructureFact:
+    FactID: ruins_weirdStructure
 --- !u!4 &174199743
 Transform:
   m_ObjectHideFlags: 0

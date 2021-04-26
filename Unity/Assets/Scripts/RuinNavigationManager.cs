@@ -24,6 +24,8 @@ public class RuinNavigationManager : MonoBehaviour
 	
 	public List<Sprite> SymbolSprites;
 
+	public FactReference WeirdStructureFact;
+
 	private readonly SmoothToggle _blackFaded = new SmoothToggle(false, 0.4f);
 
 	private List<bool> _navigations = null;
@@ -68,6 +70,7 @@ public class RuinNavigationManager : MonoBehaviour
 		_navigations.Add(direction);
 		if (_navigations.Count > 6) {
 			_navigations = null;
+			WeirdStructureFact.Discover();
 		}
 		_blackFaded.SetTrue();
 	}
