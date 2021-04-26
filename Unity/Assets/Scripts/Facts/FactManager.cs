@@ -90,9 +90,7 @@ public class FactManager : MonoBehaviour
 #if UNITY_EDITOR
 	public void GeneratePuml()
 	{
-		const string startNodeName = "Start";
-
-		var validFactIDs = new HashSet<string> {startNodeName};
+		var validFactIDs = new HashSet<string>();
 
 		string content = "@startuml\ndigraph facts {\n\n";
 		foreach (var fact in AllFacts.Values) {
@@ -109,9 +107,20 @@ public class FactManager : MonoBehaviour
 			}/**/
 		}
 		content += "\n";
+		
+		var notebook = PrefabUtility.LoadPrefabContents("Assets/Prefabs/Notebook Canvas.prefab");
+		var sceneToUnlockFact = notebook.GetComponentsInChildren<MapEntry>(true)
+			.ToDictionary(m => m.SceneName, m => m.UnlockCondition.FactID);
+		PrefabUtility.UnloadPrefabContents(notebook);
+		foreach (var scene in sceneToUnlockFact.Keys) {
+			content += scene.Replace(" ", "_") + " [label = \" <Scene> " + scene + "\"]\n";
+			if (sceneToUnlockFact[scene] != "") {
+				content += sceneToUnlockFact[scene] + " -> " + scene.Replace(" ", "_") + "\n";
+			}
+		}
+		content += "\n";
 
-		string[] scenesToSearch = {"Home Room", "Library", "Ruins", "Throne Room", "Mansion"};
-		foreach (var sceneName in scenesToSearch) {
+		foreach (var sceneName in sceneToUnlockFact.Keys) {
 			var scenePath = "Assets/Scenes/" + sceneName + ".unity";
 			var scene = EditorSceneManager.OpenScene(scenePath);
 			foreach (var rootGameObject in scene.GetRootGameObjects()) {
@@ -120,12 +129,11 @@ public class FactManager : MonoBehaviour
 					content += "'" + dialoguePerson.Person.TopicID + "\n";
 					foreach (var dialogueOption in dialoguePerson.GetComponents<DialogueOption>()) {
 						var dialogueID = dialoguePerson.Person.TopicID + "_" + dialogueOption.DisplayName.Replace(" ", "_");
+						
+						content += sceneName.Replace(" ", "_") + " -> " + dialogueID + "\n";
 						content += dialogueID + " [label =\" <Dialogue>" + dialoguePerson.Person.TopicID + "\\n" + dialogueOption.DisplayName + "\"]\n";
 
 						var dialogueOptionConditions = dialogueOption.Conditions.Select(f => f.FactID).ToList();
-						if (dialogueOptionConditions.Count == 0) {
-							dialogueOptionConditions = new[] {startNodeName}.ToList();
-						}
 						foreach (var condition in dialogueOptionConditions) {
 							content += condition + " -> " + dialogueID + "\n";
 						}

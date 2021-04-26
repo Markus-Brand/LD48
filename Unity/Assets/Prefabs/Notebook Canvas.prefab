@@ -1884,7 +1884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: UnlockCondition.FactID
-      value: severin_behavesWeirdly
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: LocationDisplayDescription

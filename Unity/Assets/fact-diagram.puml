@@ -1,28 +1,19 @@
 @startuml
 digraph facts {
 
-richard3_needsHelp [label ="richard3_needsHelp\nNeeds your help again."]
-george4_diedMysteriously [label ="george4_diedMysteriously\ndied from a mysterious sickness"]
-george4_weirdSymptoms [label ="george4_weirdSymptoms\nhad weird symptoms shortly before his death"]
-george4_wasPoisoned [label ="george4_wasPoisoned\nwas probably poisoned"]
-george4_diedOneYearAgo [label ="george4_diedOneYearAgo\ndied exactly one year ago"]
-severin_wasFatherAdvisor [label ="severin_wasFatherAdvisor\nwas the advisor of King George III"]
-severin_isCurrentAdvisor [label ="severin_isCurrentAdvisor\nis still the advisor of the current King Richard III"]
-severin_isPoisonSuspect [label ="severin_isPoisonSuspect\nis one of the suspects for poisoning King Goerge IV"]
-severin_isInWoodstockManor [label ="severin_isInWoodstockManor\nis currently in Woodstock Manor, discussing Politics with Lord Woodstock"]
-library_canBeAccessed [label ="library_canBeAccessed\nKing Richard III granted you access"]
-easterEggs_lanternFact [label ="easterEggs_lanternFact\nPlaying with the lantern is fun"]
-QueenDowager_isPoisonSuspect [label ="QueenDowager_isPoisonSuspect\nis one of the suspects for poisoning King Goerge IV"]
-woodstockManor_isUnlocked [label ="woodstockManor_isUnlocked\nis probably worth a visit to learn about Severin"]
 
-richard3_needsHelp -> george4_diedMysteriously
-george4_diedMysteriously -> george4_weirdSymptoms
-george4_weirdSymptoms -> george4_wasPoisoned
 
-'archeologist
-archeologist_Say_Hi [label =" <Dialogue>archeologist\nSay Hi"]
-Start -> archeologist_Say_Hi
+Throne_Room [label = " <Scene> Throne Room"]
+richard3_needsHelp -> Throne_Room
+Library [label = " <Scene> Library"]
+library_canBeAccessed -> Library
+Home_Room [label = " <Scene> Home Room"]
+Ruins [label = " <Scene> Ruins"]
+Mansion [label = " <Scene> Mansion"]
+woodstockManor_isUnlocked -> Mansion
+
 'richard3
+Throne_Room -> richard3_Tell_about_the_mercury_poison
 richard3_Tell_about_the_mercury_poison [label =" <Dialogue>richard3\nTell about the mercury poison"]
 george4_wasPoisoned -> richard3_Tell_about_the_mercury_poison
 richard3_Tell_about_the_mercury_poison -> severin_isPoisonSuspect
@@ -31,6 +22,7 @@ richard3_Tell_about_the_mercury_poison -> severin_wasFatherAdvisor
 richard3_Tell_about_the_mercury_poison -> severin_isCurrentAdvisor
 richard3_Tell_about_the_mercury_poison -> woodstockManor_isUnlocked
 richard3_Tell_about_the_mercury_poison -> severin_isInWoodstockManor
+Throne_Room -> richard3_Ask_about_the_letter
 richard3_Ask_about_the_letter [label =" <Dialogue>richard3\nAsk about the letter"]
 richard3_needsHelp -> richard3_Ask_about_the_letter
 richard3_Ask_about_the_letter -> george4_diedOneYearAgo
@@ -38,9 +30,12 @@ richard3_Ask_about_the_letter -> george4_diedMysteriously
 richard3_Ask_about_the_letter -> library_canBeAccessed
 'QueenDowager
 'severin
+'archeologist
+Ruins -> archeologist_Say_Hi
+archeologist_Say_Hi [label =" <Dialogue>archeologist\nSay Hi"]
 'lordWoodstock
+Mansion -> lordWoodstock_Say_Hello
 lordWoodstock_Say_Hello [label =" <Dialogue>lordWoodstock\nSay Hello"]
-Start -> lordWoodstock_Say_Hello
 
 }
 @enduml
