@@ -810,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627214810607511885, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150
+      value: -150.00003
       objectReference: {fileID: 0}
     - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -819,6 +819,10 @@ PrefabInstance:
     - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_SizeDelta.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8672606836101917009, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -227.00003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
@@ -1232,6 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e171644cbf240e7addc802e095edfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UseInvestigationCursor: 1
   Clicked:
     m_PersistentCalls:
       m_Calls:

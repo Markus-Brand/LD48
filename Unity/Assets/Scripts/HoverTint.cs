@@ -7,6 +7,8 @@ public class HoverTint : MonoBehaviour
 	private SpriteRenderer _sprite;
 	private static readonly int OverlayColor = Shader.PropertyToID("_OverlayColor");
 
+	public bool UseInvestigationCursor = false;
+	
 	private void Start()
 	{
 		_sprite = GetComponent<SpriteRenderer>();
@@ -15,12 +17,13 @@ public class HoverTint : MonoBehaviour
 
 	private void OnMouseEnter()
 	{
+		if(UseInvestigationCursor) CursorManager.GetInstance().SetInvestigateCursor();
 		_sprite?.material.SetColor(OverlayColor,  Color.white.WithAlpha(0.5f));
 	}
 
 	private void OnMouseExit()
 	{
-		Cursor.SetCursor(null, new Vector2(32, 32), CursorMode.Auto);
+		if(UseInvestigationCursor) CursorManager.GetInstance().SetDefaultCursor();
 		_sprite?.material.SetColor(OverlayColor, Color.white.WithAlpha(0));
 	}
 }
