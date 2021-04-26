@@ -66,6 +66,10 @@ Throne_Room -> richard3_I_discovered_the_Poison
 richard3_I_discovered_the_Poison [label ="<Dialogue>richard3\nI discovered the Poison"]
 severin_responsibleForKingDeath -> richard3_I_discovered_the_Poison
 ruins_relatedToConspiracy -> richard3_I_discovered_the_Poison
+Throne_Room -> richard3_Ask_to_Investigate_Woodstock_Manor
+richard3_Ask_to_Investigate_Woodstock_Manor [label ="<Dialogue>richard3\nAsk to Investigate Woodstock Manor"]
+ruins_weirdStructure -> richard3_Ask_to_Investigate_Woodstock_Manor
+lordWoodstock_fundsExcavations -> richard3_Ask_to_Investigate_Woodstock_Manor
 Throne_Room -> QueenDowager_Ask_about_George_IV_s_death
 QueenDowager_Ask_about_George_IV_s_death [label ="<Dialogue>QueenDowager\nAsk about George IV's death"]
 QueenDowager_isPoisonSuspect -> QueenDowager_Ask_about_George_IV_s_death
@@ -106,6 +110,8 @@ __Spying -> ruins_relatedToConspiracy
 Severin_Room -> MercuryVial_Inspect
 MercuryVial_Inspect [label ="<Dialogue>MercuryVial\nInspect"]
 MercuryVial_Inspect -> severin_responsibleForKingDeath
+
+Ruins -> ruins_weirdStructure
 
 }
 @enduml
