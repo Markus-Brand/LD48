@@ -1749,7 +1749,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: SceneName
-      value: WoodstockManor
+      value: Mansion
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: LocationDisplayName

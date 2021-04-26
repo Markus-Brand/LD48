@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanBeSpeaker: 1
-  Name: 
+  Name: Queen
   Names: []
 --- !u!1 &8615793690411635789
 GameObject:
