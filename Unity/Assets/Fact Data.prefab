@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanBeSpeaker: 0
-  Name: 
+  Name: The Conspiracy
   Names: []
 --- !u!1 &2934870119915446108
 GameObject:
