@@ -131,8 +131,16 @@ archeologist_Ask_About_Ruins -> ruins_fromPrecursors
 Ruins -> archeologist_Ask_about_the_Funding_of_the_Project
 archeologist_Ask_about_the_Funding_of_the_Project [label ="<Dialogue>archeologist\nAsk about the Funding of the Project"]
 archeologist_Ask_about_the_Funding_of_the_Project -> lordWoodstock_fundsExcavations
-Ruins -> StoneOnWall
-StoneOnWall [label ="<Document>StoneOnWall"]
+Ruins -> archeologist_Chat_about_the_Aru
+archeologist_Chat_about_the_Aru [label ="<Dialogue>archeologist\nChat about the Aru"]
+precursors_aru -> archeologist_Chat_about_the_Aru
+archeologist_Chat_about_the_Aru -> precursorLanguage_rtl
+Ruins -> War_with_Kyr
+War_with_Kyr [label ="<Document>War with Kyr"]
+Ruins -> Bug_Report
+Bug_Report [label ="<Document>Bug Report"]
+Ruins -> Cleansing_Light
+Cleansing_Light [label ="<Document>Cleansing Light"]
 Mansion -> Notes_on_Runes
 Notes_on_Runes [label ="<Document>Notes on Runes"]
 Notes_on_Runes -> precursorLanguage_vowels
