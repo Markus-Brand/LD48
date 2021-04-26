@@ -238,13 +238,15 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   Title: Letter from the King
-  Text: 'To NAME, Investigator extaordinaire.
+  Text: 'To the Investigator extaordinaire.
 
 
-    I write to you in a matter of
-    great importance. Recently, my father has passed away. <fact=george4_diedMysteriously>I
-    suspect that this might not have been of a natural cause</fact>. <fact=richard3_needsHelp>I
-    need your help to get to the bottom of this</fact>.
+    I write to you in a matter of great
+    importance. <fact=richard3_needsHelp>I need your help to research something</fact>
+    of which I will not speak here.
+
+    Please <fact=castle_mysteriousEvents>come
+    to the castle, and I will tell you more</fact>.
 
 
     His Majesty,

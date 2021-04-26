@@ -627,7 +627,6 @@ GameObject:
   - component: {fileID: 1608125565}
   - component: {fileID: 1608125564}
   - component: {fileID: 1608125563}
-  - component: {fileID: 1608125562}
   - component: {fileID: 1608125561}
   - component: {fileID: 1608125568}
   m_Layer: 0
@@ -653,59 +652,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.45, y: 2.5}
   m_Direction: 0
---- !u!114 &1608125562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1608125560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  displayName: Accuse the Advisor
-  conditions:
-  - FactID: george4_wasPoisoned
-  dialogue:
-  - Speaker:
-      TopicID: richard3
-    Text: Have you found something out?
-    FactsToLearn: []
-  - Speaker:
-      TopicID: you
-    Text: Please send away your helper first
-    FactsToLearn: []
-  - Speaker:
-      TopicID: richard3
-    Text: Is this necessary?
-    FactsToLearn: []
-  - Speaker:
-      TopicID: you
-    Text: Yes, absolutely
-    FactsToLearn: []
-  - Speaker:
-      TopicID: richard3
-    Text: Ok, Severin, please leave!
-    FactsToLearn: []
-  - Speaker:
-      TopicID: severin
-    Text: As you whish, my lord.
-    FactsToLearn:
-    - FactID: severin_behavesWeirdly
-  - Speaker:
-      TopicID: richard3
-    Text: So, what have you found out?
-    FactsToLearn: []
-  - Speaker:
-      TopicID: you
-    Text: Your advisor has poisoned your father!
-    FactsToLearn: []
-  - Speaker:
-      TopicID: richard3
-    Text: You win!
-    FactsToLearn: []
 --- !u!114 &1608125563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,21 +664,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a205db2c3f54fa7a8e95f51b82660c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayName: Ask about the letter
-  conditions:
+  DisplayName: Ask about the letter
+  Conditions:
   - FactID: richard3_needsHelp
-  dialogue:
+  Dialogue:
   - Speaker:
       TopicID: richard3
-    Text: So you can help me?
+    Text: Thank you for coming! I have a new Task for you.
     FactsToLearn: []
   - Speaker:
       TopicID: you
-    Text: Sure thing!
+    Text: What is it, my King?
     FactsToLearn: []
   - Speaker:
       TopicID: richard3
-    Text: Thank you very much!
+    Text: As you know, my Father, King George IV, died exactly one year ago.
+    FactsToLearn:
+    - FactID: george4_diedOneYearAgo
+  - Speaker:
+      TopicID: richard3
+    Text: You might also remember that he was not very old yet, but became very sick
+      shortly before his death. I want you to research that sickness and find a cure,
+      so that I will not end in the same way.
+    FactsToLearn:
+    - FactID: george4_diedMysteriously
+  - Speaker:
+      TopicID: richard3
+    Text: You may access the royal library for your research.
+    FactsToLearn:
+    - FactID: library_canBeAccessed
+  - Speaker:
+      TopicID: you
+    Text: I will go and have a look.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: richard3
+    Text: Thank you.
+    FactsToLearn: []
+  RepeatedDialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: Please go and find a cure for that sickness that killed my father, so that
+      I won't die the same way.
+    FactsToLearn: []
+  - Speaker:
+      TopicID: you
+    Text: I will do so, your majesty.
     FactsToLearn: []
 --- !u!114 &1608125564
 MonoBehaviour:

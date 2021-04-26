@@ -434,9 +434,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You live in Newport, the capital of this kingdom. You live in Newport,
-    the capital of this kingdom. You live in Newport, the capital of this kingdom.
-    You live in Newport, the capital of this kingdom.
+  m_text: Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+    At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+    no sea takimata sanctus est Lorem ipsum dolor sit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 74d613fef6a5b46ad818f9bb110543d3, type: 2}
   m_sharedMaterial: {fileID: 8051676980696819629, guid: 74d613fef6a5b46ad818f9bb110543d3, type: 2}
@@ -2128,7 +2129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: UnlockCondition.FactID
-      value: george4_wasPoisoned
+      value: richard3_needsHelp
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: LocationDisplayDescription
@@ -2270,7 +2271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: UnlockCondition.FactID
-      value: richard3_needsHelp
+      value: library_canBeAccessed
       objectReference: {fileID: 0}
     - target: {fileID: 1173777015876280333, guid: 994cf6a48e50927fba22af42cdb3da9f, type: 3}
       propertyPath: LocationDisplayDescription

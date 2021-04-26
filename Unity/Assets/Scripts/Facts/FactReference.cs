@@ -19,4 +19,9 @@ public class FactReference
 		FactManager.Discover(FactID);
 	}
 
+	public void Discard()
+	{
+		FactManager.Discard(FactID);
+	}
+
 }
