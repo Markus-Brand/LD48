@@ -80,6 +80,12 @@ TextureImporter:
   - first:
       213: -3114738102144766914
     second: torus-runes
+  - first:
+      213: 4172163778452043772
+    second: book5
+  - first:
+      213: 2414474533063011785
+    second: book6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -681,7 +687,7 @@ TextureImporter:
         width: 38
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -702,7 +708,7 @@ TextureImporter:
         width: 87
         height: 89
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -710,6 +716,48 @@ TextureImporter:
       bones: []
       spriteID: e3c694dd23a36c4d0800000000000000
       internalID: -3114738102144766914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: book5
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 576
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7b267f9d086e930800000000000000
+      internalID: 4172163778452043772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: book6
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 576
+        width: 5
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cda27e9bcfe18120800000000000000
+      internalID: 2414474533063011785
       vertices: []
       indices: 
       edges: []
