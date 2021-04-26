@@ -32,6 +32,7 @@ public class Topic : MonoBehaviour
 		Names ??= new List<NameOption>();
 	}
 
+#if UNITY_EDITOR
 	[MenuItem("GameObject/Add Fact", true, 0)]
 	static bool createFactVisible(MenuCommand menuCommand)
 	{
@@ -53,5 +54,6 @@ public class Topic : MonoBehaviour
 		Undo.RegisterCreatedObjectUndo(go, $"Create {go.name} fact");
 		Selection.activeObject = go;
 	}
+#endif
 
 }

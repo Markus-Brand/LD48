@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.SceneManagement;
+#endif
 using UnityEngine;
 using WgEventSystem;
 using WgEventSystem.Events;
@@ -36,6 +38,8 @@ public class FactManager : MonoBehaviour
 		FactStates = new Dictionary<string, FactState>();
 	}
 
+	
+#if UNITY_EDITOR
 	[MenuItem("GameObject/Add Topic", true, 0)]
 	static bool CreateTopicVisible(MenuCommand menuCommand)
 	{
@@ -57,6 +61,7 @@ public class FactManager : MonoBehaviour
 		Undo.RegisterCreatedObjectUndo(go, $"Create topic");
 		Selection.activeObject = go;
 	}
+#endif
 
 	public static FactState GetFactState(string id)
 	{

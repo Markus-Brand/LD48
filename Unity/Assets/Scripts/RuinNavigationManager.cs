@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
 using Random = System.Random;
 
 public class RuinNavigationManager : MonoBehaviour
