@@ -37,7 +37,7 @@ public class Document : MonoBehaviour, IHoverInfo
 
 	public void OnMouseExit()
 	{
-		CursorManager.GetInstance().SetTalkCursor();
+		CursorManager.GetInstance().SetDefaultCursor();
 		HoverMaster.GetInstance().HideInfo(this);
 	}
 
