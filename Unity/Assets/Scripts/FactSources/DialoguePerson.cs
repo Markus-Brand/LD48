@@ -21,6 +21,7 @@ public class DialoguePerson : MonoBehaviour, IHoverInfo
 
 	private void OnMouseUp()
 	{
+		if (HoverMaster.GetInstance().DisableWorldHoverElements) return;
 		SpeakTo();
 	}
 	

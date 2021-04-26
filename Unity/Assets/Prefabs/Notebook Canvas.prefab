@@ -1950,8 +1950,8 @@ MonoBehaviour:
   ClickedLink:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DocumentOverlay, Assembly-CSharp
+      - m_Target: {fileID: 4209694012583973905}
+        m_TargetAssemblyTypeName: Notebook, Assembly-CSharp
         m_MethodName: PerformLinkAction
         m_Mode: 0
         m_Arguments:
