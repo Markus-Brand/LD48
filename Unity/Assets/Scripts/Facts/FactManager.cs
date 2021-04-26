@@ -86,7 +86,7 @@ public class FactManager : MonoBehaviour
 	{
 		SetFactState(id, FactState.Discarded);
 	}
-	
+
 #if UNITY_EDITOR
 	public void GeneratePuml()
 	{
@@ -109,9 +109,8 @@ public class FactManager : MonoBehaviour
 			}/**/
 		}
 		content += "\n";
-		
-		
-		string[] scenesToSearch = { "Home Room", "Library", "Ruins", "Throne Room" };
+
+		string[] scenesToSearch = {"Home Room", "Library", "Ruins", "Throne Room", "Mansion"};
 		foreach (var sceneName in scenesToSearch) {
 			var scenePath = "Assets/Scenes/" + sceneName + ".unity";
 			var scene = EditorSceneManager.OpenScene(scenePath);
@@ -122,18 +121,21 @@ public class FactManager : MonoBehaviour
 					foreach (var dialogueOption in dialoguePerson.GetComponents<DialogueOption>()) {
 						var dialogueID = dialoguePerson.Person.TopicID + "_" + dialogueOption.DisplayName.Replace(" ", "_");
 						content += dialogueID + " [label =\" <Dialogue>" + dialoguePerson.Person.TopicID + "\\n" + dialogueOption.DisplayName + "\"]\n";
-						
+
 						var dialogueOptionConditions = dialogueOption.Conditions.Select(f => f.FactID).ToList();
 						if (dialogueOptionConditions.Count == 0) {
-							dialogueOptionConditions = new[] { startNodeName }.ToList();
+							dialogueOptionConditions = new[] {startNodeName}.ToList();
 						}
 						foreach (var condition in dialogueOptionConditions) {
 							content += condition + " -> " + dialogueID + "\n";
 						}
-						foreach (var dialogueElement in dialogueOption.Dialogue.Concat(dialogueOption.RepeatedDialogue)) {
+						foreach (var dialogueElement in
+							dialogueOption.Dialogue.Concat(dialogueOption.RepeatedDialogue)) {
 							foreach (var factToLearn in dialogueElement.FactsToLearn) {
 								if (!validFactIDs.Contains(factToLearn.FactID)) {
-									Debug.LogError("Invalid Fact reference to '" + factToLearn.FactID + "' in " + sceneName + " > " + dialoguePerson.Person.TopicID + " > " + dialogueOption.DisplayName + " > " + dialogueElement.Text);
+									Debug.LogError("Invalid Fact reference to '" + factToLearn.FactID + "' in " +
+									               sceneName + " > " + dialoguePerson.Person.TopicID + " > " +
+									               dialogueOption.DisplayName + " > " + dialogueElement.Text);
 								}
 								content += dialogueID + " -> " + factToLearn.FactID + "\n";
 							}
@@ -143,7 +145,7 @@ public class FactManager : MonoBehaviour
 			}
 		}
 		AssetDatabase.OpenAsset(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Fact Data.prefab"));
-		
+
 		content += "\n}\n@enduml";
 
 		var path = "Assets" + Path.DirectorySeparatorChar + "fact-diagram.puml";
