@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Severin Room.unity
     guid: 8673b375be2c80c4eaa95f4cbe8aa06f
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: ee50f7db6b8d7933280c6130d567db86
   m_configObjects: {}
