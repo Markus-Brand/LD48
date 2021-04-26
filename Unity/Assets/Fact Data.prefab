@@ -703,7 +703,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: has a secret space behind loose bricks in his office
+  Text: has a secret space behind loose bricks above the table in his office in the
+    castle
   Dependencies: []
   HelpText: 
 --- !u!1 &2782615749058688964
