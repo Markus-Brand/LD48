@@ -13,11 +13,13 @@ public class DialogueOption : MonoBehaviour
 	[FormerlySerializedAs("conditions")] public List<FactReference> Conditions;
 	[FormerlySerializedAs("dialogue")] public List<DialogueElement> Dialogue;
 	[FormerlySerializedAs("repeatedDialogue")] public List<DialogueElement> RepeatedDialogue;
+
+	public FactReference PreventedBy;
 	public UnityEvent DialogueDone;
 	
 	public bool IsAvailable()
 	{
-		return Conditions.All(c => c.Discovered);
+		return Conditions.All(c => c.Discovered) && (PreventedBy.IsNull || !PreventedBy.Discovered);
 	}
 
 	public bool HasBeenDoneAlready => DialogueDoneSet.Contains(DisplayName);
