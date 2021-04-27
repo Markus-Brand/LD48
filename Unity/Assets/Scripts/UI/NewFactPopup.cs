@@ -50,6 +50,7 @@ public class NewFactPopup : MonoBehaviour
 		if (e.NewState == FactState.Discovered) {
 			_shownFactIds.Add(e.FactId);
 			_wantsToClose = false;
+			_upTime = 0;
 			UpdateTextsAndPosition();
 		}
 	}
