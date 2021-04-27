@@ -27,8 +27,8 @@ public class HoverMaster : MonoBehaviour
 
 	private void Awake()
 	{
-		_canvasScaler = GetComponentInParent<CanvasScaler>();
 		_defaultTextSize = Text.fontSize;
+		_canvasTransform = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
 	}
 
 	private void Start()
@@ -63,9 +63,9 @@ public class HoverMaster : MonoBehaviour
 	public AxisState PreferredXState;
 	public bool HasPreferredYState;
 	public AxisState PreferredYState;
-	private CanvasScaler _canvasScaler;
 	private float _defaultTextSize;
 	private bool _hoveringWorldObject;
+	private RectTransform _canvasTransform;
 
 	public bool FullscreenUiOpen => Notebook.GetInstance().IsOpen() || FindObjectsOfType<DocumentOverlay>(true).Length > 0;
 
@@ -113,21 +113,13 @@ public class HoverMaster : MonoBehaviour
 		const int baseOffsetFromCursor = 9;
 		int offsetFromCursor = Mathf.RoundToInt(baseOffsetFromCursor);
 		
-		
 		var textWidth = TextPreferredWidth;
 		var textHeight = TextPreferredHeight;
-		
-		var canvasWidth = _canvasScaler.referenceResolution.x; // our canvas scaler!
-		var canvasHeight = canvasWidth * Screen.height / Screen.width;
 
-		if (true) {
-			//sorry for that hack, but it is just all broken as hell
-			float canvasAspect = _canvasScaler.referenceResolution.x / _canvasScaler.referenceResolution.y;
-			float screenAspect = Screen.width / (float)Screen.height;
-			canvasWidth *= screenAspect / canvasAspect;
-			canvasHeight *= screenAspect / canvasAspect;
-		}
-		
+		var canvasRect = _canvasTransform.rect;
+		var canvasWidth = canvasRect.width;
+		var canvasHeight = canvasRect.height;
+
 		var mousePosition = Input.mousePosition;
 		var relativeMouse = new Vector2(mousePosition.x / Screen.width, mousePosition.y / Screen.height);
 		var inCanvas = new Vector2(relativeMouse.x * canvasWidth, relativeMouse.y * canvasHeight);
