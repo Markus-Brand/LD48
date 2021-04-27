@@ -120,7 +120,7 @@ public class DialogueManager : MonoBehaviour
 			}
 		}
 		if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return) ||
-		    Input.GetKeyDown(KeyCode.KeypadEnter)) {
+		    Input.GetKeyDown(KeyCode.KeypadEnter) || (Input.GetKeyDown(KeyCode.Escape) && _currentOptions == null)) {
 			Continue();
 		}
 	}

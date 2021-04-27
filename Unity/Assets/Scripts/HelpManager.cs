@@ -8,14 +8,14 @@ public class HelpManager : MonoBehaviour
 	public DialogueOption controls;
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Escape)) {
+		if (Input.GetKeyDown(KeyCode.Escape) && !HoverMaster.GetInstance().FullscreenUiOpen) {
 			if (!Dm.IsCurrentlyActive) {
 				DialogueManager.ChoiceOption[] choices = {
 					new DialogueManager.ChoiceOption("Controls", () => controls.Execute()),
 					new DialogueManager.ChoiceOption("Exit Game", Application.Quit),
 					new DialogueManager.ChoiceOption("Nothing", () => {})
 				};
-				Dm.ShowChoice(choices);
+				Invoker.InvokeScaled(() => Dm.ShowChoice(choices), 0.1f);
 			}
 		}
 		if (Input.GetKeyDown(KeyCode.H)) {
