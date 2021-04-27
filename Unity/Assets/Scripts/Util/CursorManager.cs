@@ -18,7 +18,7 @@ public class CursorManager: MonoBehaviour
 
 	public void SetDefaultCursor()
 	{
-		Cursor.SetCursor(defaultCursor, new Vector2(32, 32), CursorMode.Auto);
+		Cursor.SetCursor(defaultCursor, new Vector2(0, 0), CursorMode.Auto);
 	}
 	public void SetTalkCursor()
 	{
@@ -26,7 +26,7 @@ public class CursorManager: MonoBehaviour
 	}
 	public void SetInvestigateCursor()
 	{
-		Cursor.SetCursor(investigateCursor, new Vector2(32, 32), CursorMode.Auto);
+		Cursor.SetCursor(investigateCursor, new Vector2(16, 16), CursorMode.Auto);
 	}
 
 }
