@@ -19,7 +19,7 @@ public class DialogueOption : MonoBehaviour
 	
 	public bool IsAvailable()
 	{
-		return Conditions.All(c => c.Discovered) && (PreventedBy.IsNull || !PreventedBy.Discovered);
+		return Conditions.All(c => c.Discovered) && (PreventedBy == null || PreventedBy.IsNull || !PreventedBy.Discovered);
 	}
 
 	public bool HasBeenDoneAlready => DialogueDoneSet.Contains(DisplayName);

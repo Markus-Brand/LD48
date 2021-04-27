@@ -49,7 +49,7 @@ public class Document : MonoBehaviour, IHoverInfo
 
 	public string GetHoverText()
 	{
-		return Title + "\nMaybe there are some facts to learn?";
+		return Title;
 	}
 	
 #if UNITY_EDITOR

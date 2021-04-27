@@ -255,6 +255,7 @@ public class Notebook : MonoBehaviour
 			var targetTopicId = action.Substring("topic:".Length);
 			_notesPage = TopicIdToNotesPage[targetTopicId];
 			UpdateText();
+			NextPageButton.SetActive(TopicTexts.Count > _notesPage * 2 + 1);
 		} else {
 			Debug.LogError("Cannot handle link action: " + action);
 		}
