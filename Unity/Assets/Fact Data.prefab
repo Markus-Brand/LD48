@@ -182,8 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: is one of the suspects for poisoning King Goerge IV
-  Dependencies: []
+  Text: is one of the suspects for poisoning King George IV
+  Dependencies:
+  - FactID: george4_wasPoisoned
   HelpText: 
 --- !u!1 &1589188931335547423
 GameObject:
@@ -276,8 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: 'there is another path through the ruins: LRRLRL'
-  Dependencies: []
-  HelpText: 
+  Dependencies:
+  - FactID: precursorLanguage_patterns
+  HelpText: I think there is some precursor writing I can decipher in the library.
 --- !u!1 &1691764806392202377
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,8 +325,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Text: runes power this machine, I can activate them in clockwise order
   Dependencies:
-  - FactID: CleansingLight_name
-  HelpText: 
+  - FactID: precursorLanguage_patterns
+  HelpText: There is an archive in the ruins, maybe I can decipher it now.
 --- !u!1 &1813039639938377529
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +594,7 @@ Transform:
   - {fileID: 4142774121858127910}
   - {fileID: 6006974367082556867}
   - {fileID: 5309228334093632896}
+  - {fileID: 8667332447253221647}
   m_Father: {fileID: 5677392511697954768}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -661,6 +664,53 @@ MonoBehaviour:
   - FactID: george4_weirdSymptoms
   HelpText: The way that King George IV died was indeed mysterious. But I think I
     have heard of these sympoms before... Where could I read more about this?
+--- !u!1 &2649676163731864879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8667332447253221647}
+  - component: {fileID: 8944345726832320098}
+  m_Layer: 0
+  m_Name: finishedGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8667332447253221647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649676163731864879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4612251446433458409}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8944345726832320098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649676163731864879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Text: YOU HAVE WON
+  Dependencies:
+  - FactID: richard3_youDecide
+  HelpText: Now I should decide what to do with the Cleansing Light...
 --- !u!1 &2675624585866352457
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,8 +802,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: members want to execute some ritual
-  Dependencies: []
-  HelpText: 
+  Dependencies:
+  - FactID: woodstockManor_isUnlocked
+  HelpText: I should head to Woodstock Manor.
 --- !u!1 &2824087912479975772
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,8 +896,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: poisoned King George IV with mercury
-  Dependencies: []
-  HelpText: 
+  Dependencies:
+  - FactID: severin_hiddenPlaceInOffice
+  HelpText: I should look for the hidden object in the office of the advisor.
 --- !u!1 &3116698797981410914
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,7 +1037,7 @@ MonoBehaviour:
   Text: openly fascinated by the ruins
   Dependencies:
   - FactID: lordWoodstock_fundsExcavations
-  HelpText: 
+  HelpText: I should talk to Lord Woodstock about the ruins.
 --- !u!1 &3216419785151378007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,8 +1192,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: 'have weird geometry: no matter the path, I always end up outside again'
-  Dependencies: []
-  HelpText: 
+  Dependencies:
+  - FactID: ruins_fromPrecursors
+  HelpText: I should explore the depths of the ruins.
 --- !u!1 &3763740013755823878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1464,7 +1517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: apparently disappeared thousand
+  Text: apparently disappeared thousands of years ago
   Dependencies: []
   HelpText: 
 --- !u!1 &4989014120801253950
@@ -1615,7 +1668,7 @@ MonoBehaviour:
   Text: appeared as apparition in the ruins
   Dependencies:
   - FactID: CleansingLight_operation1
-  HelpText: 
+  HelpText: Now I know how to activate the runes, I should see what happens.
 --- !u!1 &5121462221255769724
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,8 +1760,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: some runes are vowels
-  Dependencies: []
-  HelpText: 
+  Dependencies:
+  - FactID: lordWoodstock_summoned
+  HelpText: I should investigate Woodstock Manor.
 --- !u!1 &5226396366161819527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,8 +1992,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: heavily funds local archeology projects
-  Dependencies: []
-  HelpText: 
+  Dependencies:
+  - FactID: ruins_relatedToConspiracy
+  HelpText: Who provides funding for the archeologist at the ruins?
 --- !u!1 &5842946762624139617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,8 +2088,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Text: left by the precursors
-  Dependencies: []
-  HelpText: 
+  Dependencies:
+  - FactID: ruins_relatedToConspiracy
+  HelpText: I should look around the ruins.
 --- !u!1 &5879473550614702704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,7 +2474,8 @@ MonoBehaviour:
   Text: Aru researcher
   Dependencies:
   - FactID: oro_sok_summoned
-  HelpText: 
+  HelpText: I should talk to the strange individual that appeared when I activated
+    the runes.
 --- !u!1 &7026618250069016410
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,7 +2522,7 @@ MonoBehaviour:
   Text: 'there is a path through the ruins: LLRRLL'
   Dependencies:
   - FactID: lordWoodstock_fascinatedByAru
-  HelpText: I need to search Woodstock Manor. Maybe the King can distract the Lord.
+  HelpText: Maybe the archeologist can tell me more, now that I know the name "Aru".
 --- !u!1 &7152787181560434355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,9 +2613,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddc2f95801a48329de3116fd793fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Text: is one of the suspects for poisoning King Goerge IV
-  Dependencies: []
-  HelpText: 
+  Text: is one of the suspects for poisoning King George IV
+  Dependencies:
+  - FactID: george4_wasPoisoned
+  HelpText: I should talk to the King about the poisoning.
 --- !u!1 &7237734311662127550
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,7 +3194,8 @@ MonoBehaviour:
   Dependencies:
   - FactID: precursorLanguage_vowels
   - FactID: precursorLanguage_rtl
-  HelpText: 
+  HelpText: I am so close to deciphering the runes of the Aru... Maybe there are
+    some hints in the library.
 --- !u!1 &8770287156828100813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,4 +3337,5 @@ MonoBehaviour:
   Dependencies:
   - FactID: lordWoodstock_fundsExcavations
   - FactID: ruins_weirdStructure
-  HelpText: 
+  HelpText: The library might provide insights into who has successfully explored
+    the ruins.
