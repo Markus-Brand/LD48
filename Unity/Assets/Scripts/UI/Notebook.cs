@@ -133,6 +133,9 @@ public class Notebook : MonoBehaviour
 				OpenNotes();
 			}
 		}
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			_open.SetFalse();
+		}
 		if (_open.IsTrue()) {
 			_raisedForOpen.SetFalse(true);
 		}

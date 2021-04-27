@@ -21,7 +21,7 @@ public class DialoguePerson : MonoBehaviour, IHoverInfo
 
 	private void OnMouseUp()
 	{
-		if (HoverMaster.GetInstance().DisableWorldHoverElements) return;
+		if (HoverMaster.GetInstance().FullscreenUiOpen) return;
 		SpeakTo();
 	}
 	
