@@ -22,7 +22,7 @@ public class HoverTint : MonoBehaviour
 		if (dp != null) {
 			if(!dp.HasOptions()) return;
 		}
-		if (HoverMaster.GetInstance().DisableWorldHoverElements) return;
+		if (HoverMaster.GetInstance().FullscreenUiOpen) return;
 		if(UseInvestigationCursor) CursorManager.GetInstance().SetInvestigateCursor();
 		_sprite?.material.SetColor(OverlayColor,  Color.white.WithAlpha(0.5f));
 	}
