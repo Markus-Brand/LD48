@@ -1037,6 +1037,7 @@ MonoBehaviour:
   Text: openly fascinated by the ruins
   Dependencies:
   - FactID: lordWoodstock_fundsExcavations
+  - FactID: precursors_ancientCivilization
   HelpText: I should talk to Lord Woodstock about the ruins.
 --- !u!1 &3216419785151378007
 GameObject:

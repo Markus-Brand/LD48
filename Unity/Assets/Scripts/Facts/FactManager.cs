@@ -78,7 +78,7 @@ public class FactManager : MonoBehaviour
 #endif
 		if (state == GetFactState(id)) return;
 		Instance.FactStates[id] = state;
-		EventManager.getInstance().Trigger(new FactStateChangedEvent());
+		EventManager.getInstance().Trigger(new FactStateChangedEvent(id, state));
 	}
 
 	public static void Discover(string id, bool force = false)

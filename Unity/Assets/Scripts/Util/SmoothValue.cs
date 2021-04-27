@@ -50,4 +50,6 @@ public class SmoothValue
 		_targetReached.SetFalse(true);
 		_targetReached.SetTrue();
 	}
+
+	public bool IsStationary => _targetReached.IsTrue();
 }
