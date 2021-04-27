@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -17,6 +18,11 @@ public class HoverTint : MonoBehaviour
 
 	private void OnMouseEnter()
 	{
+		var dp = GetComponent<DialoguePerson>();
+		if (dp != null) {
+			if(!dp.HasOptions()) return;
+		}
+		if (HoverMaster.GetInstance().DisableWorldHoverElements) return;
 		if(UseInvestigationCursor) CursorManager.GetInstance().SetInvestigateCursor();
 		_sprite?.material.SetColor(OverlayColor,  Color.white.WithAlpha(0.5f));
 	}

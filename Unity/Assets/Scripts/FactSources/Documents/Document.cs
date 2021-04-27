@@ -31,6 +31,7 @@ public class Document : MonoBehaviour, IHoverInfo
 	
 	public void OnMouseEnter()
 	{
+		if (HoverMaster.GetInstance().DisableWorldHoverElements) return;
 		CursorManager.GetInstance().SetInvestigateCursor();
 		HoverMaster.GetInstance().ShowInfo(this);
 	}

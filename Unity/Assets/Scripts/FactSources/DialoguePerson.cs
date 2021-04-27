@@ -27,8 +27,17 @@ public class DialoguePerson : MonoBehaviour, IHoverInfo
 	
 	public void OnMouseEnter()
 	{
-		CursorManager.GetInstance().SetTalkCursor();
+		if (HoverMaster.GetInstance().DisableWorldHoverElements) return;
 		HoverMaster.GetInstance().ShowInfo(this);
+		if (HasOptions()) {
+			CursorManager.GetInstance().SetTalkCursor();
+		}
+	}
+
+	public bool HasOptions()
+	{
+		var options = GetComponents<DialogueOption>().Where(o => o.IsAvailable()).ToList();
+		return options.Count > 0;
 	}
 
 	public void OnMouseExit()
