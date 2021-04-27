@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1127242139705607351}
   - component: {fileID: 8899329693546914528}
   m_Layer: 5
-  m_Name: Constant Pixel Size
+  m_Name: Aspect Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
