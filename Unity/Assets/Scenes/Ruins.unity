@@ -229,6 +229,8 @@ MonoBehaviour:
       to tell me if you find anything interesting.
     FactsToLearn: []
   RepeatedDialogue: []
+  PreventedBy:
+    FactID: 
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -277,6 +279,8 @@ MonoBehaviour:
       be the first to do so.
     FactsToLearn: []
   RepeatedDialogue: []
+  PreventedBy:
+    FactID: 
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -320,6 +324,8 @@ MonoBehaviour:
     Text: Yeah, sure...
     FactsToLearn: []
   RepeatedDialogue: []
+  PreventedBy:
+    FactID: lordWoodstock_fundsExcavations
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -358,6 +364,8 @@ MonoBehaviour:
       TopicID: archeologist
     Text: These old civilizations are so fascinating!
     FactsToLearn: []
+  PreventedBy:
+    FactID: ruins_pathLogs
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -3419,6 +3427,8 @@ MonoBehaviour:
       TopicID: oro_sok
     Text: Please help free my people!
     FactsToLearn: []
+  PreventedBy:
+    FactID: 
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -3581,6 +3591,8 @@ MonoBehaviour:
     FactsToLearn:
     - FactID: oro_sok_summoned
   RepeatedDialogue: []
+  PreventedBy:
+    FactID: oro_sok_summoned
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -3609,6 +3621,8 @@ MonoBehaviour:
     Text: Now to chant the reversing sequence...
     FactsToLearn: []
   RepeatedDialogue: []
+  PreventedBy:
+    FactID: 
   DialogueDone:
     m_PersistentCalls:
       m_Calls:
@@ -3649,6 +3663,8 @@ MonoBehaviour:
     Text: Now to break this machine...
     FactsToLearn: []
   RepeatedDialogue: []
+  PreventedBy:
+    FactID: 
   DialogueDone:
     m_PersistentCalls:
       m_Calls:

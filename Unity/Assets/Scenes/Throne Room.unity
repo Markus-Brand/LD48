@@ -168,6 +168,8 @@ MonoBehaviour:
     FactsToLearn:
     - FactID: QueenDowager_isSad
   RepeatedDialogue: []
+  PreventedBy:
+    FactID: 
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -810,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4627214810607511885, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -150.00003
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 6912348576817240000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -822,7 +824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8672606836101917009, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -227.00003
+      value: -227
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260af6b2755ea8b83979fc405dfaa0c6, type: 3}
@@ -916,6 +918,8 @@ MonoBehaviour:
       TopicID: you
     Text: Yes, I will do so, your majesty.
     FactsToLearn: []
+  PreventedBy:
+    FactID: severin_responsibleForKingDeath
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -988,6 +992,8 @@ MonoBehaviour:
       TopicID: you
     Text: I will do so, your majesty.
     FactsToLearn: []
+  PreventedBy:
+    FactID: severin_isPoisonSuspect
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -1050,6 +1056,8 @@ MonoBehaviour:
     Text: Please find out what kind of conspiracy Severin and Lord Woodstock have
       formed.
     FactsToLearn: []
+  PreventedBy:
+    FactID: CleansingLight_operation2
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -1103,6 +1111,8 @@ MonoBehaviour:
       TopicID: richard3
     Text: I will lure Lord Woodstock out of his Manor. Please go and do your investigations.
     FactsToLearn: []
+  PreventedBy:
+    FactID: CleansingLight_operation2
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
@@ -1180,7 +1190,13 @@ MonoBehaviour:
     Text: I leave this matter to you. Do what you think is best for the Kingdom!
     FactsToLearn:
     - FactID: richard3_youDecide
-  RepeatedDialogue: []
+  RepeatedDialogue:
+  - Speaker:
+      TopicID: richard3
+    Text: I leave this matter to you. Do what you think is best for the Kingdom!
+    FactsToLearn: []
+  PreventedBy:
+    FactID: 
   DialogueDone:
     m_PersistentCalls:
       m_Calls: []
