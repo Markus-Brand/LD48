@@ -7,7 +7,7 @@ public class SceneChanger : MonoBehaviour
 
 	public void ChangeScene()
 	{
-		CursorManager.GetInstance().SetDefaultCursor();
+		CursorManager.GetInstance()?.SetDefaultCursor();
 		SceneManager.LoadScene(SceneName);
 	}
 }
