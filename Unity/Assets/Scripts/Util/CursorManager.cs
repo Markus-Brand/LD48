@@ -22,7 +22,7 @@ public class CursorManager: MonoBehaviour
 	}
 	public void SetTalkCursor()
 	{
-		Cursor.SetCursor(talkCursor, new Vector2(32, 32), CursorMode.Auto);
+		Cursor.SetCursor(talkCursor, new Vector2(16, 52), CursorMode.Auto);
 	}
 	public void SetInvestigateCursor()
 	{

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class TextEventHandler : MonoBehaviour, IPointerClickHandler
+public class TextEventHandler : MonoBehaviour, IPointerClickHandler, IPointerMoveHandler
 {
 
 	public UnityEvent<string> ClickedLink;
@@ -29,6 +29,23 @@ public class TextEventHandler : MonoBehaviour, IPointerClickHandler
 			if (link.linkTextfirstCharacterIndex > _textComponent.firstVisibleCharacter) {
 				ClickedLink.Invoke(link.GetLinkID());
 			}
+		}
+	}
+
+	public void OnPointerMove(PointerEventData eventData)
+	{
+		int linkIndex = TMP_TextUtilities.FindIntersectingLink(_textComponent, Input.mousePosition, _camera);
+		if (linkIndex != -1) {
+			var link = _textComponent.textInfo.linkInfo[linkIndex];
+			if (link.linkTextfirstCharacterIndex > _textComponent.firstVisibleCharacter) {
+				var split = link.GetLinkID().Split(":".ToCharArray());
+				var type = split[0];
+				if(type == "unlock-fact" && FactManager.Instance.AllFacts[split[1]].IsDiscoverable) {
+					CursorManager.GetInstance().SetInvestigateCursor();
+				}
+			}
+		} else {
+			CursorManager.GetInstance().SetDefaultCursor();
 		}
 	}
 }
