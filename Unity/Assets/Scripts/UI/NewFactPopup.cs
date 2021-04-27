@@ -40,12 +40,8 @@ public class NewFactPopup : MonoBehaviour
 			_wantsToClose = false;
 			_upTime = 0;
 		}
-		Debug.Log(_upTranslation.CurrentValue);
-		Debug.Log(transform.position);
-		Debug.Log(transform.localPosition);
-		Debug.Log(GetComponent<RectTransform>().anchoredPosition);
 		GetComponent<RectTransform>().anchoredPosition = new Vector2(GetComponent<RectTransform>().anchoredPosition.x,
-			_upTranslation.CurrentValue);
+			-_upTranslation.CurrentValue);
 		// transform.position = new Vector3(transform.position.x, _upTranslation.CurrentValue, transform.position.z);
 	}
 
@@ -79,7 +75,7 @@ public class NewFactPopup : MonoBehaviour
 		if (_wantsToClose || _shownFactIds.Count == 0) {
 			_upTranslation.SetTo(0);
 		} else {
-			_upTranslation.SetTo(DisplayText.preferredHeight + 90);
+			_upTranslation.SetTo(DisplayText.preferredHeight + 150);
 		}
 	}
 }
