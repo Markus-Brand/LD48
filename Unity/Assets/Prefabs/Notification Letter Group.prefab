@@ -85,6 +85,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2204305416902564463}
+  - component: {fileID: 3934759177294532799}
   m_Layer: 5
   m_Name: Notification Letter Group
   m_TagString: Untagged
@@ -109,9 +110,22 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 1403, y: -227}
+  m_AnchoredPosition: {x: 1371, y: 0}
   m_SizeDelta: {x: 64, y: 90}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &3934759177294532799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4319050107020322745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d45262dd08149319da9c1791bf487c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayText: {fileID: 245868123216689906}
 --- !u!1 &8330448881688147115
 GameObject:
   m_ObjectHideFlags: 0
