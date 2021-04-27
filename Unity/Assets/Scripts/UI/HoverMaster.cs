@@ -110,7 +110,7 @@ public class HoverMaster : MonoBehaviour
 	private Vector2 TargetPosition()
 	{
 		const int minimumSpaceToScreenBorder = 20;
-		const int baseOffsetFromCursor = 9;
+		const int baseOffsetFromCursor = 16;
 		int offsetFromCursor = Mathf.RoundToInt(baseOffsetFromCursor);
 		
 		var textWidth = TextPreferredWidth;
