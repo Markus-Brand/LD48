@@ -201,6 +201,7 @@ GameObject:
   - component: {fileID: 2004823021}
   - component: {fileID: 2004823020}
   - component: {fileID: 2004823023}
+  - component: {fileID: 2004823024}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -305,6 +306,20 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &2004823024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004823019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa0199fe4984824a1ff2680031a674f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AspectWidth: 16
+  AspectHeight: 9
 --- !u!1001 &4511240694155479809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,6 +327,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2958319443453731633, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958319443453731633, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958319443453731633, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2958319443453731633, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4511240694025428753, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
       propertyPath: m_Name
       value: Document Canvas
@@ -320,6 +351,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2004823021}
+    - target: {fileID: 4511240694025428755, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4511240694025428757, guid: 12378e7f0f8144aca82a7ac505841885, type: 3}
       propertyPath: m_Pivot.x
       value: 0
