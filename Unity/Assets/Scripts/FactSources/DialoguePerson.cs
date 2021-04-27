@@ -27,7 +27,7 @@ public class DialoguePerson : MonoBehaviour, IHoverInfo
 	
 	public void OnMouseEnter()
 	{
-		if (HoverMaster.GetInstance().DisableWorldHoverElements) return;
+		if (HoverMaster.GetInstance().FullscreenUiOpen) return;
 		HoverMaster.GetInstance().ShowInfo(this);
 		if (HasOptions()) {
 			CursorManager.GetInstance().SetTalkCursor();
