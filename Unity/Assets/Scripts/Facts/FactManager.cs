@@ -27,7 +27,7 @@ public class FactManager : MonoBehaviour
 	public Dictionary<string, Fact> AllFacts =>
 		_allFacts ??= Topics.SelectMany(topic => topic.Facts).ToDictionary(fact => fact.ID);
 
-	public IEnumerable<Fact> AllDiscoverableFacts => _allFacts.Values.Where(fact => fact.IsDiscoverable);
+	public IEnumerable<Fact> AllDiscoverableFacts => AllFacts.Values.Where(fact => fact.IsDiscoverable);
 
 	public Dictionary<string, FactState> FactStates { get; private set; }
 
